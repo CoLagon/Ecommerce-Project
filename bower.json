@@ -1,0 +1,18 @@
+{
+  "name": "Ecommerce-proj",
+  "description": "",
+  "main": "index.js",
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "^15.6.1",
+    "babel": "^5.8.38"
+  }
+}
