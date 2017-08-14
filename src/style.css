@@ -10,13 +10,11 @@ body {
 }
 img {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  height:100px;
 }
 
 button {
   width: 66.06px;
 }
-
  /*dropdown basic */
 .dropdown {
   display: block;
@@ -29,3 +27,58 @@ button {
   background-color: #aaa;
   cursor: pointer;
 }
+
+.fa-plus-circle {
+  color: #71fd26;
+}
+.fa-plus-circle:hover {
+  cursor: pointer;
+}
+
+#box-dash {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  border-style: dashed;
+  border-width:5px;
+}
+div.column.is-11 {
+  margin: 0;
+}
+/*.addColumn {
+  margin-top: 61%;
+  margin-bottom: 61%;
+}*/
+/*.addColumn {
+  margin-top: 61%;
+  margin-bottom: 61%;
+}
+
+
+@media (min-width: 1527px) and (max-width: 1552px) {
+  .addColumn {
+    margin-top: 60%;
+    margin-bottom: 60%;
+  }
+}
+
+@media (min-width: 1484px) and (max-width: 1527px) {
+  .addColumn {
+    margin-top: 58%;
+    margin-bottom: 58%;
+  }
+}
+
+@media (min-width: 708px) and (max-width: 715px) {
+  .addColumn {
+    margin-top: 0;
+    margin-bottom: 1px;
+  }
+}
+
+@media (min-width: 720px) {
+  .addColumn {
+    margin-top: 48%;
+    margin-bottom: 48%;
+  }
+}*/
