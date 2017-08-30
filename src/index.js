@@ -3,7 +3,7 @@
 var JEANS = [
     {
       SKU: 1324,
-      title: "RUSTIC DIME SHREDDED JEANS",
+      title: "The first item in the array",
       fit: "TAPER FIT",
       color: "black",
       sizes: [ 30, 32, 34 ],
@@ -200,46 +200,57 @@ var Clothes = {
 function DisplayImage2(props) {
   return (
     <div className={"column is-" + props.imageWidth + ""}>
-        <div className="card">
+        <div className="card money-border">
           <div className="card-image">
-            <figure className="image is-2by3" id={props.id} >
+            <figure className="image is-2by3">
                 <img src={props.image}
                      onMouseOver={ function() {var len = props.image.length; if(len) {props.onFlipImage(len);}}}
                      onMouseOut={function() {props.onToDefault();}}
-                     onClick={function(event) { props.dropZone(event, props.id);}}
-                     onDragOver={function(event) {event.preventDefault();}}
-                     onDrop={function(event) { props.dropZone(event, props.id);}}
-                     onDragStart={function(event) {console.log(event.target);}}
+                     onDragOver={function(event) {props.borderHover(event, "inset 0 1px 1px rgba(0,0,0, 0.5), 0 0 50px rgb(113,253,38)", event.target.id); event.preventDefault();}}
+                     onDragLeave={function(event) {props.borderHover(event, "none");}}
+                     onMouseDown={function(event) {props.drag(event);}}
+                     onMouseMove={function(event) {props.move(event);}}
+                     onDrop={function(event) {props.dropZone(event); props.borderHover(event, "none");}}
+                     onDragStart={function(event) {event.dataTransfer.setData("data", event.target.id); props.borderHover(event)}}
                      draggable="true"
-                     id={props.id}/>
+                     id={props.index}/>
             </figure>
           </div>
         </div>
         <div>
           <h1>{props.title}</h1>
-          <h1>{props.id}</h1>
+          <h1>id: {props.id} index: {props.index}</h1>
         </div>
     </div>
   );
 }
 function DisplayImage3(props) {
-        return (
-          <div className={"column " + "is-" + props.imageWidth + ""}>
-              <div className="card">
-                <div className="card-image">
-                  <figure className="image is-2by3" id={props.id}>
-                  <img src={props.image}
-                       onMouseOver={ function() {var len = props.image.length; if(len) {props.onFlipImage(len);}}}
-                       onMouseOut={function() {props.onToDefault();}}
-                       onClick={function() { props.dropZone(event);}}
-                       draggable="true" />
-                  </figure>
-                </div>
-              </div>
-                <p>{props.title}</p>
-                <p>{props.id}</p>
+
+  return (
+    <div className={"column is-" + props.imageWidth + ""}>
+        <div className="card">
+          <div className="card-image">
+            <figure className="image is-2by3">
+                <img src={props.image}
+                     onMouseOver={ function() {var len = props.image.length; if(len) {props.onFlipImage(len);}}}
+                     onMouseOut={function() {props.onToDefault();}}
+                     onDragOver={function(event) {props.borderHover(event, "inset 0 1px 1px rgba(0,0,0, 0.5), 0 0 50px rgb(113,253,38)"); event.preventDefault(); }}
+                     onDragLeave={function(event) {props.borderHover(event, "none");}}
+                     onMouseDown={function(event) {props.drag(event);}}
+                     onMouseMove={function(event) {props.move(event);}}
+                     onDrop={function(event) {props.dropZone(event); props.borderHover(event, "none");}}
+                     onDragStart={function(event) {event.dataTransfer.setData("data", event.target.id); }}
+                     draggable="true"
+                     id={props.index}/>
+            </figure>
           </div>
-        );
+        </div>
+        <div>
+          <h1>{props.title}</h1>
+          <h1>id: {props.id} index: {props.index}</h1>
+        </div>
+    </div>
+  );
 }
 
 function BoxDash(props) {
@@ -277,12 +288,10 @@ function ManageColumns(props) {
 
 var DisplayImage = React.createClass({
   flipImage: function(len) {
-    console.log("flipImage", len)
     var loopImage = function(i) {
       if(i < len) {
         this.Timeout = setTimeout(function() {
           this.setState({image: this.props.image[i]})
-          console.log(this.state.image);
           loopImage(i + 1);
         }.bind(this), 500)
       }
@@ -336,7 +345,11 @@ var DisplayImage = React.createClass({
      if (this.props.id > this.state.theRemaining) {
         return (
           <DisplayImage3
+            index={this.props.index}
             dropZone={this.props.dropZone}
+            drag={this.props.drag}
+            move={this.props.move}
+            borderHover={this.props.borderHover}
             len={this.state.len}
             id={this.props.id}
             title={this.props.title}
@@ -354,7 +367,11 @@ var DisplayImage = React.createClass({
       } else {
         return (
           <DisplayImage2
+            index={this.props.index}
             dropZone={this.props.dropZone}
+            drag={this.props.drag}
+            move={this.props.move}
+            borderHover={this.props.borderHover}
             id={this.props.id}
             title={this.props.title}
             sizes={this.props.sizes}
@@ -377,15 +394,18 @@ var ExtractObjects = React.createClass({
       return (
         <div className="columns is-vcentered">
         {this.props.objects.map(function(object, index){
-          if(object.id == this.props.len && this.props.admin) {
+          if(object.index == this.props.len - 1 && this.props.admin) {
             if(this.props.factor) {
               return ([
                 <DisplayImage
                      dropZone={this.props.dropZone}
+                     drag={this.props.drag}
+                     move={this.props.move}
+                     borderHover={this.props.borderHover}
                      admin={this.props.admin}
                      len={this.props.len}
                      key={this.props.objects[index].id}
-                     index={index}
+                     index={object.index}
                      jean={object}
                      SKU={object.SKU}
                      color={object.color}
@@ -404,10 +424,13 @@ var ExtractObjects = React.createClass({
             return (
               <DisplayImage
                   dropZone={this.props.dropZone}
+                  drag={this.props.drag}
+                  move={this.props.move}
+                  borderHover={this.props.borderHover}
                   admin={this.props.admin}
                   len={this.props.len}
                   key={this.props.objects[index].id}
-                  index={index}
+                  index={object.index}
                   jean={object}
                   SKU={object.SKU}
                   color={object.color}
@@ -425,9 +448,12 @@ var ExtractObjects = React.createClass({
             return (
                   <DisplayImage
                       dropZone={this.props.dropZone}
+                      drag={this.props.drag}
+                      move={this.props.move}
+                      borderHover={this.props.borderHover}
                       len={this.props.len}
                       key={index}
-                      index={index}
+                      index={object.index}
                       jean={object}
                       SKU={object.SKU}
                       color={object.color}
@@ -448,10 +474,44 @@ var ExtractObjects = React.createClass({
   }
 });
 
+var ident = 17;
+
 //Object literal or Class with properties and methods
 //this class holds function expressions(methods)
-/***********************Ecommerce Application*********************************************/
+
 var Ecommerce = React.createClass({
+  componentWillReceiveProps: function(a) {
+    var len = a.initialJeans.length;
+    var arrOfObj = []
+    var rem = len % this.state.columns;
+    var rows = len / this.state.columns;
+    var factor;
+
+    var prevPos = 0;
+    var Pos = this.state.columns;
+    for(var i = 0; i < rows; i++) {
+      arrOfObj.push(a.initialJeans.slice(prevPos, Pos));
+      prevPos += this.state.columns;
+      Pos += this.state.columns;
+    }
+
+    if(arrOfObj != null) {
+      if (arrOfObj[arrOfObj.length - 1].length != this.state.columns) {
+          factor = false;
+      } else {
+          factor = true;
+      }
+    }
+
+    this.setState({
+      array: arrOfObj,
+      len: len,
+      rows: rows,
+      remainder: rem,
+      arrLen: arrOfObj.length,
+      factor: factor
+    })
+  },
   getInitialState: function() {
       if(this.props.initialJeans.length != 0) {
           var admin = true;
@@ -459,13 +519,15 @@ var Ecommerce = React.createClass({
           var arrOfObj = [];
           var columns = 4;
           var rem = len % columns;
-          console.log("what dkfsjlkf",columns - rem)
+          // console.log("what dkfsjlkf",columns - rem)
           var rows = len / columns;
+
+          var copy = [...this.props.initialJeans];
 
           var prevPos = 0;
           var Pos = columns;
           for(var i = 0; i < rows; i++) {
-            arrOfObj.push(this.props.initialJeans.slice(prevPos, Pos));
+            arrOfObj.push(copy.slice(prevPos, Pos));
             prevPos += columns;
             Pos += columns;
           }
@@ -503,15 +565,12 @@ var Ecommerce = React.createClass({
       console.warn("Ecommerce: componentDidMount is not in use :(")
     }
   },
-  componentDidUpdate: function(a, b) {
+  componentDidUpdate: function() {
     if(this.state.newColumns != undefined && this.state.newColumns != this.state.columns) {
         var len = this.props.initialJeans.length;
-        var arr;
         var columns = this.state.newColumns;
         var rem = len % this.state.newColumns;
         var rows = len / this.state.newColumns;
-        var prevPos = 0;
-        var Pos = this.state.newColumns;
         var arrOfObj = [];
         var prevPos = 0;
         var Pos = this.state.newColumns;
@@ -524,7 +583,7 @@ var Ecommerce = React.createClass({
         }
 
         if(this.state.array != null) {
-          if (arrOfObj[this.state.arrLen - 1].length != this.state.newColumns) {
+          if (arrOfObj[arrOfObj.length - 1].length != this.state.newColumns) {
               factor = false;
           } else {
               factor = true;
@@ -545,45 +604,18 @@ var Ecommerce = React.createClass({
   columnManagement: function(delta) {
     var prev = this.state.columns;
     var curr = prev + delta;
-
+    if(curr < 1) {
+      curr = 1;
+    } else if(curr > 6) {
+      curr = 6;
+    }
     this.state.newColumns = curr;
     this.setState({})
+  },
 
-    console.log(this.state)
-  },
-  dropZone: function(e, id) {
-    // var node = ReactDOM.findDOMNode(DOMNode);
-    var cell = document.getElementById(id);
-    var cellWidth = cell.clientWidth;
-    var coordinates = cell.getBoundingClientRect();
-    var x = e.pageX - coordinates.left;
-    console.log("hi")
-    console.log(this.state.array[0][0].id)
-    for(var i = 0; i < this.state.array.length - 1; i++) {
-      var len = this.state.array[i].length - 1;
-      console.log(this.state.array[i][len]);
-      if(this.state.array[i][len].length > 1) {
-        for(var j = 0; j < this.state.array[i][len].length - 1; i++) {
-          if(this.state.array[i][j].id === id) {
-            console.log("found")
-          }
-        }
-      } else {
-        if(this.state.array[i][len].id === id) {
-          console.log("found")
-        }
-      }
-    }
-    // if( x < cellWidth/2) {
-    //   console.log("left");
-    // } else {
-    //
-    // }
-  },
   render: function() {
-    console.log(this.state.array);
-    console.log(this.state.factor)
-    console.log(this.state.arrLen - 1);
+    // console.log(this.state.factor)
+    // console.log(this.state.arrLen - 1);
     // var arrOfObj = [];
     // var prevPos = 0;
     // var Pos = this.state.columns;
@@ -614,7 +646,10 @@ var Ecommerce = React.createClass({
                   <ManageColumns
                           onColumnManagement={this.columnManagement}/>,
                   <ExtractObjects
-                          dropZone={function(e, id) {this.dropZone(e, id)}.bind(this)}
+                          dropZone={this.props.dropZone}
+                          drag={this.props.drag}
+                          move={this.props.move}
+                          borderHover={this.props.borderHover}
                           admin={this.state.admin}
                           key={index}
                           objects={objects}
@@ -628,7 +663,10 @@ var Ecommerce = React.createClass({
               } else if (index === this.state.arrLen - 1 && this.state.factor) {
                 return ([
                   <ExtractObjects
-                        dropZone={function(e, id) {this.dropZone(e, id)}.bind(this)}
+                        dropZone={this.props.dropZone}
+                        drag={this.props.drag}
+                        move={this.props.move}
+                        borderHover={this.props.borderHover}
                         admin={this.state.admin}
                         key={index}
                         objects={objects}
@@ -644,7 +682,10 @@ var Ecommerce = React.createClass({
               } else {
                 return (
                   <ExtractObjects
-                          dropZone={function(e, id) {this.dropZone(e, id)}.bind(this)}
+                          dropZone={this.props.dropZone}
+                          drag={this.props.drag}
+                          move={this.props.move}
+                          borderHover={this.props.borderHover}
                           admin={this.state.admin}
                           key={index}
                           objects={objects}
@@ -659,7 +700,6 @@ var Ecommerce = React.createClass({
             } else {
               return (
                 <ExtractObjects
-                        dropZone={function(e, id) {this.dropZone(e, id)}.bind(this)}
                         admin={this.state.admin}
                         key={index}
                         objects={objects}
@@ -677,8 +717,88 @@ var Ecommerce = React.createClass({
   }
 });
 
+var obj, x, y, prev_x, prev_y;
+var myArr = [];
+var Beginning = React.createClass({
+  move: function(e) {
+    if(e.pageX) {
+      x = e.pageX;
+      y = e.pageY;
+    }
+  // If the object specifically is selected, then move it to the X/Y coordinates that are always being tracked.
+  if(obj) {
+    obj.style.left = (x - prev_x) + 'px';
+    obj.style.top = (y - prev_y) + 'px';
+  }
+  },
+  drag: function(e) {
+    // Yep, use the object I just clicked on.
+  obj = e.target;
+  // Set current X coordinate minus distance left from offsetParent node.
+  prev_x = x - obj.offsetLeft;
+  // Set current Y coordinate minus distance top from offsetParent node.
+  prev_y = y - obj.offsetTop;
+  //quickie
+  },
+  borderHover: function(e, style) {
+    myArr.push(e.target.id)
+      if(myArr[0] == e.target.id && e.type == "dragover") {
+        e.target.style.boxShadow = "inset 0 1px 1px rgba(0,0,0, 0.5), 0 0 50px rgb(66, 134, 244)";
+      } else if(e.type == "drop") {
+        e.target.style.boxShadow = "none"
+        console.log(myArr, "myArr")
+        myArr = [];
+      } else {
+        e.target.style.boxShadow = style;
+      }
 
-ReactDOM.render(<Ecommerce initialJeans={JEANS} />, document.getElementById("root"));
+  },
+  dropZone: function(e) {
+    var cell = e.target;
+    var cellWidth = cell.clientWidth;
+    var coordinates = cell.getBoundingClientRect();
+    var x = e.pageX - coordinates.left;
+    var dataID = e.dataTransfer.getData("data");
+
+    if(dataID != e.target.id) {
+      if( x < cellWidth/2) {
+        this.state.data.splice(e.target.id, 0, this.state.data.splice(this.state.data[dataID].index, 1)[0])
+      } else {
+        this.state.data.splice(e.target.id, 0, this.state.data.splice(this.state.data[dataID].index, 1)[0])
+      }
+    }
+
+    this.setState({
+      data: this.state.data
+    })
+  },
+  getInitialState: function() {
+    var copy = [...this.props.initialJeans];
+    return {
+      data: copy
+    }
+  },
+  render: function() {
+    var arr = [];
+    this.state.data.forEach(function(data, index) {
+      data.index = index;
+      arr.push(data);
+    })
+    return (
+      <div>
+        <Ecommerce
+          initialJeans={arr}
+          dropZone={function(e, id) {this.dropZone(e, id)}.bind(this)}
+          borderHover={function(e, style, id) {this.borderHover(e, style, id)}.bind(this)}
+          drag={function(e) {this.drag(e)}.bind(this)}
+          move={function(e) {this.move(e)}.bind(this)}
+          />
+      </div>
+    )
+  }
+})
+
+ReactDOM.render(<Beginning initialJeans={JEANS} />, document.getElementById("root"));
 /***********************************************************/
 // propTypes: {
 //   initialJeans: React.PropTypes.arrayOf(React.PropTypes.shape({

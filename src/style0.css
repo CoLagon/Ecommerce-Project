@@ -45,13 +45,9 @@ button {
 div.column.is-11 {
   margin: 0;
 }
-
-/*.money-border:hover {
-  border: 2px solid;
-  border-color: rgb(113,253,38);
-  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.045), 0 0 8px rgb(113,253,38);
-  box-shadow: inset 0 1px 1px rgba(0,0,0,.045), 0 0 8px rgb(113,253,38);
-}*/
+.fuck {
+  width: 14.28%;
+}
 /*.addColumn {
   margin-top: 61%;
   margin-bottom: 61%;
