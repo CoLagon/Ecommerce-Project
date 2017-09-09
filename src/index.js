@@ -2,16 +2,6 @@
 //array of object literals
 var JEANS = [
     {
-      SKU: 1324,
-      title: "The first item in the array",
-      fit: "TAPER FIT",
-      color: "black",
-      sizes: [ 30, 32, 34 ],
-      image: ["https://cdn.shopify.com/s/files/1/0452/6221/products/110raw_1024x1024.jpg?v=1492608239"],
-      description: "Get a stylish street look loaded with comfort with the new Biker Black Shredded jeans from Rustic Dime. A stylish tapered fit will have you looking your best in the black colorway that features custom knee panels and hand cut tears on the front for a shredded look and a cotton-spandex construction for a comfortable fit with plenty of stretch.",
-      id: 3
-    },
-    {
       SKU: 1234,
       title: "SAINT VERNON",
       fit: "TAPER FIT",
@@ -39,127 +29,67 @@ var JEANS = [
       sizes: [ 30, 32, 34 ],
       image: ["https://cdn.shopify.com/s/files/1/0452/6221/products/rustic-dime-shredded-biker-4_1024x1024.jpg?v=1492608318"],
       description: "Get a stylish street look loaded with comfort with the new Biker Black Shredded jeans from Rustic Dime. A stylish tapered fit will have you looking your best in the black colorway that features custom knee panels and hand cut tears on the front for a shredded look and a cotton-spandex construction for a comfortable fit with plenty of stretch.",
+      id: 3
+    },
+    {
+      SKU: 1234,
+      title: "SAINT VERNON",
+      fit: "TAPER FIT",
+      color: "blue",
+      sizes: [ 28, 30, 32 ],
+      image: ["https://cdn.shopify.com/s/files/1/0452/6221/products/rustic-dime-saint-vernon-taper-fit-1_1024x1024-1_1024x1024.jpg?v=1492608261%22", "https://cdn.shopify.com/s/files/1/0452/6221/products/rustic-dime-saint-vernon-taper-fit-2_1024x1024.jpg?v=1492608262"],
+      description: "Our Saint Vernon Taper Fit denim features distressed and tattered details. Each pair is hand cut and sanded for a unique look. 100% cotton bleached american denim. Made in Los Angeles.",
       id: 4
     },
     {
-      SKU: 1324,
-      title: "some of a bitch",
-      fit: "TAPER FIT",
-      color: "black",
-      sizes: [ 30, 32, 34 ],
-      image: ["https://cdn.shopify.com/s/files/1/0452/6221/products/110raw_1024x1024.jpg?v=1492608239"],
-      description: "Get a stylish street look loaded with comfort with the new Biker Black Shredded jeans from Rustic Dime. A stylish tapered fit will have you looking your best in the black colorway that features custom knee panels and hand cut tears on the front for a shredded look and a cotton-spandex construction for a comfortable fit with plenty of stretch.",
+      SKU: 4321,
+      title: "VINO SHREDDED",
+      fit: "BIKER DENIM",
+      color: "red",
+      sizes: [ 28, 30, 32 ],
+      image: ["https://cdn.shopify.com/s/files/1/0452/6221/products/105black_1024x1024.jpg?v=1492608011", "https://cdn.shopify.com/s/files/1/0452/6221/products/105black_b_1024x1024.jpg?v=1492608012","https://cdn.shopify.com/s/files/1/0452/6221/products/105black_c_1024x1024.jpg?v=1492608013"],
+      description: "Our new Biker Denim features quality denim with a special knee design and hand shredding, and distressed details that are unique to each piece. 98% Cotton / 2% Spandex. Made in Los Angeles, CA.",
       id: 5
     },
     {
-      SKU: 1324,
-      title: "I got way to fly yesterday",
+      SKU: 1234,
+      title: "SAINT VERNON",
       fit: "TAPER FIT",
-      color: "black",
-      sizes: [ 30, 32, 34 ],
-      image: ["https://cdn.shopify.com/s/files/1/0452/6221/products/110raw_1024x1024.jpg?v=1492608239"],
-      description: "Get a stylish street look loaded with comfort with the new Biker Black Shredded jeans from Rustic Dime. A stylish tapered fit will have you looking your best in the black colorway that features custom knee panels and hand cut tears on the front for a shredded look and a cotton-spandex construction for a comfortable fit with plenty of stretch.",
+      color: "blue",
+      sizes: [ 28, 30, 32 ],
+      image: ["https://cdn.shopify.com/s/files/1/0452/6221/products/rustic-dime-saint-vernon-taper-fit-1_1024x1024-1_1024x1024.jpg?v=1492608261%22", "https://cdn.shopify.com/s/files/1/0452/6221/products/rustic-dime-saint-vernon-taper-fit-2_1024x1024.jpg?v=1492608262"],
+      description: "Our Saint Vernon Taper Fit denim features distressed and tattered details. Each pair is hand cut and sanded for a unique look. 100% cotton bleached american denim. Made in Los Angeles.",
       id: 6
     },
     {
-      SKU: 1324,
-      title: "george is my bro",
-      fit: "TAPER FIT",
-      color: "black",
-      sizes: [ 30, 32, 34 ],
-      image: ["https://cdn.shopify.com/s/files/1/0452/6221/products/110raw_1024x1024.jpg?v=1492608239"],
-      description: "Get a stylish street look loaded with comfort with the new Biker Black Shredded jeans from Rustic Dime. A stylish tapered fit will have you looking your best in the black colorway that features custom knee panels and hand cut tears on the front for a shredded look and a cotton-spandex construction for a comfortable fit with plenty of stretch.",
+      SKU: 4321,
+      title: "VINO SHREDDED",
+      fit: "BIKER DENIM",
+      color: "red",
+      sizes: [ 28, 30, 32 ],
+      image: ["https://cdn.shopify.com/s/files/1/0452/6221/products/105black_1024x1024.jpg?v=1492608011", "https://cdn.shopify.com/s/files/1/0452/6221/products/105black_b_1024x1024.jpg?v=1492608012","https://cdn.shopify.com/s/files/1/0452/6221/products/105black_c_1024x1024.jpg?v=1492608013"],
+      description: "Our new Biker Denim features quality denim with a special knee design and hand shredding, and distressed details that are unique to each piece. 98% Cotton / 2% Spandex. Made in Los Angeles, CA.",
       id: 7
     },
     {
-      SKU: 1324,
-      title: "funny money",
+      SKU: 1234,
+      title: "SAINT VERNON",
       fit: "TAPER FIT",
-      color: "black",
-      sizes: [ 30, 32, 34 ],
-      image: ["https://cdn.shopify.com/s/files/1/0452/6221/products/110raw_1024x1024.jpg?v=1492608239"],
-      description: "Get a stylish street look loaded with comfort with the new Biker Black Shredded jeans from Rustic Dime. A stylish tapered fit will have you looking your best in the black colorway that features custom knee panels and hand cut tears on the front for a shredded look and a cotton-spandex construction for a comfortable fit with plenty of stretch.",
+      color: "blue",
+      sizes: [ 28, 30, 32 ],
+      image: ["https://cdn.shopify.com/s/files/1/0452/6221/products/rustic-dime-saint-vernon-taper-fit-1_1024x1024-1_1024x1024.jpg?v=1492608261%22", "https://cdn.shopify.com/s/files/1/0452/6221/products/rustic-dime-saint-vernon-taper-fit-2_1024x1024.jpg?v=1492608262"],
+      description: "Our Saint Vernon Taper Fit denim features distressed and tattered details. Each pair is hand cut and sanded for a unique look. 100% cotton bleached american denim. Made in Los Angeles.",
       id: 8
     },
     {
-      SKU: 1324,
-      title: "goofy mothertrucker",
-      fit: "TAPER FIT",
-      color: "black",
-      sizes: [ 30, 32, 34 ],
-      image: ["http://media.npr.org/assets/img/2015/09/23/ap_836720500193-13f1674f764e5180cf9f3349cfef258d181f2b32-s900-c85.jpg"],
-      description: "Get a stylish street look loaded with comfort with the new Biker Black Shredded jeans from Rustic Dime. A stylish tapered fit will have you looking your best in the black colorway that features custom knee panels and hand cut tears on the front for a shredded look and a cotton-spandex construction for a comfortable fit with plenty of stretch.",
+      SKU: 4321,
+      title: "VINO SHREDDED",
+      fit: "BIKER DENIM",
+      color: "red",
+      sizes: [ 28, 30, 32 ],
+      image: ["https://cdn.shopify.com/s/files/1/0452/6221/products/105black_1024x1024.jpg?v=1492608011", "https://cdn.shopify.com/s/files/1/0452/6221/products/105black_b_1024x1024.jpg?v=1492608012","https://cdn.shopify.com/s/files/1/0452/6221/products/105black_c_1024x1024.jpg?v=1492608013"],
+      description: "Our new Biker Denim features quality denim with a special knee design and hand shredding, and distressed details that are unique to each piece. 98% Cotton / 2% Spandex. Made in Los Angeles, CA.",
       id: 9
-    },
-    {
-      SKU: 4321,
-      title: "BLACK",
-      fit: "SKINNY FIT",
-      color: "black",
-      sizes: [ 28, 30, 32 ],
-      image: ["https://cdn.shopify.com/s/files/1/0452/6221/products/105black_1024x1024.jpg?v=1492608011", "https://cdn.shopify.com/s/files/1/0452/6221/products/105black_b_1024x1024.jpg?v=1492608012","https://cdn.shopify.com/s/files/1/0452/6221/products/105black_c_1024x1024.jpg?v=1492608013"],
-      description: "Our signature Black Skinny Fit denim is a fan favorite. Made from a garment dyed 98% cotton 2% spandex, these jeans are perfect for everyday wear. Made in Los Angeles.",
-      id: 10
-    },
-    {
-      SKU: 1324,
-      title: "what a blast",
-      fit: "TAPER FIT",
-      color: "black",
-      sizes: [ 30, 32, 34 ],
-      image: ["https://cdn.shopify.com/s/files/1/0452/6221/products/110raw_1024x1024.jpg?v=1492608239"],
-      description: "Get a stylish street look loaded with comfort with the new Biker Black Shredded jeans from Rustic Dime. A stylish tapered fit will have you looking your best in the black colorway that features custom knee panels and hand cut tears on the front for a shredded look and a cotton-spandex construction for a comfortable fit with plenty of stretch.",
-      id: 11
-    },
-    {
-      SKU: 4321,
-      title: "BLACK",
-      fit: "SKINNY FIT",
-      color: "black",
-      sizes: [ 28, 30, 32 ],
-      image: ["https://cdn.shopify.com/s/files/1/0452/6221/products/105black_1024x1024.jpg?v=1492608011", "https://cdn.shopify.com/s/files/1/0452/6221/products/105black_b_1024x1024.jpg?v=1492608012","https://cdn.shopify.com/s/files/1/0452/6221/products/105black_c_1024x1024.jpg?v=1492608013"],
-      description: "Our signature Black Skinny Fit denim is a fan favorite. Made from a garment dyed 98% cotton 2% spandex, these jeans are perfect for everyday wear. Made in Los Angeles.",
-      id: 12
-    },
-    {
-      SKU: 1324,
-      title: "what a blast",
-      fit: "TAPER FIT",
-      color: "black",
-      sizes: [ 30, 32, 34 ],
-      image: ["https://cdn.shopify.com/s/files/1/0452/6221/products/110raw_1024x1024.jpg?v=1492608239"],
-      description: "Get a stylish street look loaded with comfort with the new Biker Black Shredded jeans from Rustic Dime. A stylish tapered fit will have you looking your best in the black colorway that features custom knee panels and hand cut tears on the front for a shredded look and a cotton-spandex construction for a comfortable fit with plenty of stretch.",
-      id: 13
-    },
-    {
-      SKU: 4321,
-      title: "BLACK",
-      fit: "SKINNY FIT",
-      color: "black",
-      sizes: [ 28, 30, 32 ],
-      image: ["https://cdn.shopify.com/s/files/1/0452/6221/products/105black_1024x1024.jpg?v=1492608011", "https://cdn.shopify.com/s/files/1/0452/6221/products/105black_b_1024x1024.jpg?v=1492608012","https://cdn.shopify.com/s/files/1/0452/6221/products/105black_c_1024x1024.jpg?v=1492608013"],
-      description: "Our signature Black Skinny Fit denim is a fan favorite. Made from a garment dyed 98% cotton 2% spandex, these jeans are perfect for everyday wear. Made in Los Angeles.",
-      id: 14
-    },
-    {
-      SKU: 1324,
-      title: "what a blast",
-      fit: "TAPER FIT",
-      color: "black",
-      sizes: [ 30, 32, 34 ],
-      image: ["https://cdn.shopify.com/s/files/1/0452/6221/products/110raw_1024x1024.jpg?v=1492608239"],
-      description: "Get a stylish street look loaded with comfort with the new Biker Black Shredded jeans from Rustic Dime. A stylish tapered fit will have you looking your best in the black colorway that features custom knee panels and hand cut tears on the front for a shredded look and a cotton-spandex construction for a comfortable fit with plenty of stretch.",
-      id: 15
-    },
-    {
-      SKU: 1324,
-      title: "what a blast",
-      fit: "TAPER FIT",
-      color: "black",
-      sizes: [ 30, 32, 34 ],
-      image: ["https://cdn.shopify.com/s/files/1/0452/6221/products/110raw_1024x1024.jpg?v=1492608239"],
-      description: "Get a stylish street look loaded with comfort with the new Biker Black Shredded jeans from Rustic Dime. A stylish tapered fit will have you looking your best in the black colorway that features custom knee panels and hand cut tears on the front for a shredded look and a cotton-spandex construction for a comfortable fit with plenty of stretch.",
-      id: 16
     }
 ];
 
@@ -197,26 +127,23 @@ var Clothes = {
 
 /**********************ImageFrame Comoponent*************************************/
 
-function DisplayImage2(props) {
+function Product1(props) {
   return (
     <div className={"column is-" + props.imageWidth + ""}>
-        <div className="card money-border">
           <div className="card-image">
             <figure className="image is-2by3">
                 <img src={props.image}
-                     onMouseOver={ function() {var len = props.image.length; if(len) {props.onFlipImage(len);}}}
-                     onMouseOut={function() {props.onToDefault();}}
+                     onMouseOver={props.onFlipImage}
+                     onMouseOut={props.onToDefault}
                      onDragOver={function(event) {props.borderHover(event, "inset 0 1px 1px rgba(0,0,0, 0.5), 0 0 50px rgb(113,253,38)", event.target.id); event.preventDefault();}}
                      onDragLeave={function(event) {props.borderHover(event, "none");}}
-                     onMouseDown={function(event) {props.drag(event);}}
-                     onMouseMove={function(event) {props.move(event);}}
                      onDrop={function(event) {props.dropZone(event); props.borderHover(event, "none");}}
-                     onDragStart={function(event) {event.dataTransfer.setData("data", event.target.id); props.borderHover(event)}}
+                     onDragStart={function(event) {event.dataTransfer.setData("text", event.target.id); props.borderHover(event);}}
                      draggable="true"
                      id={props.index}/>
             </figure>
           </div>
-        </div>
+          <a className="round-button red" onClick={function(event) {props.deleteItem(event.target.id);}}><i className="fa fa-close"></i></a>
         <div>
           <h1>{props.title}</h1>
           <h1>id: {props.id} index: {props.index}</h1>
@@ -224,27 +151,23 @@ function DisplayImage2(props) {
     </div>
   );
 }
-function DisplayImage3(props) {
-
+function Product2(props) {
   return (
     <div className={"column is-" + props.imageWidth + ""}>
-        <div className="card">
           <div className="card-image">
             <figure className="image is-2by3">
                 <img src={props.image}
-                     onMouseOver={ function() {var len = props.image.length; if(len) {props.onFlipImage(len);}}}
-                     onMouseOut={function() {props.onToDefault();}}
-                     onDragOver={function(event) {props.borderHover(event, "inset 0 1px 1px rgba(0,0,0, 0.5), 0 0 50px rgb(113,253,38)"); event.preventDefault(); }}
+                     onMouseOver={props.onFlipImage}
+                     onMouseOut={props.onToDefault}
+                     onDragOver={function(event) {props.borderHover(event, "inset 0 1px 1px rgba(0,0,0, 0.5), 0 0 50px rgb(113,253,38)", event.target.id); event.preventDefault();}}
                      onDragLeave={function(event) {props.borderHover(event, "none");}}
-                     onMouseDown={function(event) {props.drag(event);}}
-                     onMouseMove={function(event) {props.move(event);}}
                      onDrop={function(event) {props.dropZone(event); props.borderHover(event, "none");}}
-                     onDragStart={function(event) {event.dataTransfer.setData("data", event.target.id); }}
+                     onDragStart={function(event) {event.dataTransfer.setData("text", event.target.id); props.borderHover(event);}}
                      draggable="true"
                      id={props.index}/>
             </figure>
           </div>
-        </div>
+          <a className="round-button red" onClick={function(event) {props.deleteItem(event.target.id);}}><i className="fa fa-close"></i></a>
         <div>
           <h1>{props.title}</h1>
           <h1>id: {props.id} index: {props.index}</h1>
@@ -253,43 +176,597 @@ function DisplayImage3(props) {
   );
 }
 
-function BoxDash(props) {
-  if(props.factor) {
-    return (
-      <div className="columns is-vcentered">
-        <div id="widt" className={"column is-" + props.imageWidth + " has-text-centered"}>
-            <div id="box-dash">
-              <div id="Cheight"><i className="fa fa-plus-circle fa-5x"></i></div>
+var Modal = React.createClass({
+    getInitialState: function() {
+      return {
+        showIcon: "hidden",
+        data: {},
+        image: [],
+        fileUpload: {
+          button: "Choose a file..."
+        },
+      }
+    },
+    onFileUpload: function(id) {
+      // document.getElementById('file').addEventListener('change', readURL, true);
+      console.log(document.getElementById(id));
+      if(document.getElementById(id).id === "urlUpload") {
+        var image = new Image();
+        image.src = document.getElementById(id).value;
+        this.state.image.push(document.getElementById(id).value)
+        document.getElementById(id).value = '';
+        image.onload = function() {
+          document.getElementById('fileImage').appendChild(image);
+          // document.getElementById('fileImage').style.backgroundImage = "url(" + this.src + ")";
+          // document.getElementById('fileImage').style.width = "" + 240 + "px";
+          // document.getElementById('fileImage').style.height = "" + this.height + "px";
+
+        }
+
+      } else if(document.getElementById(id).id === "files"){
+        var files = document.getElementById(id).files;
+        // loop through files
+        var parent = this;
+        for (var i = 0; i < files.length; i++) {
+          (function(file, parent){
+            var reader = new FileReader();
+            reader.onloadend = function(){
+              var image = new Image();
+              image.src = reader.result;
+
+              parent.state.image.push(reader.result)
+              console.log(parent.state.image)
+              image.onload = function() {
+                document.getElementById('fileImage').appendChild(image);
+                // document.getElementById('fileImage').style.backgroundImage = "url(" + this.src + ")";
+                // document.getElementById('fileImage').style.width = "" + 240 + "px";
+                // document.getElementById('fileImage').style.height = "" + this.height + "px";
+
+              }
+
+
+            }
+              if(file){
+                  reader.readAsDataURL(file);
+              }
+          })(files[i], parent)
+        }
+      } else {
+        console.error("something went terribly wrong")
+      }
+
+    },
+    getInputData: function(callback) {
+      var sizeValues = [];
+      console.log("sku", document.getElementById("sku"))
+      this.state.data.sku = document.getElementById("sku").value;
+      this.state.data.title = document.getElementById("title").value;
+      this.state.data.fit = document.getElementById("fit").value;
+      this.state.data.color = "";
+      this.state.data.size = "";
+      this.state.data.image = this.state.image;
+
+      for(var i = 0; i < document.getElementsByName("color").length; i++) {
+        if(document.getElementsByName("color")[i].checked) {
+          this.state.data.color = document.getElementsByName("color")[i].value;
+        }
+      }
+      for(var i = 0; i < document.getElementsByClassName("checkbox").length; i++) {
+        if(document.getElementsByClassName("checkbox")[i].checked) {
+          sizeValues.push(document.getElementsByClassName("checkbox")[i].value)
+          this.state.data.size = sizeValues;
+        }
+      }
+
+      if(this.state.data.sku && this.state.data.title && this.state.data.fit && this.state.data.color && this.state.data.size && this.state.data.image) {
+        this.props.addItem(this.state.data);
+        callback("is-inactive")
+      } else {
+        var inputs = document.getElementsByTagName('input');
+          for(var i=0; i<inputs.length; i++){
+            var type = inputs[i].getAttribute("type");
+            if(type === "text") {
+              if(i <= 3) {
+                if(inputs[i].value == '') {
+                  inputs[i].parentNode.childNodes[0].childNodes[3].setAttribute("class", "visible")
+                } else {
+                  inputs[i].parentNode.childNodes[0].childNodes[3].setAttribute("class", "hidden")
+                }
+              }
+            }
+
+          }
+
+            var loopRadio = function(j) {
+              if(j < document.getElementsByName("color").length) {
+                if(document.getElementsByName("color")[j].checked != true) {
+                  loopRadio(j+1);
+                } else {
+                  console.log(inputs[j])
+                  document.getElementById("color").setAttribute("class", "hidden");
+                }
+              } else {
+                  document.getElementById("color").setAttribute("class", "visible");
+              }
+            }
+            loopRadio(0);
+
+            var loopCheckB = function(j) {
+              if(j < document.getElementsByClassName("checkbox").length){
+                if(document.getElementsByClassName("checkbox")[j].checked != true) {
+                  loopCheckB(j+1);
+                } else {
+                  console.log(inputs[j]);
+                  document.getElementById("size").setAttribute("class", "hidden");
+                }
+              } else {
+                  document.getElementById("size").setAttribute("class", "visible");
+              }
+            }
+            loopCheckB(0);
+
+          if(document.getElementById('fileImage').childNodes[0] === undefined) {
+            document.getElementById("image").setAttribute("class", "visible");
+          } else {
+            document.getElementById("image").setAttribute("class", "hidden");
+          }
+
+          var toggleDialog = function(i) {
+            if(i<document.getElementsByClassName('fa-asterisk').length - 1) {
+              var redAsterik = document.getElementsByClassName('fa-asterisk')[i];
+              var currentClass = redAsterik.parentNode.getAttribute("class");
+              if(currentClass === "visible") {
+                document.getElementById("reqDialog").setAttribute("class", "visible Red")
+              } else {
+                toggleDialog(i+1)
+              }
+            } else {
+              document.getElementById("reqDialog").setAttribute("class", "hidden")
+            }
+          }
+          toggleDialog(0)
+      }
+    },
+    render: function() {
+      console.log(this.props.toggle);
+      return (
+        <div className={"modal" + " " + this.props.toggle + " "}>
+          <div className="modal-background"></div>
+          <div className="modal-card">
+              <header className="modal-card-head">
+                <p className="modal-card-title">Add Item</p>
+                <button className="delete" aria-label="close" onClick={function() {this.props.onModalToggle("is-inactive")}.bind(this)}></button>
+              </header>
+              <section className="modal-card-body">
+                <div className="field">
+                  <div className="control">
+                    <label className="label has-text-left">SKU<span className="hidden"><i className="fa fa-asterisk Red"></i></span></label>
+                    <input id="sku" className="input" type="text" />
+                  </div>
+                  <div className="control">
+                    <label className="label has-text-left">Title<span className="hidden"><i className="fa fa-asterisk Red"></i></span></label>
+                    <input id="title" className="input" type="text" />
+                  </div>
+                  <div className="control">
+                    <label className="label has-text-left">Fit<span className="hidden"><i className="fa fa-asterisk Red"></i></span></label>
+                    <input id="fit" className="input" type="text" />
+                  </div>
+
+                  <div className="jar">
+                    <label className="label has-text-left">Color<span id="color" className="hidden"><i className="fa fa-asterisk Red"></i></span></label>
+
+                      <div className="field is-grouped">
+                      <div>
+                        <span className="color-box black"></span>
+                      </div>
+                        <div className="control">
+                          <label className="label has-text-left normal">Black</label>
+                          <input type="radio" name="color" value="black" />
+                        </div>
+                        <div>
+                          <span className="color-box white"></span>
+                        </div>
+                        <div className="control">
+                          <label className="label has-text-left normal">White</label>
+                          <input type="radio" name="color" value="white" />
+                        </div>
+                        <div>
+                          <span className="color-box blue"></span>
+                        </div>
+                        <div className="control">
+                          <label className="label has-text-left normal">Blue</label>
+                          <input type="radio" name="color" value="blue" />
+                        </div>
+                        <div>
+                          <span className="color-box grey"></span>
+                        </div>
+                        <div className="control">
+                          <label className="label has-text-left normal">Grey</label>
+                          <input type="radio" name="color" value="grey" />
+                        </div>
+                        <div>
+                          <span className="color-box green"></span>
+                        </div>
+                        <div className="control">
+                          <label className="label has-text-left normal">Green</label>
+                          <input type="radio" name="color" value="green" />
+                        </div>
+                        <div>
+                          <span className="color-box red"></span>
+                        </div>
+                        <div className="control">
+                          <label className="label has-text-left normal">Red</label>
+                          <input type="radio" name="color" value="red" />
+                        </div>
+                        <div>
+                          <span className="color-box tan"></span>
+                        </div>
+                        <div className="control">
+                          <label className="label has-text-left normal">Tan</label>
+                          <input type="radio" name="color" value="tan" />
+                        </div>
+                        <span>
+                        <i className="fa fa-question-circle-o"></i>
+                        </span>
+                        <div className="control">
+                          <label className="label has-text-left normal">Other</label>
+                          <input className="input is-small" size="25" name="color" size="5" type="text" />
+                        </div>
+                      </div>
+                  </div>
+
+                  <div className="jar">
+                    <label className="label has-text-left">Size(s)<span id="size" className="hidden"><i className="fa fa-asterisk Red"></i></span></label>
+                    <div className="field is-grouped">
+                      <div className="control">
+                        <label className="label has-text-left normal">28</label>
+                        <input className="checkbox" type="checkbox" value="28"/>
+                      </div>
+                      <div className="control">
+                        <label className="label has-text-left normal">30</label>
+                        <input className="checkbox" type="checkbox" value="30"/>
+                      </div>
+                      <div className="control">
+                        <label className="label has-text-left normal">32</label>
+                        <input className="checkbox" type="checkbox" value="32"/>
+                      </div>
+                      <div className="control">
+                        <label className="label has-text-left normal">34</label>
+                        <input className="checkbox" type="checkbox" value="34"/>
+                      </div>
+                      <div className="control">
+                        <label className="label has-text-left normal">36</label>
+                        <input className="checkbox" type="checkbox" value="36"/>
+                      </div>
+                      <div className="control">
+                        <label className="label has-text-left normal">38</label>
+                        <input className="checkbox" type="checkbox" value="38"/>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="jar">
+                    <label className="label has-text-left">Image(s)<span id="image" className="hidden"><i className="fa fa-asterisk Red"></i></span></label>
+
+                    <div className="level">
+                      <div className="field is-grouped">
+                        <div className="control level-item">
+                          <input type="file" name="file" id="file" className="inputfile" data-multiple-caption="{count} files selected" multiple onChange={function(event) {this.onFileUpload(event.target.id)}.bind(this)}/>
+                          <label htmlFor="file"><span><i className="fa fa-upload"></i></span>{this.state.fileUpload.button}</label>
+                        </div>
+                        <div className="level-item">
+                          <h1> -OR- </h1>
+                        </div>
+                        <div className="field has-addons level-item">
+                          <label className="spacer"><strong>URL:</strong></label>
+                          <div className="control">
+                            <input className="input" type="text" id="urlUpload" placeholder="ex. https://vignette4.wikia.nocookie.net/muppet/images/1/10/Episode109_%2816%29.jpg/revision/latest?cb=20151201215848"  />
+                          </div>
+                          <span className="control"><a className="button is-info" htmlFor="urlUpload" onClick={function() {this.onFileUpload("urlUpload")}.bind(this)}>GO</a></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div id="fileImage"></div>
+
+                  <div className="jar">
+                    <label className="label has-text-left">Description</label>
+                    <textarea id="textarea" className="textarea"></textarea>
+                  </div>
+                </div>
+
+
+              </section>
+              <footer className="modal-card-foot">
+                <button className="button"
+                  onClick={function() {this.getInputData(this.props.onModalToggle);}.bind(this)}>Add</button>
+                <button className="button" onClick={function() {this.props.onModalToggle("is-inactive")}.bind(this)}>Cancel</button>
+                <p id="reqDialog" className="hidden"> Required fields are marked by an asterik *</p>
+              </footer>
+          </div>
+        </div>
+      );
+    }
+})
+function Navbar(props) {
+  return(
+    <div className="container">
+  <nav className="navbar ">
+  <div className="navbar-brand">
+    <a className="navbar-item" href="http://bulma.io">
+      <img src="http://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28" />
+    </a>
+
+    <a className="navbar-item is-hidden-desktop" href="https://github.com/jgthms/bulma" target="_blank">
+      <span className="icon">
+        <i className="fa fa-github"></i>
+      </span>
+    </a>
+
+    <a className="navbar-item is-hidden-desktop" href="https://twitter.com/jgthms" target="_blank">
+      <span className="icon">
+        <i className="fa fa-twitter"></i>
+      </span>
+    </a>
+
+    <div className="navbar-burger burger" data-target="navMenuDocumentation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <div id="navMenuDocumentation" className="navbar-menu">
+    <div className="navbar-start">
+      <div className="navbar-item has-dropdown is-hoverable">
+        <a className="navbar-link  is-active" href="/documentation/overview/start/">
+          Docs
+        </a>
+        <div className="navbar-dropdown ">
+          <a className="navbar-item " href="/documentation/overview/start/">
+            Overview
+          </a>
+          <a className="navbar-item " href="http://bulma.io/documentation/modifiers/syntax/">
+            Modifiers
+          </a>
+          <a className="navbar-item " href="http://bulma.io/documentation/columns/basics/">
+            Columns
+          </a>
+          <a className="navbar-item " href="http://bulma.io/documentation/layout/container/">
+            Layout
+          </a>
+          <a className="navbar-item " href="http://bulma.io/documentation/form/general/">
+            Form
+          </a>
+          <a className="navbar-item " href="http://bulma.io/documentation/elements/box/">
+            Elements
+          </a>
+
+            <a className="navbar-item is-active" href="http://bulma.io/documentation/components/breadcrumb/">
+              Components
+            </a>
+
+          <hr className="navbar-divider" />
+          <div className="navbar-item">
+            <div>
+              <p className="is-size-6-desktop">
+                <strong className="has-text-info">0.5.1</strong>
+              </p>
+
+                <small>
+                  <a className="bd-view-all-versions" href="/versions">View all versions</a>
+                </small>
+
             </div>
-            <div id="lift"></div>
+          </div>
         </div>
       </div>
-    );
-  } else {
-    return (
-      <div id="widt" className={"column is-" + props.imageWidth + " has-text-centered"}>
+      <div className="navbar-item has-dropdown is-hoverable">
+        <a className="navbar-link " href="http://bulma.io/blog/">
+          Blog
+        </a>
+        <div id="blogDropdown" className="navbar-dropdown ">
+
+            <a className="navbar-item" href="/2017/08/03/list-of-tags/">
+              <div className="navbar-content">
+                <p>
+                  <small className="has-text-info">03 Aug 2017</small>
+                </p>
+                <p>New feature: list of tags</p>
+              </div>
+            </a>
+
+            <a className="navbar-item" href="/2017/08/01/bulma-bootstrap-comparison/">
+              <div className="navbar-content">
+                <p>
+                  <small className="has-text-info">01 Aug 2017</small>
+                </p>
+                <p>Bulma / Bootstrap comparison</p>
+              </div>
+            </a>
+
+            <a className="navbar-item" href="/2017/07/24/access-previous-bulma-versions/">
+              <div className="navbar-content">
+                <p>
+                  <small className="has-text-info">24 Jul 2017</small>
+                </p>
+                <p>Access previous Bulma versions</p>
+              </div>
+            </a>
+
+          <a className="navbar-item" href="http://bulma.io/blog/">
+            More posts
+          </a>
+          <hr className="navbar-divider"/>
+          <div className="navbar-item">
+            <div className="navbar-content">
+              <div className="level is-mobile">
+                <div className="level-left">
+                  <div className="level-item">
+                    <strong>Stay up to date!</strong>
+                  </div>
+                </div>
+                <div className="level-right">
+                  <div className="level-item">
+                    <a className="button bd-is-rss is-small" href="http://bulma.io/atom.xml">
+                      <span className="icon is-small">
+                        <i className="fa fa-rss"></i>
+                      </span>
+                      <span>Subscribe</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="navbar-item has-dropdown is-hoverable">
+        <div className="navbar-link">
+          More
+        </div>
+        <div id="moreDropdown" className="navbar-dropdown ">
+          <a className="navbar-item " href="http://bulma.io/extensions/">
+            <div className="level is-mobile">
+              <div className="level-left">
+                <div className="level-item">
+                  <p>
+                    <strong>Extensions</strong>
+                    <br/>
+                    <small>Side projects to enhance Bulma</small>
+                  </p>
+                </div>
+              </div>
+              <div className="level-right">
+                <div className="level-item">
+                  <span className="icon has-text-info">
+                    <i className="fa fa-plug"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <a className="navbar-item " href="http://bulma.io/expo/">
+        <span className="bd-emoji">⭐️</span>
+        Expo
+      </a>
+      <a className="navbar-item " href="http://bulma.io/love/">
+        <span className="bd-emoji">❤️</span>
+        Love
+      </a>
+    </div>
+
+    <div className="navbar-end">
+      <a className="navbar-item is-hidden-desktop-only" href="https://github.com/jgthms/bulma" target="_blank">
+        <span className="icon">
+          <i className="fa fa-github"></i>
+        </span>
+      </a>
+      <a className="navbar-item is-hidden-desktop-only" href="https://twitter.com/jgthms" target="_blank">
+        <span className="icon">
+          <i className="fa fa-twitter"></i>
+        </span>
+      </a>
+      <div className="navbar-item">
+        <div className="field is-grouped">
+          <p className="control">
+            <a className="bd-tw-button button" data-social-network="Twitter" data-social-action="tweet" data-social-target="http://bulma.io" target="_blank" href="https://twitter.com/intent/tweet?text=Bulma: a modern CSS framework based on Flexbox&amp;hashtags=bulmaio&amp;url=http://bulma.io&amp;via=jgthms">
+  <span className="icon">
+    <i className="fa fa-twitter"></i>
+  </span>
+  <span>
+    Tweet
+  </span>
+</a>
+
+          </p>
+          <p className="control">
+            <a className="button is-primary" href="https://github.com/jgthms/bulma/archive/0.5.1.zip">
+              <span className="icon">
+                <i className="fa fa-download"></i>
+              </span>
+              <span>Download</span>
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+</div>
+  );
+}
+var BoxDash = React.createClass({
+  getInitialState: function() {
+    return {
+      factor: "is-inactive"
+    }
+  },
+  modalToggle: function(factor) {
+    if(Object.prototype.toString.call(factor) === "[object String]") {
+      this.setState({
+        factor: factor
+      })
+    } else {
+      console.warn("modalToggle requires the passed parameter to be of type string")
+    }
+  },
+  render: function() {
+    if(this.props.factor) {
+      return (
+        <div className="columns is-vcentered">
+          <div id="widt" className={"column is-" + this.props.imageWidth + " has-text-centered"}>
+              <div id="box-dash">
+                <div id="Cheight"><i className="fa fa-plus-circle fa-5x" onClick={function() {this.modalToggle("is-active")}.bind(this)}></i></div>
+                {this.state.factor === "is-active" ?
+                <Modal
+                  toggle={this.state.factor}
+                  onModalToggle={function(f) {this.modalToggle(f)}.bind(this)}
+                  addItem={this.props.addItem}
+                  /> : null}
+              </div>
+              <div id="lift"></div>
+          </div>
+        </div>
+      );
+    } else {
+      return (
+        <div id="widt" className={"column is-" + this.props.imageWidth + " has-text-centered"}>
           <div id="box-dash">
-            <div id="Cheight"><i className="fa fa-plus-circle fa-5x"></i></div>
+            <div id="Cheight"><i className="fa fa-plus-circle fa-5x" onClick={function() {this.modalToggle("is-active")}.bind(this)}></i></div>
+            {this.state.factor === "is-active" ?
+            <Modal
+              toggle={this.state.factor}
+              onModalToggle={function(f) {this.modalToggle(f)}.bind(this)}
+              addItem={this.props.addItem}
+              /> : null}
           </div>
           <div id="lift"></div>
-      </div>
-    )
+        </div>
+      )
+    }
   }
-}
+})
 
 function ManageColumns(props) {
   return (
+  <div className="jar">
     <div className="has-text-right">
-      <i className="fa fa-minus fa-2x" onClick={function() {props.onColumnManagement(-1)}}></i>
-      <i className="fa fa-plus fa-2x" onClick={function() {props.onColumnManagement(1)}}></i>
+      <button className="button red is-medium is-rounded" onClick={function() {props.onColumnManagement(-1)}}><span className="icon"><i className="fa fa-minus fa-1x"></i></span></button>
+      <button className="button theme-green is-medium is-rounded" onClick={function() {props.onColumnManagement(1)}}><span className="icon"><i className="fa fa-plus fa-1x"></i></span></button>
     </div>
+  </div>
   );
 }
 
 var DisplayImage = React.createClass({
-  flipImage: function(len) {
+  flipImage: function() {
     var loopImage = function(i) {
-      if(i < len) {
+      if(i < this.props.image.length) {
         this.Timeout = setTimeout(function() {
           this.setState({image: this.props.image[i]})
           loopImage(i + 1);
@@ -307,48 +784,47 @@ var DisplayImage = React.createClass({
  //      var DOMnode = document.getElementsByClassName('image')[this.props.len - 1];
  //      if(DOMnode){
  //        var node = ReactDOM.findDOMNode(DOMnode);
- //        console.log(node);
+ //        // console.log(node);
  //        var nodeHeight = node.clientHeight;
  //        var nodeWidth = node.clientWidth;
  //        var plusIconDOM = document.getElementById('Cheight');
- //        console.log(plusIconDOM);
+ //        // console.log(plusIconDOM);
  //        var icon = ReactDOM.findDOMNode(plusIconDOM);
- //        console.log(icon);
+ //        // console.log(icon);
  //        var iconHeight = icon.clientHeight;
  //
  //        var height = nodeHeight - iconHeight;
  //
  //        document.getElementById("Cheight").style.marginTop = "" + height/2 + "px";
  //        document.getElementById("Cheight").style.marginBottom = "" + height/2 + "px";
- //     this.setState({})
- //   } else {
- //     this.componentDidMount = function() { return false; }
+ //    //  this.setState({})
  //   }
  //
  // }, 300)
   },
   componentWillReceiveProps: function(props) {
-    this.setState({
-      image: props.image
-    })
+    if(props.image) {
+      var image = [...props.image];
+      this.setState({
+        image: image[0]
+      })
+    }
+
   },
   getInitialState: function() {
     return {
             len: this.props.len,
             theRemaining: this.props.len - this.props.remainder,
-            image: this.props.image,
-            toggle: "show",
-            size: "size"
+            image: this.props.image[0]
            }
   },
   render: function() {
      if (this.props.id > this.state.theRemaining) {
         return (
-          <DisplayImage3
+          <Product2
+            deleteItem={this.props.deleteItem}
             index={this.props.index}
             dropZone={this.props.dropZone}
-            drag={this.props.drag}
-            move={this.props.move}
             borderHover={this.props.borderHover}
             len={this.state.len}
             id={this.props.id}
@@ -366,11 +842,10 @@ var DisplayImage = React.createClass({
           );
       } else {
         return (
-          <DisplayImage2
+          <Product1
+            deleteItem={this.props.deleteItem}
             index={this.props.index}
             dropZone={this.props.dropZone}
-            drag={this.props.drag}
-            move={this.props.move}
             borderHover={this.props.borderHover}
             id={this.props.id}
             title={this.props.title}
@@ -398,9 +873,8 @@ var ExtractObjects = React.createClass({
             if(this.props.factor) {
               return ([
                 <DisplayImage
+                     deleteItem={this.props.deleteItem}
                      dropZone={this.props.dropZone}
-                     drag={this.props.drag}
-                     move={this.props.move}
                      borderHover={this.props.borderHover}
                      admin={this.props.admin}
                      len={this.props.len}
@@ -418,14 +892,14 @@ var ExtractObjects = React.createClass({
                      imageWidth={this.props.imageWidth}
                      />,
                   <BoxDash
+                      addItem={this.props.addItem}
                       imageWidth={this.props.imageWidth}/>
                  ]);
             } else {
             return (
               <DisplayImage
+                  deleteItem={this.props.deleteItem}
                   dropZone={this.props.dropZone}
-                  drag={this.props.drag}
-                  move={this.props.move}
                   borderHover={this.props.borderHover}
                   admin={this.props.admin}
                   len={this.props.len}
@@ -447,9 +921,8 @@ var ExtractObjects = React.createClass({
           } else {
             return (
                   <DisplayImage
+                      deleteItem={this.props.deleteItem}
                       dropZone={this.props.dropZone}
-                      drag={this.props.drag}
-                      move={this.props.move}
                       borderHover={this.props.borderHover}
                       len={this.props.len}
                       key={index}
@@ -474,12 +947,10 @@ var ExtractObjects = React.createClass({
   }
 });
 
-var ident = 17;
-
 //Object literal or Class with properties and methods
 //this class holds function expressions(methods)
 
-var Ecommerce = React.createClass({
+var GridSystem = React.createClass({
   componentWillReceiveProps: function(a) {
     var len = a.initialJeans.length;
     var arrOfObj = []
@@ -495,7 +966,10 @@ var Ecommerce = React.createClass({
       Pos += this.state.columns;
     }
 
-    if(arrOfObj != null) {
+    console.log(arrOfObj.length)
+    if(arrOfObj.length === 0) {
+      console.log("nope")
+    }else if(arrOfObj != null) {
       if (arrOfObj[arrOfObj.length - 1].length != this.state.columns) {
           factor = false;
       } else {
@@ -553,6 +1027,8 @@ var Ecommerce = React.createClass({
   componentDidMount: function() {
     if(this.state.array != null && this.state.arrLen) {
       if (this.state.array[this.state.arrLen - 1].length != this.state.columns) {
+        console.log(this.state.array[this.state.arrLen - 1].length, "how many items in the array")
+        console.log(this.state.columns, "the number of columns")
         this.setState({
           factor: false
         })
@@ -562,7 +1038,7 @@ var Ecommerce = React.createClass({
         })
       }
     } else {
-      console.warn("Ecommerce: componentDidMount is not in use :(")
+      console.warn("GridSystem: componentDidMount is not in use :(")
     }
   },
   componentDidUpdate: function() {
@@ -604,6 +1080,7 @@ var Ecommerce = React.createClass({
   columnManagement: function(delta) {
     var prev = this.state.columns;
     var curr = prev + delta;
+    //set max and min column values
     if(curr < 1) {
       curr = 1;
     } else if(curr > 6) {
@@ -614,7 +1091,8 @@ var Ecommerce = React.createClass({
   },
 
   render: function() {
-    // console.log(this.state.factor)
+    console.log(this.state.factor)
+    console.log(this.state.arrLen - 1)
     // console.log(this.state.arrLen - 1);
     // var arrOfObj = [];
     // var prevPos = 0;
@@ -627,7 +1105,9 @@ var Ecommerce = React.createClass({
     if(this.state.array == null || this.state.array.length === 0){
       if(this.state.admin) {
         return (
-          <BoxDash columnWidth={this.state.columnWidth} />
+          <BoxDash
+            columnWidth={this.state.columnWidth}
+            addItem={this.props.addItem}/>
         );
       } else {
         return(
@@ -641,14 +1121,113 @@ var Ecommerce = React.createClass({
         <div className="container">
           {this.state.array.map(function(objects, index) {
             if(this.state.admin) {
-              if(index === 0) {
+              if(this.state.arrLen - 1 === 0) {
+                if(index === 0 && this.state.factor === false) {
+                  return ([
+                    <ManageColumns
+                            onColumnManagement={this.columnManagement}/>,
+                    <ExtractObjects
+                            deleteItem={this.props.deleteItem}
+                            dropZone={this.props.dropZone}
+                            borderHover={this.props.borderHover}
+                            admin={this.state.admin}
+                            key={index}
+                            objects={objects}
+                            remainder={this.state.remainder}
+                            len={this.state.len}
+                            columns={this.state.columns}
+                            imageWidth={this.state.imageWidth}
+                            rows={this.state.rows}
+                            factor={true}
+                            />
+                          ])
+                } else if(index === this.state.arrLen - 1) {
+                  return ([
+                    <ManageColumns
+                            onColumnManagement={this.columnManagement}/>,
+                    <ExtractObjects
+                            deleteItem={this.props.deleteItem}
+                            dropZone={this.props.dropZone}
+                            borderHover={this.props.borderHover}
+                            admin={this.state.admin}
+                            key={index}
+                            objects={objects}
+                            remainder={this.state.remainder}
+                            len={this.state.len}
+                            columns={this.state.columns}
+                            imageWidth={this.state.imageWidth}
+                            rows={this.state.rows}
+                            />,
+                    <BoxDash
+                          addItem={this.props.addItem}
+                          imageWidth={this.state.imageWidth}
+                          factor={true}/>
+                          ])
+                } else {
+                  return (
+                    <ExtractObjects
+                            deleteItem={this.props.deleteItem}
+                            dropZone={this.props.dropZone}
+                            borderHover={this.props.borderHover}
+                            admin={this.state.admin}
+                            key={index}
+                            objects={objects}
+                            remainder={this.state.remainder}
+                            len={this.state.len}
+                            columns={this.state.columns}
+                            imageWidth={this.state.imageWidth}
+                            rows={this.state.rows}
+                            />
+                  );
+                }
+              } else if(index === 0) {
                 return ([
                   <ManageColumns
                           onColumnManagement={this.columnManagement}/>,
                   <ExtractObjects
+                          deleteItem={this.props.deleteItem}
                           dropZone={this.props.dropZone}
-                          drag={this.props.drag}
-                          move={this.props.move}
+                          borderHover={this.props.borderHover}
+                          admin={this.state.admin}
+                          key={index}
+                          objects={objects}
+                          remainder={this.state.remainder}
+                          len={this.state.len}
+                          columns={this.state.columns}
+                          imageWidth={this.state.imageWidth}
+                          rows={this.state.rows}
+                          factor={true}
+                          />
+                        ])
+              } else if(index === 0 && this.state.factor) {
+                return ([
+                  <ManageColumns
+                          onColumnManagement={this.columnManagement}/>,
+                  <ExtractObjects
+                          deleteItem={this.props.deleteItem}
+                          dropZone={this.props.dropZone}
+                          borderHover={this.props.borderHover}
+                          admin={this.state.admin}
+                          key={index}
+                          objects={objects}
+                          remainder={this.state.remainder}
+                          len={this.state.len}
+                          columns={this.state.columns}
+                          imageWidth={this.state.imageWidth}
+                          rows={this.state.rows}
+                          />,
+                  <BoxDash
+                        addItem={this.props.addItem}
+                        imageWidth={this.state.imageWidth}
+                        factor={true}/>
+                        ])
+              } else if(index === 0) {
+                return ([
+                  <ManageColumns
+                          onColumnManagement={this.columnManagement}/>,
+                  <ExtractObjects
+                          deleteItem={this.props.deleteItem}
+                          dropZone={this.props.dropZone}
                           borderHover={this.props.borderHover}
                           admin={this.state.admin}
                           key={index}
@@ -663,9 +1242,8 @@ var Ecommerce = React.createClass({
               } else if (index === this.state.arrLen - 1 && this.state.factor) {
                 return ([
                   <ExtractObjects
+                        deleteItem={this.props.deleteItem}
                         dropZone={this.props.dropZone}
-                        drag={this.props.drag}
-                        move={this.props.move}
                         borderHover={this.props.borderHover}
                         admin={this.state.admin}
                         key={index}
@@ -676,15 +1254,16 @@ var Ecommerce = React.createClass({
                         imageWidth={this.state.imageWidth}
                         rows={this.state.rows}/>,
                   <BoxDash
+                        addItem={this.props.addItem}
                         imageWidth={this.state.imageWidth}
                         factor={true}/>
                    ])
               } else {
                 return (
                   <ExtractObjects
+                          deleteItem={this.props.deleteItem}
+                          addItem={this.props.addItem}
                           dropZone={this.props.dropZone}
-                          drag={this.props.drag}
-                          move={this.props.move}
                           borderHover={this.props.borderHover}
                           admin={this.state.admin}
                           key={index}
@@ -717,28 +1296,42 @@ var Ecommerce = React.createClass({
   }
 });
 
-var obj, x, y, prev_x, prev_y;
 var myArr = [];
-var Beginning = React.createClass({
-  move: function(e) {
-    if(e.pageX) {
-      x = e.pageX;
-      y = e.pageY;
-    }
-  // If the object specifically is selected, then move it to the X/Y coordinates that are always being tracked.
-  if(obj) {
-    obj.style.left = (x - prev_x) + 'px';
-    obj.style.top = (y - prev_y) + 'px';
-  }
+var nextId = 17;
+/*
+{
+  SKU: 4321,
+  title: "BLACK",
+  fit: "SKINNY FIT",
+  color: "black",
+  sizes: [ 28, 30, 32 ],
+  image: ["https://cdn.shopify.com/s/files/1/0452/6221/products/105black_1024x1024.jpg?v=1492608011", "https://cdn.shopify.com/s/files/1/0452/6221/products/105black_b_1024x1024.jpg?v=1492608012","https://cdn.shopify.com/s/files/1/0452/6221/products/105black_c_1024x1024.jpg?v=1492608013"],
+  description: "Our signature Black Skinny Fit denim is a fan favorite. Made from a garment dyed 98% cotton 2% spandex, these jeans are perfect for everyday wear. Made in Los Angeles.",
+  id: 10
+}
+*/
+var ProductPage = React.createClass({
+  onAddItem: function(data) {
+    console.log(data.image);
+    var nextState = [...this.state.data];
+    nextState.push(data);
+
+    this.setState({
+      data: nextState,
+    })
+
+    nextId += 1;
   },
-  drag: function(e) {
-    // Yep, use the object I just clicked on.
-  obj = e.target;
-  // Set current X coordinate minus distance left from offsetParent node.
-  prev_x = x - obj.offsetLeft;
-  // Set current Y coordinate minus distance top from offsetParent node.
-  prev_y = y - obj.offsetTop;
-  //quickie
+  onDeleteItem: function(data) {
+    console.log(data);
+    var nextState = [...this.state.data];
+    nextState.splice(data, 1);
+
+    console.log(nextState, "nextState");
+
+    this.setState({
+      data: nextState
+    })
   },
   borderHover: function(e, style) {
     myArr.push(e.target.id)
@@ -754,22 +1347,24 @@ var Beginning = React.createClass({
 
   },
   dropZone: function(e) {
+    var nextState = [...this.state.data];
     var cell = e.target;
+    console.log(cell);
     var cellWidth = cell.clientWidth;
     var coordinates = cell.getBoundingClientRect();
     var x = e.pageX - coordinates.left;
-    var dataID = e.dataTransfer.getData("data");
+    var dataID = e.dataTransfer.getData("text");
 
     if(dataID != e.target.id) {
       if( x < cellWidth/2) {
-        this.state.data.splice(e.target.id, 0, this.state.data.splice(this.state.data[dataID].index, 1)[0])
+        nextState.splice(e.target.id, 0, nextState.splice(nextState[dataID].index, 1)[0])
       } else {
-        this.state.data.splice(e.target.id, 0, this.state.data.splice(this.state.data[dataID].index, 1)[0])
+        nextState.splice(e.target.id, 0, nextState.splice(nextState[dataID].index, 1)[0])
       }
     }
 
     this.setState({
-      data: this.state.data
+      data: nextState
     })
   },
   getInitialState: function() {
@@ -779,26 +1374,27 @@ var Beginning = React.createClass({
     }
   },
   render: function() {
+    console.log(this.state.data);
     var arr = [];
     this.state.data.forEach(function(data, index) {
       data.index = index;
       arr.push(data);
     })
     return (
-      <div>
-        <Ecommerce
-          initialJeans={arr}
-          dropZone={function(e, id) {this.dropZone(e, id)}.bind(this)}
-          borderHover={function(e, style, id) {this.borderHover(e, style, id)}.bind(this)}
-          drag={function(e) {this.drag(e)}.bind(this)}
-          move={function(e) {this.move(e)}.bind(this)}
-          />
-      </div>
+        <div>
+          <GridSystem
+            initialJeans={arr}
+            dropZone={function(e, id) {this.dropZone(e, id)}.bind(this)}
+            borderHover={function(e, style, id) {this.borderHover(e, style, id)}.bind(this)}
+            addItem={function(d) {this.onAddItem(d)}.bind(this)}
+            deleteItem={function(d) {this.onDeleteItem(d)}.bind(this)}
+            />
+        </div>
     )
   }
 })
 
-ReactDOM.render(<Beginning initialJeans={JEANS} />, document.getElementById("root"));
+ReactDOM.render(<ProductPage initialJeans={JEANS} />, document.getElementById("root"));
 /***********************************************************/
 // propTypes: {
 //   initialJeans: React.PropTypes.arrayOf(React.PropTypes.shape({

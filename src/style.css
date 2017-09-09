@@ -22,12 +22,23 @@ button {
   z-index: 9999;
 }
 
+.jar {
+  padding: 12px 0;
+}
  /*dropdown optional styling */
 .dropdown li:hover {
   background-color: #aaa;
   cursor: pointer;
 }
-
+.theme-green {
+  background-color: #71fd26;
+}
+.theme-purple {
+  background-color: #dd49ff;
+}
+.theme-yellow {
+  background-color: #efff49;
+}
 .fa-plus-circle {
   color: #71fd26;
 }
@@ -45,7 +56,126 @@ button {
 div.column.is-11 {
   margin: 0;
 }
+div.control > label.normal {
+  font-weight: normal;
+}
+.color-box {
+ vertical-align: text-top;
+ float: right;
+ width: 10px;
+ height: 10px;
+ margin: 8px 10px 0 0;
+ border: 1px solid rgba(0, 0, 0, .2);
+ position: relative;
+}
+.round-button {
+    display:block;
+    width:35px;
+    height:35px;
+    line-height:50px;
+    border-radius: 50%;
+    text-align:center;
+    text-decoration:none;
+    box-shadow: 0 0 3px gray;
+    z-index: 2;
+    color: #fff;
+}
+.column > a.round-button {
+  position: absolute;
+  right: -5px;
+  top: -5px;
+}
+a.round-button > i.fa {
+  position: absolute;
+  right: 10px;
+  top: 7px;
+}
+.column {
+  position: relative;
+}
+.black {
+  background-color: black;
+}
+.blue {
+  background-color: blue;
+}
+.red {
+  background-color: red;
+}
+.Red {
+  color: red;
+}
+.white {
+  background-color: white;
+}
+.tan {
+  background-color: tan;
+}
+.grey {
+  background-color: grey;
+}
+.green {
+  background-color: green;
+}
+.red {
+  background-color: red;
+}
 
+i.fa.fa-question-circle-o {
+  margin: 5px 5px 0 0;
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+.inputfile + label {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    background-color: #dd49ff;
+    display: inline-block;
+    padding: 0.625rem 1.25rem;
+}
+
+.file-icon {
+  vertical-align: middle;
+}
+
+.inlineLabel {
+  white-space: nowrap;
+}
+.inlineLabel > label > strong {
+  margin: 0 10px 0 0;
+}
+i.fa.fa-upload {
+  margin: 6px 6px 0 0;
+}
+.inputfile + label:hover {
+    background-color: #71fd26;
+}
+.inputfile + label {
+	cursor: pointer; /* "hand" cursor */
+}
+/*.inputfile:focus + label,
+.inputfile.has-focus + label {
+    outline: 1px dotted #000;
+    outline: -webkit-focus-ring-color auto 5px;
+}*/
+.hidden {
+  visibility: hidden;
+}
+.visible {
+  visibility: visible;
+}
+
+.spacer {
+  padding: 0 12px;
+}
 /*.money-border:hover {
   border: 2px solid;
   border-color: rgb(113,253,38);
