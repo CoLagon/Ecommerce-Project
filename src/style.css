@@ -90,6 +90,13 @@ a.round-button > i.fa {
   right: 10px;
   top: 7px;
 }
+#test {
+  background-color: green;
+  width: 100%;
+  background: green;
+  border: 2px solid green;
+  background-image: URL("https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Macaca_sinica_-_01.jpg/1200px-Macaca_sinica_-_01.jpg");
+}
 .column {
   position: relative;
 }

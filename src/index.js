@@ -127,7 +127,7 @@ var Clothes = {
 
 /**********************ImageFrame Comoponent*************************************/
 
-function Product1(props) {
+function ProductFrame1(props) {
   return (
     <div className={"column is-" + props.imageWidth + ""}>
           <div className="card-image">
@@ -151,7 +151,7 @@ function Product1(props) {
     </div>
   );
 }
-function Product2(props) {
+function ProductFrame2(props) {
   return (
     <div className={"column is-" + props.imageWidth + ""}>
           <div className="card-image">
@@ -491,213 +491,202 @@ var Modal = React.createClass({
 })
 function Navbar(props) {
   return(
-    <div className="container">
-  <nav className="navbar ">
-  <div className="navbar-brand">
-    <a className="navbar-item" href="http://bulma.io">
-      <img src="http://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28" />
-    </a>
-
-    <a className="navbar-item is-hidden-desktop" href="https://github.com/jgthms/bulma" target="_blank">
-      <span className="icon">
-        <i className="fa fa-github"></i>
-      </span>
-    </a>
-
-    <a className="navbar-item is-hidden-desktop" href="https://twitter.com/jgthms" target="_blank">
-      <span className="icon">
-        <i className="fa fa-twitter"></i>
-      </span>
-    </a>
-
-    <div className="navbar-burger burger" data-target="navMenuDocumentation">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </div>
-
-  <div id="navMenuDocumentation" className="navbar-menu">
-    <div className="navbar-start">
-      <div className="navbar-item has-dropdown is-hoverable">
-        <a className="navbar-link  is-active" href="/documentation/overview/start/">
-          Docs
+      <nav className="navbar ">
+      <div className="navbar-brand">
+        <a className="navbar-item" href="http://bulma.io">
+          <img src="http://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28" />
         </a>
-        <div className="navbar-dropdown ">
-          <a className="navbar-item " href="/documentation/overview/start/">
-            Overview
-          </a>
-          <a className="navbar-item " href="http://bulma.io/documentation/modifiers/syntax/">
-            Modifiers
-          </a>
-          <a className="navbar-item " href="http://bulma.io/documentation/columns/basics/">
-            Columns
-          </a>
-          <a className="navbar-item " href="http://bulma.io/documentation/layout/container/">
-            Layout
-          </a>
-          <a className="navbar-item " href="http://bulma.io/documentation/form/general/">
-            Form
-          </a>
-          <a className="navbar-item " href="http://bulma.io/documentation/elements/box/">
-            Elements
-          </a>
 
-            <a className="navbar-item is-active" href="http://bulma.io/documentation/components/breadcrumb/">
-              Components
-            </a>
+        <a className="navbar-item is-hidden-desktop" href="https://github.com/jgthms/bulma" target="_blank">
+          <span className="icon">
+            <i className="fa fa-github"></i>
+          </span>
+        </a>
 
-          <hr className="navbar-divider" />
-          <div className="navbar-item">
-            <div>
-              <p className="is-size-6-desktop">
-                <strong className="has-text-info">0.5.1</strong>
-              </p>
+        <a className="navbar-item is-hidden-desktop" href="https://twitter.com/jgthms" target="_blank">
+          <span className="icon">
+            <i className="fa fa-twitter"></i>
+          </span>
+        </a>
 
-                <small>
-                  <a className="bd-view-all-versions" href="/versions">View all versions</a>
-                </small>
-
-            </div>
-          </div>
+        <div className="navbar-burger burger" data-target="navMenuDocumentation">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
       </div>
-      <div className="navbar-item has-dropdown is-hoverable">
-        <a className="navbar-link " href="http://bulma.io/blog/">
-          Blog
-        </a>
-        <div id="blogDropdown" className="navbar-dropdown ">
 
-            <a className="navbar-item" href="/2017/08/03/list-of-tags/">
-              <div className="navbar-content">
-                <p>
-                  <small className="has-text-info">03 Aug 2017</small>
-                </p>
-                <p>New feature: list of tags</p>
-              </div>
+      <div id="navMenuDocumentation" className="navbar-menu">
+        <div className="navbar-start">
+          <div className="navbar-item has-dropdown is-hoverable">
+            <a className="navbar-link  is-active" href="/documentation/overview/start/">
+              Docs
             </a>
+            <div className="navbar-dropdown ">
+              <a className="navbar-item " href="/documentation/overview/start/">
+                Overview
+              </a>
+              <a className="navbar-item " href="http://bulma.io/documentation/modifiers/syntax/">
+                Modifiers
+              </a>
+              <a className="navbar-item " href="http://bulma.io/documentation/columns/basics/">
+                Columns
+              </a>
+              <a className="navbar-item " href="http://bulma.io/documentation/layout/container/">
+                Layout
+              </a>
+              <a className="navbar-item " href="http://bulma.io/documentation/form/general/">
+                Form
+              </a>
+              <a className="navbar-item " href="http://bulma.io/documentation/elements/box/">
+                Elements
+              </a>
 
-            <a className="navbar-item" href="/2017/08/01/bulma-bootstrap-comparison/">
-              <div className="navbar-content">
-                <p>
-                  <small className="has-text-info">01 Aug 2017</small>
-                </p>
-                <p>Bulma / Bootstrap comparison</p>
-              </div>
-            </a>
+                <a className="navbar-item is-active" href="http://bulma.io/documentation/components/breadcrumb/">
+                  Components
+                </a>
 
-            <a className="navbar-item" href="/2017/07/24/access-previous-bulma-versions/">
-              <div className="navbar-content">
-                <p>
-                  <small className="has-text-info">24 Jul 2017</small>
-                </p>
-                <p>Access previous Bulma versions</p>
-              </div>
-            </a>
-
-          <a className="navbar-item" href="http://bulma.io/blog/">
-            More posts
-          </a>
-          <hr className="navbar-divider"/>
-          <div className="navbar-item">
-            <div className="navbar-content">
-              <div className="level is-mobile">
-                <div className="level-left">
-                  <div className="level-item">
-                    <strong>Stay up to date!</strong>
-                  </div>
-                </div>
-                <div className="level-right">
-                  <div className="level-item">
-                    <a className="button bd-is-rss is-small" href="http://bulma.io/atom.xml">
-                      <span className="icon is-small">
-                        <i className="fa fa-rss"></i>
-                      </span>
-                      <span>Subscribe</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="navbar-item has-dropdown is-hoverable">
-        <div className="navbar-link">
-          More
-        </div>
-        <div id="moreDropdown" className="navbar-dropdown ">
-          <a className="navbar-item " href="http://bulma.io/extensions/">
-            <div className="level is-mobile">
-              <div className="level-left">
-                <div className="level-item">
-                  <p>
-                    <strong>Extensions</strong>
-                    <br/>
-                    <small>Side projects to enhance Bulma</small>
+              <hr className="navbar-divider" />
+              <div className="navbar-item">
+                <div>
+                  <p className="is-size-6-desktop">
+                    <strong className="has-text-info">0.5.1</strong>
                   </p>
-                </div>
-              </div>
-              <div className="level-right">
-                <div className="level-item">
-                  <span className="icon has-text-info">
-                    <i className="fa fa-plug"></i>
-                  </span>
+
+                    <small>
+                      <a className="bd-view-all-versions" href="/versions">View all versions</a>
+                    </small>
+
                 </div>
               </div>
             </div>
-          </a>
-        </div>
-      </div>
-      <a className="navbar-item " href="http://bulma.io/expo/">
-        <span className="bd-emoji">⭐️</span>
-        Expo
-      </a>
-      <a className="navbar-item " href="http://bulma.io/love/">
-        <span className="bd-emoji">❤️</span>
-        Love
-      </a>
-    </div>
-
-    <div className="navbar-end">
-      <a className="navbar-item is-hidden-desktop-only" href="https://github.com/jgthms/bulma" target="_blank">
-        <span className="icon">
-          <i className="fa fa-github"></i>
-        </span>
-      </a>
-      <a className="navbar-item is-hidden-desktop-only" href="https://twitter.com/jgthms" target="_blank">
-        <span className="icon">
-          <i className="fa fa-twitter"></i>
-        </span>
-      </a>
-      <div className="navbar-item">
-        <div className="field is-grouped">
-          <p className="control">
-            <a className="bd-tw-button button" data-social-network="Twitter" data-social-action="tweet" data-social-target="http://bulma.io" target="_blank" href="https://twitter.com/intent/tweet?text=Bulma: a modern CSS framework based on Flexbox&amp;hashtags=bulmaio&amp;url=http://bulma.io&amp;via=jgthms">
-  <span className="icon">
-    <i className="fa fa-twitter"></i>
-  </span>
-  <span>
-    Tweet
-  </span>
-</a>
-
-          </p>
-          <p className="control">
-            <a className="button is-primary" href="https://github.com/jgthms/bulma/archive/0.5.1.zip">
-              <span className="icon">
-                <i className="fa fa-download"></i>
-              </span>
-              <span>Download</span>
+          </div>
+          <div className="navbar-item has-dropdown is-hoverable">
+            <a className="navbar-link " href="http://bulma.io/blog/">
+              Blog
             </a>
-          </p>
+            <div id="blogDropdown" className="navbar-dropdown ">
+
+                <a className="navbar-item" href="/2017/08/03/list-of-tags/">
+                  <div className="navbar-content">
+                    <p>
+                      <small className="has-text-info">03 Aug 2017</small>
+                    </p>
+                    <p>New feature: list of tags</p>
+                  </div>
+                </a>
+
+                <a className="navbar-item" href="/2017/08/01/bulma-bootstrap-comparison/">
+                  <div className="navbar-content">
+                    <p>
+                      <small className="has-text-info">01 Aug 2017</small>
+                    </p>
+                    <p>Bulma / Bootstrap comparison</p>
+                  </div>
+                </a>
+
+                <a className="navbar-item" href="/2017/07/24/access-previous-bulma-versions/">
+                  <div className="navbar-content">
+                    <p>
+                      <small className="has-text-info">24 Jul 2017</small>
+                    </p>
+                    <p>Access previous Bulma versions</p>
+                  </div>
+                </a>
+
+              <a className="navbar-item" href="http://bulma.io/blog/">
+                More posts
+              </a>
+              <hr className="navbar-divider"/>
+              <div className="navbar-item">
+                <div className="navbar-content">
+                  <div className="level is-mobile">
+                    <div className="level-left">
+                      <div className="level-item">
+                        <strong>Stay up to date!</strong>
+                      </div>
+                    </div>
+                    <div className="level-right">
+                      <div className="level-item">
+                        <a className="button bd-is-rss is-small" href="http://bulma.io/atom.xml">
+                          <span className="icon is-small">
+                            <i className="fa fa-rss"></i>
+                          </span>
+                          <span>Subscribe</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="navbar-item has-dropdown is-hoverable">
+            <div className="navbar-link">
+              More
+            </div>
+            <div id="moreDropdown" className="navbar-dropdown ">
+              <a className="navbar-item " href="http://bulma.io/extensions/">
+                <div className="level is-mobile">
+                  <div className="level-left">
+                    <div className="level-item">
+                      <p>
+                        <strong>Extensions</strong>
+                        <br/>
+                        <small>Side projects to enhance Bulma</small>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="level-right">
+                    <div className="level-item">
+                      <span className="icon has-text-info">
+                        <i className="fa fa-plug"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="navbar-end">
+          <a className="navbar-item is-hidden-desktop-only" href="https://github.com/jgthms/bulma" target="_blank">
+            <span className="icon">
+              <i className="fa fa-github"></i>
+            </span>
+          </a>
+          <a className="navbar-item is-hidden-desktop-only" href="https://twitter.com/jgthms" target="_blank">
+            <span className="icon">
+              <i className="fa fa-twitter"></i>
+            </span>
+          </a>
+          <div className="navbar-item">
+            <div className="field is-grouped">
+              <p className="control">
+                <a className="bd-tw-button button" data-social-network="Twitter" data-social-action="tweet" data-social-target="http://bulma.io" target="_blank" href="https://twitter.com/intent/tweet?text=Bulma: a modern CSS framework based on Flexbox&amp;hashtags=bulmaio&amp;url=http://bulma.io&amp;via=jgthms">
+                <span className="icon">
+                  <i className="fa fa-twitter"></i>
+                </span>
+                <span>
+                  Tweet
+                </span>
+              </a>
+              </p>
+              <p className="control">
+                <a className="button is-primary" href="https://github.com/jgthms/bulma/archive/0.5.1.zip">
+                  <span className="icon">
+                    <i className="fa fa-download"></i>
+                  </span>
+                  <span>Download</span>
+                </a>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</nav>
+    </nav>
 
-</div>
   );
 }
 var BoxDash = React.createClass({
@@ -821,7 +810,7 @@ var DisplayImage = React.createClass({
   render: function() {
      if (this.props.id > this.state.theRemaining) {
         return (
-          <Product2
+          <ProductFrame2
             deleteItem={this.props.deleteItem}
             index={this.props.index}
             dropZone={this.props.dropZone}
@@ -842,7 +831,7 @@ var DisplayImage = React.createClass({
           );
       } else {
         return (
-          <Product1
+          <ProductFrame1
             deleteItem={this.props.deleteItem}
             index={this.props.index}
             dropZone={this.props.dropZone}
@@ -1310,7 +1299,7 @@ var nextId = 17;
   id: 10
 }
 */
-var ProductPage = React.createClass({
+var ShowCase = React.createClass({
   onAddItem: function(data) {
     console.log(data.image);
     var nextState = [...this.state.data];
@@ -1381,20 +1370,32 @@ var ProductPage = React.createClass({
       arr.push(data);
     })
     return (
-        <div>
-          <GridSystem
-            initialJeans={arr}
-            dropZone={function(e, id) {this.dropZone(e, id)}.bind(this)}
-            borderHover={function(e, style, id) {this.borderHover(e, style, id)}.bind(this)}
-            addItem={function(d) {this.onAddItem(d)}.bind(this)}
-            deleteItem={function(d) {this.onDeleteItem(d)}.bind(this)}
-            />
-        </div>
+      <GridSystem
+        initialJeans={arr}
+        dropZone={function(e, id) {this.dropZone(e, id)}.bind(this)}
+        borderHover={function(e, style, id) {this.borderHover(e, style, id)}.bind(this)}
+        addItem={function(d) {this.onAddItem(d)}.bind(this)}
+        deleteItem={function(d) {this.onDeleteItem(d)}.bind(this)}
+        />
     )
   }
 })
 
-ReactDOM.render(<ProductPage initialJeans={JEANS} />, document.getElementById("root"));
+
+var RootPage = React.createClass({
+  render: function() {
+    return(
+      <div>
+        <Navbar />
+        <ShowCase initialJeans={this.props.initialJeans}/>
+      </div>
+    )
+  }
+})
+
+
+
+ReactDOM.render(<RootPage initialJeans={JEANS}/>, document.getElementById("root"));
 /***********************************************************/
 // propTypes: {
 //   initialJeans: React.PropTypes.arrayOf(React.PropTypes.shape({
