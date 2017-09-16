@@ -1,4 +1,13 @@
 
+//
+import React from 'react';
+import ReactDOM from 'react-dom';
+import {BrowserRouter, Route, HashRouter, Switch, Link, Redirect} from 'react-router-dom';
+
+// import './src/bower_components/css/bulma.css';
+// import './src/bower_components/sass/components/_all.sass'
+
+import './style.css';
 //array of object literals
 var JEANS = [
     {
@@ -9,6 +18,7 @@ var JEANS = [
       sizes: [ 28, 30, 32 ],
       image: ["https://cdn.shopify.com/s/files/1/0452/6221/products/rustic-dime-saint-vernon-taper-fit-1_1024x1024-1_1024x1024.jpg?v=1492608261%22", "https://cdn.shopify.com/s/files/1/0452/6221/products/rustic-dime-saint-vernon-taper-fit-2_1024x1024.jpg?v=1492608262"],
       description: "Our Saint Vernon Taper Fit denim features distressed and tattered details. Each pair is hand cut and sanded for a unique look. 100% cotton bleached american denim. Made in Los Angeles.",
+      price: "30.00",
       id: 1
     },
     {
@@ -19,6 +29,7 @@ var JEANS = [
       sizes: [ 28, 30, 32 ],
       image: ["https://cdn.shopify.com/s/files/1/0452/6221/products/105black_1024x1024.jpg?v=1492608011", "https://cdn.shopify.com/s/files/1/0452/6221/products/105black_b_1024x1024.jpg?v=1492608012","https://cdn.shopify.com/s/files/1/0452/6221/products/105black_c_1024x1024.jpg?v=1492608013"],
       description: "Our new Biker Denim features quality denim with a special knee design and hand shredding, and distressed details that are unique to each piece. 98% Cotton / 2% Spandex. Made in Los Angeles, CA.",
+      price: "30.00",
       id: 2
     },
     {
@@ -29,6 +40,7 @@ var JEANS = [
       sizes: [ 30, 32, 34 ],
       image: ["https://cdn.shopify.com/s/files/1/0452/6221/products/rustic-dime-shredded-biker-4_1024x1024.jpg?v=1492608318"],
       description: "Get a stylish street look loaded with comfort with the new Biker Black Shredded jeans from Rustic Dime. A stylish tapered fit will have you looking your best in the black colorway that features custom knee panels and hand cut tears on the front for a shredded look and a cotton-spandex construction for a comfortable fit with plenty of stretch.",
+      price: "30.00",
       id: 3
     },
     {
@@ -39,6 +51,7 @@ var JEANS = [
       sizes: [ 28, 30, 32 ],
       image: ["https://cdn.shopify.com/s/files/1/0452/6221/products/rustic-dime-saint-vernon-taper-fit-1_1024x1024-1_1024x1024.jpg?v=1492608261%22", "https://cdn.shopify.com/s/files/1/0452/6221/products/rustic-dime-saint-vernon-taper-fit-2_1024x1024.jpg?v=1492608262"],
       description: "Our Saint Vernon Taper Fit denim features distressed and tattered details. Each pair is hand cut and sanded for a unique look. 100% cotton bleached american denim. Made in Los Angeles.",
+      price: "30.00",
       id: 4
     },
     {
@@ -49,6 +62,7 @@ var JEANS = [
       sizes: [ 28, 30, 32 ],
       image: ["https://cdn.shopify.com/s/files/1/0452/6221/products/105black_1024x1024.jpg?v=1492608011", "https://cdn.shopify.com/s/files/1/0452/6221/products/105black_b_1024x1024.jpg?v=1492608012","https://cdn.shopify.com/s/files/1/0452/6221/products/105black_c_1024x1024.jpg?v=1492608013"],
       description: "Our new Biker Denim features quality denim with a special knee design and hand shredding, and distressed details that are unique to each piece. 98% Cotton / 2% Spandex. Made in Los Angeles, CA.",
+      price: "30.00",
       id: 5
     },
     {
@@ -59,6 +73,7 @@ var JEANS = [
       sizes: [ 28, 30, 32 ],
       image: ["https://cdn.shopify.com/s/files/1/0452/6221/products/rustic-dime-saint-vernon-taper-fit-1_1024x1024-1_1024x1024.jpg?v=1492608261%22", "https://cdn.shopify.com/s/files/1/0452/6221/products/rustic-dime-saint-vernon-taper-fit-2_1024x1024.jpg?v=1492608262"],
       description: "Our Saint Vernon Taper Fit denim features distressed and tattered details. Each pair is hand cut and sanded for a unique look. 100% cotton bleached american denim. Made in Los Angeles.",
+      price: "30.00",
       id: 6
     },
     {
@@ -69,6 +84,7 @@ var JEANS = [
       sizes: [ 28, 30, 32 ],
       image: ["https://cdn.shopify.com/s/files/1/0452/6221/products/105black_1024x1024.jpg?v=1492608011", "https://cdn.shopify.com/s/files/1/0452/6221/products/105black_b_1024x1024.jpg?v=1492608012","https://cdn.shopify.com/s/files/1/0452/6221/products/105black_c_1024x1024.jpg?v=1492608013"],
       description: "Our new Biker Denim features quality denim with a special knee design and hand shredding, and distressed details that are unique to each piece. 98% Cotton / 2% Spandex. Made in Los Angeles, CA.",
+      price: "30.00",
       id: 7
     },
     {
@@ -79,6 +95,7 @@ var JEANS = [
       sizes: [ 28, 30, 32 ],
       image: ["https://cdn.shopify.com/s/files/1/0452/6221/products/rustic-dime-saint-vernon-taper-fit-1_1024x1024-1_1024x1024.jpg?v=1492608261%22", "https://cdn.shopify.com/s/files/1/0452/6221/products/rustic-dime-saint-vernon-taper-fit-2_1024x1024.jpg?v=1492608262"],
       description: "Our Saint Vernon Taper Fit denim features distressed and tattered details. Each pair is hand cut and sanded for a unique look. 100% cotton bleached american denim. Made in Los Angeles.",
+      price: "30.00",
       id: 8
     },
     {
@@ -89,36 +106,24 @@ var JEANS = [
       sizes: [ 28, 30, 32 ],
       image: ["https://cdn.shopify.com/s/files/1/0452/6221/products/105black_1024x1024.jpg?v=1492608011", "https://cdn.shopify.com/s/files/1/0452/6221/products/105black_b_1024x1024.jpg?v=1492608012","https://cdn.shopify.com/s/files/1/0452/6221/products/105black_c_1024x1024.jpg?v=1492608013"],
       description: "Our new Biker Denim features quality denim with a special knee design and hand shredding, and distressed details that are unique to each piece. 98% Cotton / 2% Spandex. Made in Los Angeles, CA.",
+      price: "30.00",
       id: 9
     }
 ];
 
-var Clothes = {
-  jeans: [
-    {
-      title: "black rustic jeans"
-    },
-    {
-      title: "green rustic jeans"
-    }
-  ],
-  shirts: [
-    {
-      title: "black shirt"
-    },
-    {
-      title: "green shirt"
-    }
-  ],
-  shoes: [
-    {
-      title: "black shoes"
-    },
-    {
-      title: "green shoes"
-    }
-  ]
-}
+var USERS = [
+  {
+    userName: "user1",
+    passord: "password"
+  }
+]
+
+var ADMINS = [
+  {
+    userName: "admin",
+    password: "admin"
+  }
+]
 
 // var JEANS = [
 //
@@ -139,11 +144,12 @@ function ProductFrame1(props) {
                      onDragLeave={function(event) {props.borderHover(event, "none");}}
                      onDrop={function(event) {props.dropZone(event); props.borderHover(event, "none");}}
                      onDragStart={function(event) {event.dataTransfer.setData("text", event.target.id); props.borderHover(event);}}
+                     onClick={props.imageClick}
                      draggable="true"
                      id={props.index}/>
             </figure>
           </div>
-          <a className="round-button red" onClick={function(event) {props.deleteItem(event.target.id);}}><i className="fa fa-close"></i></a>
+          {props.admin ? <a className="round-button red" onClick={function() {console.log(props.index); props.deleteItem(props.index)}}><i className="fa fa-close"></i></a> : null}
         <div>
           <h1>{props.title}</h1>
           <h1>id: {props.id} index: {props.index}</h1>
@@ -163,11 +169,12 @@ function ProductFrame2(props) {
                      onDragLeave={function(event) {props.borderHover(event, "none");}}
                      onDrop={function(event) {props.dropZone(event); props.borderHover(event, "none");}}
                      onDragStart={function(event) {event.dataTransfer.setData("text", event.target.id); props.borderHover(event);}}
+                     onClick={props.imageClick}
                      draggable="true"
                      id={props.index}/>
             </figure>
           </div>
-          <a className="round-button red" onClick={function(event) {props.deleteItem(event.target.id);}}><i className="fa fa-close"></i></a>
+          {props.admin ? <a className="round-button red" onClick={function() {props.deleteItem(props.index);}}><i className="fa fa-close"></i></a> : null}
         <div>
           <h1>{props.title}</h1>
           <h1>id: {props.id} index: {props.index}</h1>
@@ -176,7 +183,7 @@ function ProductFrame2(props) {
   );
 }
 
-var Modal = React.createClass({
+var AddProductModal = React.createClass({
     getInitialState: function() {
       return {
         showIcon: "hidden",
@@ -189,7 +196,8 @@ var Modal = React.createClass({
     },
     onFileUpload: function(id) {
       // document.getElementById('file').addEventListener('change', readURL, true);
-      console.log(document.getElementById(id));
+      // console.log(document.getElementById(id));
+      console.log(id)
       if(document.getElementById(id).id === "urlUpload") {
         var image = new Image();
         image.src = document.getElementById(id).value;
@@ -197,14 +205,11 @@ var Modal = React.createClass({
         document.getElementById(id).value = '';
         image.onload = function() {
           document.getElementById('fileImage').appendChild(image);
-          // document.getElementById('fileImage').style.backgroundImage = "url(" + this.src + ")";
-          // document.getElementById('fileImage').style.width = "" + 240 + "px";
-          // document.getElementById('fileImage').style.height = "" + this.height + "px";
-
         }
 
-      } else if(document.getElementById(id).id === "files"){
+      } else if(document.getElementById(id).id === "file"){
         var files = document.getElementById(id).files;
+        console.log(files);
         // loop through files
         var parent = this;
         for (var i = 0; i < files.length; i++) {
@@ -215,16 +220,9 @@ var Modal = React.createClass({
               image.src = reader.result;
 
               parent.state.image.push(reader.result)
-              console.log(parent.state.image)
               image.onload = function() {
                 document.getElementById('fileImage').appendChild(image);
-                // document.getElementById('fileImage').style.backgroundImage = "url(" + this.src + ")";
-                // document.getElementById('fileImage').style.width = "" + 240 + "px";
-                // document.getElementById('fileImage').style.height = "" + this.height + "px";
-
               }
-
-
             }
               if(file){
                   reader.readAsDataURL(file);
@@ -238,7 +236,6 @@ var Modal = React.createClass({
     },
     getInputData: function(callback) {
       var sizeValues = [];
-      console.log("sku", document.getElementById("sku"))
       this.state.data.sku = document.getElementById("sku").value;
       this.state.data.title = document.getElementById("title").value;
       this.state.data.fit = document.getElementById("fit").value;
@@ -282,7 +279,6 @@ var Modal = React.createClass({
                 if(document.getElementsByName("color")[j].checked != true) {
                   loopRadio(j+1);
                 } else {
-                  console.log(inputs[j])
                   document.getElementById("color").setAttribute("class", "hidden");
                 }
               } else {
@@ -296,7 +292,6 @@ var Modal = React.createClass({
                 if(document.getElementsByClassName("checkbox")[j].checked != true) {
                   loopCheckB(j+1);
                 } else {
-                  console.log(inputs[j]);
                   document.getElementById("size").setAttribute("class", "hidden");
                 }
               } else {
@@ -328,7 +323,6 @@ var Modal = React.createClass({
       }
     },
     render: function() {
-      console.log(this.props.toggle);
       return (
         <div className={"modal" + " " + this.props.toggle + " "}>
           <div className="modal-background"></div>
@@ -489,206 +483,224 @@ var Modal = React.createClass({
       );
     }
 })
-function Navbar(props) {
+function EntryModal(props) {
   return(
-      <nav className="navbar ">
-      <div className="navbar-brand">
-        <a className="navbar-item" href="http://bulma.io">
-          <img src="http://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28" />
-        </a>
-
-        <a className="navbar-item is-hidden-desktop" href="https://github.com/jgthms/bulma" target="_blank">
-          <span className="icon">
-            <i className="fa fa-github"></i>
-          </span>
-        </a>
-
-        <a className="navbar-item is-hidden-desktop" href="https://twitter.com/jgthms" target="_blank">
-          <span className="icon">
-            <i className="fa fa-twitter"></i>
-          </span>
-        </a>
-
-        <div className="navbar-burger burger" data-target="navMenuDocumentation">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-
-      <div id="navMenuDocumentation" className="navbar-menu">
-        <div className="navbar-start">
-          <div className="navbar-item has-dropdown is-hoverable">
-            <a className="navbar-link  is-active" href="/documentation/overview/start/">
-              Docs
-            </a>
-            <div className="navbar-dropdown ">
-              <a className="navbar-item " href="/documentation/overview/start/">
-                Overview
-              </a>
-              <a className="navbar-item " href="http://bulma.io/documentation/modifiers/syntax/">
-                Modifiers
-              </a>
-              <a className="navbar-item " href="http://bulma.io/documentation/columns/basics/">
-                Columns
-              </a>
-              <a className="navbar-item " href="http://bulma.io/documentation/layout/container/">
-                Layout
-              </a>
-              <a className="navbar-item " href="http://bulma.io/documentation/form/general/">
-                Form
-              </a>
-              <a className="navbar-item " href="http://bulma.io/documentation/elements/box/">
-                Elements
-              </a>
-
-                <a className="navbar-item is-active" href="http://bulma.io/documentation/components/breadcrumb/">
-                  Components
-                </a>
-
-              <hr className="navbar-divider" />
-              <div className="navbar-item">
-                <div>
-                  <p className="is-size-6-desktop">
-                    <strong className="has-text-info">0.5.1</strong>
-                  </p>
-
-                    <small>
-                      <a className="bd-view-all-versions" href="/versions">View all versions</a>
-                    </small>
-
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="navbar-item has-dropdown is-hoverable">
-            <a className="navbar-link " href="http://bulma.io/blog/">
-              Blog
-            </a>
-            <div id="blogDropdown" className="navbar-dropdown ">
-
-                <a className="navbar-item" href="/2017/08/03/list-of-tags/">
-                  <div className="navbar-content">
-                    <p>
-                      <small className="has-text-info">03 Aug 2017</small>
-                    </p>
-                    <p>New feature: list of tags</p>
-                  </div>
-                </a>
-
-                <a className="navbar-item" href="/2017/08/01/bulma-bootstrap-comparison/">
-                  <div className="navbar-content">
-                    <p>
-                      <small className="has-text-info">01 Aug 2017</small>
-                    </p>
-                    <p>Bulma / Bootstrap comparison</p>
-                  </div>
-                </a>
-
-                <a className="navbar-item" href="/2017/07/24/access-previous-bulma-versions/">
-                  <div className="navbar-content">
-                    <p>
-                      <small className="has-text-info">24 Jul 2017</small>
-                    </p>
-                    <p>Access previous Bulma versions</p>
-                  </div>
-                </a>
-
-              <a className="navbar-item" href="http://bulma.io/blog/">
-                More posts
-              </a>
-              <hr className="navbar-divider"/>
-              <div className="navbar-item">
-                <div className="navbar-content">
-                  <div className="level is-mobile">
-                    <div className="level-left">
-                      <div className="level-item">
-                        <strong>Stay up to date!</strong>
-                      </div>
-                    </div>
-                    <div className="level-right">
-                      <div className="level-item">
-                        <a className="button bd-is-rss is-small" href="http://bulma.io/atom.xml">
-                          <span className="icon is-small">
-                            <i className="fa fa-rss"></i>
-                          </span>
-                          <span>Subscribe</span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="navbar-item has-dropdown is-hoverable">
-            <div className="navbar-link">
-              More
-            </div>
-            <div id="moreDropdown" className="navbar-dropdown ">
-              <a className="navbar-item " href="http://bulma.io/extensions/">
-                <div className="level is-mobile">
-                  <div className="level-left">
-                    <div className="level-item">
-                      <p>
-                        <strong>Extensions</strong>
-                        <br/>
-                        <small>Side projects to enhance Bulma</small>
-                      </p>
-                    </div>
-                  </div>
-                  <div className="level-right">
-                    <div className="level-item">
-                      <span className="icon has-text-info">
-                        <i className="fa fa-plug"></i>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div className="navbar-end">
-          <a className="navbar-item is-hidden-desktop-only" href="https://github.com/jgthms/bulma" target="_blank">
-            <span className="icon">
-              <i className="fa fa-github"></i>
-            </span>
-          </a>
-          <a className="navbar-item is-hidden-desktop-only" href="https://twitter.com/jgthms" target="_blank">
-            <span className="icon">
-              <i className="fa fa-twitter"></i>
-            </span>
-          </a>
-          <div className="navbar-item">
-            <div className="field is-grouped">
-              <p className="control">
-                <a className="bd-tw-button button" data-social-network="Twitter" data-social-action="tweet" data-social-target="http://bulma.io" target="_blank" href="https://twitter.com/intent/tweet?text=Bulma: a modern CSS framework based on Flexbox&amp;hashtags=bulmaio&amp;url=http://bulma.io&amp;via=jgthms">
-                <span className="icon">
-                  <i className="fa fa-twitter"></i>
-                </span>
-                <span>
-                  Tweet
-                </span>
-              </a>
-              </p>
-              <p className="control">
-                <a className="button is-primary" href="https://github.com/jgthms/bulma/archive/0.5.1.zip">
-                  <span className="icon">
-                    <i className="fa fa-download"></i>
-                  </span>
-                  <span>Download</span>
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
-
+    <div className="modal is-active">
+      <div className="modal-background"></div>
+      {props.loginModal ?
+        <LoginCard toggleModal={props.toggleModal} toggleOff={props.toggleOff} self={props.self} handleSubmit={props.handleSubmit}/> :
+        <RegisterCard toggleModal={props.toggleModal} toggleOn={props.toggleOn} self={props.self} handleSubmit={props.handleSubmit}/>}
+    </div>
   );
 }
+
+function LoginCard(props) {
+  return(
+  <div className="modal-card">
+    <header className="modal-card-head">
+      <p className="modal-card-title">Log In</p>
+      <button className="delete" aria-label="close" onClick={props.toggleModal}></button>
+    </header>
+    <form onSubmit={props.handleSubmit}>
+    <section className="modal-card-body">
+
+      <label className="label">Username</label>
+      <p className="control">
+        <input className="input" type="text" placeholder="jsmith" ref={function(input) {props.self.userName = input}} />
+      </p>
+      <label className="label">Password</label>
+      <p className="control">
+        <input className="input" type="password" placeholder="●●●●●●●" ref={function(input) {props.self.password = input}}/>
+      </p>
+
+    </section>
+
+    <footer className="modal-card-foot">
+      <button className="button is-success">Log In</button>
+      <button className="button is-default">Cancel</button>
+
+      <a onClick={props.toggleOff}>Register</a>
+    </footer>
+    </form>
+  </div>
+  )
+}
+
+function RegisterCard(props) {
+  return(
+    <div className="modal-card">
+      <header className="modal-card-head">
+        <p className="modal-card-title">Register</p>
+        <button className="delete" aria-label="close" onClick={props.toggleModal}></button>
+      </header>
+      <form onSubmit={props.handleSubmit}>
+      <section className="modal-card-body">
+        <label className="label">Name</label>
+        <p className="control">
+          <input className="input" type="text" placeholder="John Smith" ref={function(input) {props.self.name = input}}/>
+        </p>
+        <label className="label">Username</label>
+        <p className="control">
+          <input className="input" type="text" placeholder="jsmith" ref={function(input) {props.self.userName = input}}/>
+        </p>
+        <label className="label">Email</label>
+        <p className="control">
+          <input className="input" type="text" placeholder="jsmith@example.org" ref={function(input) {props.self.email = input}}/>
+        </p>
+        <hr/>
+        <label className="label">Password</label>
+        <p className="control">
+          <input className="input" type="password" placeholder="●●●●●●●" ref={function(input) {props.self.password = input}}/>
+        </p>
+        <label className="label">Confirm Password</label>
+        <p className="control">
+          <input className="input" type="password" placeholder="●●●●●●●" ref={function(input) {props.self.confirmPassword = input}}/>
+        </p>
+      </section>
+      <footer className="modal-card-foot">
+        <button className="button is-success">Register</button>
+        <button className="button is-default">Cancel</button>
+        <a onClick={props.toggleOn}>Log In</a>
+      </footer>
+      </form>
+    </div>
+  )
+}
+
+var Navbar = React.createClass({
+  getInitialState: function() {
+    return {
+      factor: false,
+      loginModal: true,
+      loggedIn: false
+    }
+  },
+  toggleModal: function() {
+      this.setState({
+        factor: false
+      })
+  },
+  onToggleCard: function() {
+    this.setState({
+      loginModal: true
+    })
+  },
+  offToggleCard: function() {
+    this.setState({
+      loginModal: false
+    })
+  },
+  handleSubmit: function(event) {
+    event.preventDefault();
+    console.log(this.userName.value);
+    console.log(this.password.value);
+    for(var prop in this.props.users) {
+      if(this.props.users.hasOwnProperty(prop)) {
+        var key = this.props.users[prop];
+        for(var value in key) {
+          if(key.hasOwnProperty(value)){
+            if(this.password.value === key[value]) {
+              var password = true;
+            }
+             if(this.userName.value === key[value]) {
+              var userName = true;
+            }
+          }
+        }
+      }
+    }
+
+    for(var prop in this.props.admins) {
+      if(this.props.admins.hasOwnProperty(prop)) {
+        var key = this.props.admins[prop];
+        for(var value in key) {
+          if(key.hasOwnProperty(value)){
+
+            if(this.password.value === key[value]) {
+              console.log("made it here password")
+              var adminPassword = true;
+            }
+             if(this.userName.value === key[value]) {
+              console.log("usernaem")
+              var adminUser = true;
+            }
+          }
+        }
+      }
+    }
+
+    if(password && userName) {
+      this.setState({
+        factor: false
+      })
+      this.props.getAuth({auth: true})
+    }
+     if(adminUser && adminPassword) {
+       this.setState({
+         factor: false
+       })
+      this.props.getAuth({auth: true, admin: true})
+    }
+  },
+  render: function() {
+    return (
+        <nav className="navbar ">
+
+        <div className="navbar-brand">
+
+          <div className="navbar-item">
+            <span style={{cursor: "pointer"}} onClick={this.props.openNav}>&#9776;</span>
+          </div>
+          <a className="navbar-item" href="#">
+            <img src="src/images/mascot.png" alt="mascot" style={{boxShadow: "none"}}/>
+          </a>
+
+          <div className="navbar-burger burger" data-target="navMenuDocumentation">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+        {this.state.factor ? <EntryModal toggleModal={this.toggleModal} loginModal={this.state.loginModal} toggleOff={this.offToggleCard} toggleOn={this.onToggleCard} self={this} handleSubmit={this.handleSubmit}/> : null}
+        <div className="navbar-menu">
+          <div className="navbar-end">
+            <div className="navbar-item">
+              <div className="field is-grouped">
+                <div className="control">
+                {this.props.loggedIn ?
+                  <Link to="/account" className="button is-black" >
+                    <span className="icon">
+                      <i className="fa fa-cog"></i>
+                    </span>
+                    <span>
+                      Account
+                    </span>
+                  </Link>
+                  :
+                <a className="button" onClick={function() {this.setState({ factor: true })}.bind(this)}>
+                  <span className="icon">
+                    <i className="fa fa-sign-in"></i>
+                  </span>
+                  <span>
+                    Log In
+                  </span>
+                </a>}
+
+                </div>
+              </div>
+            </div>
+            <div className="navbar-item">
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+    );
+  }
+})
+
+
 var BoxDash = React.createClass({
   getInitialState: function() {
     return {
@@ -712,7 +724,7 @@ var BoxDash = React.createClass({
               <div id="box-dash">
                 <div id="Cheight"><i className="fa fa-plus-circle fa-5x" onClick={function() {this.modalToggle("is-active")}.bind(this)}></i></div>
                 {this.state.factor === "is-active" ?
-                <Modal
+                <AddProductModal
                   toggle={this.state.factor}
                   onModalToggle={function(f) {this.modalToggle(f)}.bind(this)}
                   addItem={this.props.addItem}
@@ -728,7 +740,7 @@ var BoxDash = React.createClass({
           <div id="box-dash">
             <div id="Cheight"><i className="fa fa-plus-circle fa-5x" onClick={function() {this.modalToggle("is-active")}.bind(this)}></i></div>
             {this.state.factor === "is-active" ?
-            <Modal
+            <AddProductModal
               toggle={this.state.factor}
               onModalToggle={function(f) {this.modalToggle(f)}.bind(this)}
               addItem={this.props.addItem}
@@ -764,9 +776,19 @@ var DisplayImage = React.createClass({
     }.bind(this);
     loopImage(1);
   },
+  onImageClick: function() {
+    clearTimeout(this.Timeout);
+    let history = this.props.history;
+    let id = this.props.id;
+    //es2015 use
+    // let path = '/products/${id}'
+    let path = '/product/' + id + '';
+
+    history.push(path);
+  },
   toDefault: function() {
     clearTimeout(this.Timeout);
-    this.setState(this.getInitialState());
+    this.setState({image: this.props.image[0]});
   },
   componentDidMount: function() {
  //    const interval = setInterval(() => {
@@ -791,6 +813,10 @@ var DisplayImage = React.createClass({
  //
  // }, 300)
   },
+  componentWillUnmount: function() {
+    //clear interval
+
+  },
   componentWillReceiveProps: function(props) {
     if(props.image) {
       var image = [...props.image];
@@ -802,20 +828,19 @@ var DisplayImage = React.createClass({
   },
   getInitialState: function() {
     return {
-            len: this.props.len,
-            theRemaining: this.props.len - this.props.remainder,
             image: this.props.image[0]
            }
   },
   render: function() {
-     if (this.props.id > this.state.theRemaining) {
+     if (this.props.id > this.props.len - this.props.remainder) {
         return (
           <ProductFrame2
+            imageClick={this.onImageClick}
+            admin={this.props.admin}
             deleteItem={this.props.deleteItem}
             index={this.props.index}
             dropZone={this.props.dropZone}
             borderHover={this.props.borderHover}
-            len={this.state.len}
             id={this.props.id}
             title={this.props.title}
             sizes={this.props.sizes}
@@ -832,6 +857,8 @@ var DisplayImage = React.createClass({
       } else {
         return (
           <ProductFrame1
+            imageClick={this.onImageClick}
+            admin={this.props.admin}
             deleteItem={this.props.deleteItem}
             index={this.props.index}
             dropZone={this.props.dropZone}
@@ -862,6 +889,8 @@ var ExtractObjects = React.createClass({
             if(this.props.factor) {
               return ([
                 <DisplayImage
+                     history={this.props.history}
+                     admin={this.props.admin}
                      deleteItem={this.props.deleteItem}
                      dropZone={this.props.dropZone}
                      borderHover={this.props.borderHover}
@@ -887,6 +916,8 @@ var ExtractObjects = React.createClass({
             } else {
             return (
               <DisplayImage
+                  history={this.props.history}
+                  admin={this.props.admin}
                   deleteItem={this.props.deleteItem}
                   dropZone={this.props.dropZone}
                   borderHover={this.props.borderHover}
@@ -910,6 +941,8 @@ var ExtractObjects = React.createClass({
           } else {
             return (
                   <DisplayImage
+                      history={this.props.history}
+                      admin={this.props.admin}
                       deleteItem={this.props.deleteItem}
                       dropZone={this.props.dropZone}
                       borderHover={this.props.borderHover}
@@ -942,10 +975,11 @@ var ExtractObjects = React.createClass({
 var GridSystem = React.createClass({
   componentWillReceiveProps: function(a) {
     var len = a.initialJeans.length;
+    console.log(len, "length")
     var arrOfObj = []
     var rem = len % this.state.columns;
     var rows = len / this.state.columns;
-    var factor;
+    var factor, columns
 
     var prevPos = 0;
     var Pos = this.state.columns;
@@ -955,9 +989,9 @@ var GridSystem = React.createClass({
       Pos += this.state.columns;
     }
 
-    console.log(arrOfObj.length)
+
     if(arrOfObj.length === 0) {
-      console.log("nope")
+
     }else if(arrOfObj != null) {
       if (arrOfObj[arrOfObj.length - 1].length != this.state.columns) {
           factor = false;
@@ -966,21 +1000,28 @@ var GridSystem = React.createClass({
       }
     }
 
-    this.setState({
-      array: arrOfObj,
-      len: len,
-      rows: rows,
-      remainder: rem,
-      arrLen: arrOfObj.length,
-      factor: factor
-    })
+    if(a.columns) {
+      columns = a.columns
+    } else {
+      columns = this.state.columns
+    }
+    
+    // this.setState({
+    //   array: arrOfObj,
+    //   len: len,
+    //   rows: rows,
+    //   remainder: rem,
+    //   arrLen: arrOfObj.length,
+    //   factor: factor,
+    //   columns: columns
+    // })
   },
   getInitialState: function() {
       if(this.props.initialJeans.length != 0) {
-          var admin = true;
+
           var len = this.props.initialJeans.length;
           var arrOfObj = [];
-          var columns = 4;
+          var columns = this.props.columns;
           var rem = len % columns;
           // console.log("what dkfsjlkf",columns - rem)
           var rows = len / columns;
@@ -1001,7 +1042,6 @@ var GridSystem = React.createClass({
           len: this.props.initialJeans.length,
           columns: columns,
           rows: rows,
-          admin: admin,
           imageWidth: Math.round(12/columns),
           arrLen: arrOfObj.length
         }
@@ -1016,8 +1056,6 @@ var GridSystem = React.createClass({
   componentDidMount: function() {
     if(this.state.array != null && this.state.arrLen) {
       if (this.state.array[this.state.arrLen - 1].length != this.state.columns) {
-        console.log(this.state.array[this.state.arrLen - 1].length, "how many items in the array")
-        console.log(this.state.columns, "the number of columns")
         this.setState({
           factor: false
         })
@@ -1026,13 +1064,12 @@ var GridSystem = React.createClass({
           factor: true
         })
       }
-    } else {
-      console.warn("GridSystem: componentDidMount is not in use :(")
     }
   },
   componentDidUpdate: function() {
     if(this.state.newColumns != undefined && this.state.newColumns != this.state.columns) {
         var len = this.props.initialJeans.length;
+        console.log(len, "component did up date")
         var columns = this.state.newColumns;
         var rem = len % this.state.newColumns;
         var rows = len / this.state.newColumns;
@@ -1046,7 +1083,8 @@ var GridSystem = React.createClass({
           prevPos += this.state.newColumns;
           Pos += this.state.newColumns;
         }
-
+        console.log(arrOfObj.length, "dkljalfjsdjfklasjfklasdfjklsjdfl;sj")
+        console.log(this.props.initialJeans, "initaljeans")
         if(this.state.array != null) {
           if (arrOfObj[arrOfObj.length - 1].length != this.state.newColumns) {
               factor = false;
@@ -1054,6 +1092,8 @@ var GridSystem = React.createClass({
               factor = true;
           }
         }
+
+        this.props.getColumns(this.state.newColumns)
 
         this.setState({
           array: arrOfObj,
@@ -1080,20 +1120,11 @@ var GridSystem = React.createClass({
   },
 
   render: function() {
-    console.log(this.state.factor)
-    console.log(this.state.arrLen - 1)
-    // console.log(this.state.arrLen - 1);
-    // var arrOfObj = [];
-    // var prevPos = 0;
-    // var Pos = this.state.columns;
-    // for(var i = 0; i < this.state.rows; i++) {
-    //   arrOfObj.push(this.props.initialJeans.slice(prevPos, Pos));
-    //   prevPos += this.state.columns;
-    //   Pos += this.state.columns;
-    // }
+    console.log(this.props.columns, "this.props.columns")
     if(this.state.array == null || this.state.array.length === 0){
-      if(this.state.admin) {
+      if(this.props.admin) {
         return (
+
           <BoxDash
             columnWidth={this.state.columnWidth}
             addItem={this.props.addItem}/>
@@ -1109,17 +1140,18 @@ var GridSystem = React.createClass({
       return (
         <div className="container">
           {this.state.array.map(function(objects, index) {
-            if(this.state.admin) {
+            if(this.props.admin) {
               if(this.state.arrLen - 1 === 0) {
                 if(index === 0 && this.state.factor === false) {
                   return ([
                     <ManageColumns
                             onColumnManagement={this.columnManagement}/>,
                     <ExtractObjects
+                            history={this.props.history}
                             deleteItem={this.props.deleteItem}
                             dropZone={this.props.dropZone}
                             borderHover={this.props.borderHover}
-                            admin={this.state.admin}
+                            admin={this.props.admin}
                             key={index}
                             objects={objects}
                             remainder={this.state.remainder}
@@ -1135,10 +1167,11 @@ var GridSystem = React.createClass({
                     <ManageColumns
                             onColumnManagement={this.columnManagement}/>,
                     <ExtractObjects
+                            history={this.props.history}
                             deleteItem={this.props.deleteItem}
                             dropZone={this.props.dropZone}
                             borderHover={this.props.borderHover}
-                            admin={this.state.admin}
+                            admin={this.props.admin}
                             key={index}
                             objects={objects}
                             remainder={this.state.remainder}
@@ -1155,10 +1188,11 @@ var GridSystem = React.createClass({
                 } else {
                   return (
                     <ExtractObjects
+                            history={this.props.history}
                             deleteItem={this.props.deleteItem}
                             dropZone={this.props.dropZone}
                             borderHover={this.props.borderHover}
-                            admin={this.state.admin}
+                            admin={this.props.admin}
                             key={index}
                             objects={objects}
                             remainder={this.state.remainder}
@@ -1174,10 +1208,11 @@ var GridSystem = React.createClass({
                   <ManageColumns
                           onColumnManagement={this.columnManagement}/>,
                   <ExtractObjects
+                          history={this.props.history}
                           deleteItem={this.props.deleteItem}
                           dropZone={this.props.dropZone}
                           borderHover={this.props.borderHover}
-                          admin={this.state.admin}
+                          admin={this.props.admin}
                           key={index}
                           objects={objects}
                           remainder={this.state.remainder}
@@ -1193,10 +1228,11 @@ var GridSystem = React.createClass({
                   <ManageColumns
                           onColumnManagement={this.columnManagement}/>,
                   <ExtractObjects
+                          history={this.props.history}
                           deleteItem={this.props.deleteItem}
                           dropZone={this.props.dropZone}
                           borderHover={this.props.borderHover}
-                          admin={this.state.admin}
+                          admin={this.props.admin}
                           key={index}
                           objects={objects}
                           remainder={this.state.remainder}
@@ -1215,10 +1251,11 @@ var GridSystem = React.createClass({
                   <ManageColumns
                           onColumnManagement={this.columnManagement}/>,
                   <ExtractObjects
+                          history={this.props.history}
                           deleteItem={this.props.deleteItem}
                           dropZone={this.props.dropZone}
                           borderHover={this.props.borderHover}
-                          admin={this.state.admin}
+                          admin={this.props.admin}
                           key={index}
                           objects={objects}
                           remainder={this.state.remainder}
@@ -1231,10 +1268,11 @@ var GridSystem = React.createClass({
               } else if (index === this.state.arrLen - 1 && this.state.factor) {
                 return ([
                   <ExtractObjects
+                        history={this.props.history}
                         deleteItem={this.props.deleteItem}
                         dropZone={this.props.dropZone}
                         borderHover={this.props.borderHover}
-                        admin={this.state.admin}
+                        admin={this.props.admin}
                         key={index}
                         objects={objects}
                         remainder={this.state.remainder}
@@ -1250,11 +1288,12 @@ var GridSystem = React.createClass({
               } else {
                 return (
                   <ExtractObjects
+                          history={this.props.history}
                           deleteItem={this.props.deleteItem}
                           addItem={this.props.addItem}
                           dropZone={this.props.dropZone}
                           borderHover={this.props.borderHover}
-                          admin={this.state.admin}
+                          admin={this.props.admin}
                           key={index}
                           objects={objects}
                           remainder={this.state.remainder}
@@ -1268,7 +1307,8 @@ var GridSystem = React.createClass({
             } else {
               return (
                 <ExtractObjects
-                        admin={this.state.admin}
+                        history={this.props.history}
+                        admin={this.props.admin}
                         key={index}
                         objects={objects}
                         remainder={this.state.remainder}
@@ -1285,8 +1325,10 @@ var GridSystem = React.createClass({
   }
 });
 
+
+
 var myArr = [];
-var nextId = 17;
+var nextID = 10;
 /*
 {
   SKU: 4321,
@@ -1303,24 +1345,25 @@ var ShowCase = React.createClass({
   onAddItem: function(data) {
     console.log(data.image);
     var nextState = [...this.state.data];
+    data.id = nextID;
     nextState.push(data);
+
+    console.log(nextState, "nextState")
 
     this.setState({
       data: nextState,
     })
-
-    nextId += 1;
+    this.props.updateParent(nextState);
+    nextID += 1;
   },
   onDeleteItem: function(data) {
-    console.log(data);
     var nextState = [...this.state.data];
     nextState.splice(data, 1);
-
-    console.log(nextState, "nextState");
 
     this.setState({
       data: nextState
     })
+    this.props.updateParent(nextState);
   },
   borderHover: function(e, style) {
     myArr.push(e.target.id)
@@ -1356,14 +1399,16 @@ var ShowCase = React.createClass({
       data: nextState
     })
   },
+
   getInitialState: function() {
     var copy = [...this.props.initialJeans];
     return {
       data: copy
     }
   },
+
   render: function() {
-    console.log(this.state.data);
+    console.log(this.props, "showcase state")
     var arr = [];
     this.state.data.forEach(function(data, index) {
       data.index = index;
@@ -1371,31 +1416,239 @@ var ShowCase = React.createClass({
     })
     return (
       <GridSystem
+        history={this.props.history}
         initialJeans={arr}
         dropZone={function(e, id) {this.dropZone(e, id)}.bind(this)}
         borderHover={function(e, style, id) {this.borderHover(e, style, id)}.bind(this)}
         addItem={function(d) {this.onAddItem(d)}.bind(this)}
-        deleteItem={function(d) {this.onDeleteItem(d)}.bind(this)}
+        deleteItem={function(data) {this.onDeleteItem(data)}.bind(this)}
+        admin={this.props.admin}
+        loggedIn={this.props.loggedIn}
+        getColumns={this.props.getColumns}
+        columns={this.props.columns}
         />
     )
   }
 })
 
 
-var RootPage = React.createClass({
-  render: function() {
-    return(
-      <div>
-        <Navbar />
-        <ShowCase initialJeans={this.props.initialJeans}/>
+function ProductPage(props) {
+  for(var index in props.initialJeans) {
+    if(props.initialJeans[index].id == props.match.params.id) {
+      var jean = props.initialJeans[index];
+    }
+  }
+  return(
+  <div style={{paddingTop: 70 + "px", paddingBottom: 70 + "px"}}>
+  <div className="section product-header">
+    <div className="container">
+      <div className="columns">
+        <div className="column">
+          <span className="title is-3">Product Name</span>
+          <span className="title is-3 has-text-muted">&nbsp;|&nbsp;</span>
+          <span className="title is-4 has-text-muted">Category</span>
+        </div>
       </div>
+    </div>
+  </div>
+
+  <div className="section">
+    <div className="container">
+      <div className="columns">
+        <div className="column is-6">
+          <div className="image is-2by2">
+            <img src={jean.image[0]} />
+          </div>
+        </div>
+        <div className="column is-5 is-offset-1">
+          <div className="title is-2">{jean.title}</div>
+          <p className="title is-3 has-text-muted">{jean.price}</p>
+          <hr/>
+          <br/>
+          <p className="">
+            <i className="fa fa-star title is-5"></i>
+            <i className="fa fa-star title is-5"></i>
+            <i className="fa fa-star title is-5"></i>
+            <i className="fa fa-star title is-5"></i>
+            <i className="fa fa-star title is-5"></i>
+            &nbsp; &nbsp;
+            <strong>41 Reviews</strong>
+            &nbsp; &nbsp;
+            <a href="#">show all</a>
+          </p>
+          <br/>
+          <p>{jean.description}
+          </p>
+          <br/>
+          <br/>
+          <p className="">
+            <a href="#">
+              <i className="fa fa-minus cart-icon"></i>
+            </a>
+            &nbsp;
+            <input type="text" name="" className="input has-text-centered" value="1" style={{width: 40 + "px"}} />
+            &nbsp;
+            <a href="#">
+              <i className="fa fa-plus cart-icon"></i>
+            </a>
+            &nbsp; &nbsp; &nbsp;
+            <a className="button is-primary">Add to cart</a>
+          </p>
+          <br/>
+          <table className="table">
+            <tbody>
+              <tr>
+                <td className="has-text-right">
+                  <strong>Item ID</strong>
+                </td>
+                <td>{jean.id}</td>
+              </tr>
+              <tr>
+                <td className="has-text-right">
+                  <strong>Seller</strong>
+                </td>
+                <td>jsmith</td>
+              </tr>
+              <tr>
+                <td className="has-text-right">
+                  <strong>Added</strong>
+                </td>
+                <td>3 days ago</td>
+              </tr>
+              <tr>
+                <td className="has-text-right">
+                  <strong>Views</strong>
+                </td>
+                <td>3</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div className="section">
+    <div className="container">
+      <div className="tabs">
+        <ul>
+          <li><a>Reviews</a></li>
+        </ul>
+      </div>
+      <div className="box">
+        <p> </p><br/><p>
+
+        Sed at risus enim. Nunc aliquet tellus a purus blandit lobortis. Duis condimentum sapien sed orci ornare mollis. Praesent eleifend ante magna, quis commodo risus pellentesque in. Donec eget porta leo. Sed vel dictum est. Ut dui lorem, volutpat vel risus in, dictum euismod ex. Aenean laoreet dapibus nulla, nec viverra massa feugiat vitae. Vestibulum elementum nec nisi dictum rhoncus. Nam placerat mi eu tortor tincidunt commodo. Duis posuere, sapien a laoreet dapibus, elit tortor laoreet est, eget dapibus dui justo vitae ipsum. Praesent sed augue nec leo hendrerit iaculis sit amet efficitur ante. Nunc ac maximus mauris. Sed luctus erat id elit tempor, a aliquam lacus sodales.
+      </p><br/><p>
+
+      Suspendisse sodales metus justo, ullamcorper iaculis purus interdum in. Sed ultricies enim felis, in interdum urna malesuada a. Morbi id ligula vel leo elementum dignissim quis vel purus. Donec iaculis, est ac maximus vestibulum, sapien mi lacinia urna, at laoreet felis lectus nec urna. Fusce egestas, neque vitae blandit scelerisque, leo arcu pellentesque risus, et volutpat neque nunc id massa. Aenean dapibus leo vel purus malesuada, eu ultrices nulla consequat. Duis erat orci, lobortis sed dictum id, pretium a nibh. Mauris pharetra ligula consequat gravida ornare.
+    </p><br/><p>
+
+    Sed a gravida sapien. Nam malesuada feugiat nunc, eu varius risus suscipit non. Nulla vitae odio fermentum, varius ligula et, iaculis enim. Mauris tempor in dolor non aliquet. Pellentesque ac mauris a augue tempus pharetra. Nulla facilisi. Vivamus sit amet lacus sagittis, ullamcorper nisi sit amet, consequat eros. Sed faucibus nulla vitae erat tristique ornare.
+  </p><br/><p>
+
+  Nullam sit amet magna ipsum. In tincidunt tincidunt tellus. Duis maximus vulputate elit sit amet auctor. Vestibulum a nunc consectetur, accumsan arcu eu, dapibus est. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec vitae massa eget nulla gravida porta eu et sem. Sed in lorem id lectus auctor lobortis sed vel libero. Nam dapibus risus eu sodales consectetur. Fusce luctus sollicitudin ante et sodales. Curabitur eget justo turpis. Vestibulum vel nunc tellus. Morbi accumsan urna nibh, at malesuada odio faucibus accumsan.
+</p>
+
+</div>
+</div>
+</div>
+
+</div>
+  );
+
+}
+
+function SideNav(props) {
+  window.addEventListener('mouseup', function(event){
+    var sidenav = document.getElementById('mySidenav');
+    if (event.target != sidenav && event.target.parentNode != sidenav){
+          props.closeNav();
+      }
+
+  });
+  return (
+    <div id="mySidenav" className="sidenav">
+      <a href="javascript:void(0)" className="closebtn" onClick={props.closeNav}>&times;</a>
+      <Link to="/">Shop</Link>
+    </div>
+  );
+}
+
+
+var MainApp = React.createClass({
+  update: function(nextState) {
+    this.setState({
+      jeans: nextState
+    })
+  },
+  getColumns: function(columns) {
+    this.setState({
+      columns: columns
+    })
+  },
+  getAuth: function(authData) {
+    if(authData.auth && authData.admin) {
+      this.setState({
+        loggedIn: true,
+        admin: true
+      })
+    } else if(authData.auth) {
+        this.setState({
+          loggedIn: true
+        })
+    }
+
+  },
+  getInitialState: function() {
+    return {
+      jeans: this.props.initialJeans,
+      columns: 4
+    }
+  },
+  openNav: function() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+ },
+ closeNav: function() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+  },
+  render: function() {
+    console.log(this.state, "main app state")
+    return (
+      <HashRouter>
+        <div id="main">
+          <Navbar openNav={this.openNav} users={this.props.initialUsers} admins={this.props.initialAdmins} getAuth={function(a) {this.getAuth(a)}.bind(this)} loggedIn={this.state.loggedIn} admin={this.state.admin}/>
+
+          <SideNav
+            closeNav={this.closeNav}
+            openNav={this.openNav}
+            />
+
+            <div className="jar">
+              <Route exact path="/" render={function({history}) {return (<ShowCase initialJeans={this.state.jeans} updateParent={function(n) {this.update(n)}.bind(this)} history={history} loggedIn={this.state.loggedIn} columns={this.state.columns} admin={this.state.admin} getColumns={function(c) {this.getColumns(c)}.bind(this)} />)}.bind(this)} />
+              <Route path="/product/:id" render={function({match}) {return (<ProductPage initialJeans={this.state.jeans} match={match}/>)}.bind(this)} />
+              <Route path="/cart" component={cart} />
+            </div>
+
+        </div>
+      </HashRouter>
+
     )
   }
 })
 
-
-
-ReactDOM.render(<RootPage initialJeans={JEANS}/>, document.getElementById("root"));
+function cart() {
+  return(
+    <div>
+      <h1>this is cart</h1>
+    </div>
+  )
+}
+// <ShowCase initialJeans={this.props.initialJeans} />
+ReactDOM.render(<MainApp initialJeans={JEANS} initialUsers={USERS} initialAdmins={ADMINS}/>, document.getElementById("root"));
 /***********************************************************/
 // propTypes: {
 //   initialJeans: React.PropTypes.arrayOf(React.PropTypes.shape({
