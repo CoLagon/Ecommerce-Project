@@ -97,31 +97,41 @@ var JEANS = [
       description: "Our Saint Vernon Taper Fit denim features distressed and tattered details. Each pair is hand cut and sanded for a unique look. 100% cotton bleached american denim. Made in Los Angeles.",
       price: "30.00",
       id: 8
-    },
-    {
-      SKU: 4321,
-      title: "VINO SHREDDED",
-      fit: "BIKER DENIM",
-      color: "red",
-      sizes: [ 28, 30, 32 ],
-      image: ["https://cdn.shopify.com/s/files/1/0452/6221/products/105black_1024x1024.jpg?v=1492608011", "https://cdn.shopify.com/s/files/1/0452/6221/products/105black_b_1024x1024.jpg?v=1492608012","https://cdn.shopify.com/s/files/1/0452/6221/products/105black_c_1024x1024.jpg?v=1492608013"],
-      description: "Our new Biker Denim features quality denim with a special knee design and hand shredding, and distressed details that are unique to each piece. 98% Cotton / 2% Spandex. Made in Los Angeles, CA.",
-      price: "30.00",
-      id: 9
     }
 ];
 
+
+var SHIRTS = [
+  {
+    SKU: 2354,
+    title: "GREY BUTTON UP",
+    color: "grey",
+    sizes: ["small", "medium", "large"],
+    image: ["https://slimages.macysassets.com/is/image/MCY/products/8/optimized/8069758_fpx.tif?op_sharpen=1&wid=400&hei=489&fit=fit,1&$filterlrg$"],
+    description: "grey button up short sleeve shirt casual wear",
+    price: "$20.00",
+    id: 1
+  }
+]
 var USERS = [
   {
+    name: "cole logan",
     userName: "user1",
-    passord: "password"
+    email: "colelogan19@yahoo.com",
+    address: "123 sesame street",
+    passord: "password",
+    id: 1
   }
 ]
 
 var ADMINS = [
   {
-    userName: "admin",
-    password: "admin"
+    name: "george hennon",
+    userName: "admin1",
+    email: "admin@gmail.com",
+    address: null,
+    password: "admin",
+    id: 1
   }
 ]
 
@@ -135,8 +145,11 @@ var ADMINS = [
 function ProductFrame1(props) {
   return (
     <div className={"column is-" + props.imageWidth + ""}>
+    {props.admin ? <a className="round-button red" onClick={function() {console.log(props.index); props.deleteItem(props.index)}}><i className="fa fa-close"></i></a> : null}
+      <div className="card">
           <div className="card-image">
             <figure className="image is-2by3">
+            {props.admin ?
                 <img src={props.image}
                      onMouseOver={props.onFlipImage}
                      onMouseOut={props.onToDefault}
@@ -147,12 +160,20 @@ function ProductFrame1(props) {
                      onClick={props.imageClick}
                      draggable="true"
                      id={props.index}/>
+                   :
+                   <img src={props.image}
+                        onMouseOver={props.onFlipImage}
+                        onMouseOut={props.onToDefault}
+                        onClick={props.imageClick}
+                        draggable="false"
+                        id={props.index}/>
+                 }
             </figure>
           </div>
-          {props.admin ? <a className="round-button red" onClick={function() {console.log(props.index); props.deleteItem(props.index)}}><i className="fa fa-close"></i></a> : null}
-        <div>
-          <h1>{props.title}</h1>
-          <h1>id: {props.id} index: {props.index}</h1>
+
+          <div className="card-cardi has-text-centered">
+            <p>{props.title}</p>
+          </div>
         </div>
     </div>
   );
@@ -160,8 +181,11 @@ function ProductFrame1(props) {
 function ProductFrame2(props) {
   return (
     <div className={"column is-" + props.imageWidth + ""}>
+    {props.admin ? <a className="round-button red" onClick={function() {console.log(props.index); props.deleteItem(props.index)}}><i className="fa fa-close"></i></a> : null}
+      <div className="card">
           <div className="card-image">
             <figure className="image is-2by3">
+            {props.admin ?
                 <img src={props.image}
                      onMouseOver={props.onFlipImage}
                      onMouseOut={props.onToDefault}
@@ -172,12 +196,20 @@ function ProductFrame2(props) {
                      onClick={props.imageClick}
                      draggable="true"
                      id={props.index}/>
+                   :
+                   <img src={props.image}
+                        onMouseOver={props.onFlipImage}
+                        onMouseOut={props.onToDefault}
+                        onClick={props.imageClick}
+                        draggable="false"
+                        id={props.index}/>
+                 }
             </figure>
           </div>
-          {props.admin ? <a className="round-button red" onClick={function() {props.deleteItem(props.index);}}><i className="fa fa-close"></i></a> : null}
-        <div>
-          <h1>{props.title}</h1>
-          <h1>id: {props.id} index: {props.index}</h1>
+
+          <div className="card-cardi has-text-centered">
+            <p>{props.title}</p>
+          </div>
         </div>
     </div>
   );
@@ -256,14 +288,14 @@ var AddProductModal = React.createClass({
       }
 
       if(this.state.data.sku && this.state.data.title && this.state.data.fit && this.state.data.color && this.state.data.size && this.state.data.image) {
-        this.props.addItem(this.state.data);
+        this.props.addItem(this.state.data, this.props.router.match.path);
         callback("is-inactive")
       } else {
         var inputs = document.getElementsByTagName('input');
           for(var i=0; i<inputs.length; i++){
             var type = inputs[i].getAttribute("type");
             if(type === "text") {
-              if(i <= 3) {
+              if(i <= 4) {
                 if(inputs[i].value == '') {
                   inputs[i].parentNode.childNodes[0].childNodes[3].setAttribute("class", "visible")
                 } else {
@@ -343,6 +375,10 @@ var AddProductModal = React.createClass({
                   </div>
                   <div className="control">
                     <label className="label has-text-left">Fit<span className="hidden"><i className="fa fa-asterisk Red"></i></span></label>
+                    <input id="fit" className="input" type="text" />
+                  </div>
+                  <div className="control">
+                    <label className="label has-text-left">Price<span className="hidden"><i className="fa fa-asterisk Red"></i></span></label>
                     <input id="fit" className="input" type="text" />
                   </div>
 
@@ -590,6 +626,9 @@ var Navbar = React.createClass({
       loginModal: false
     })
   },
+  routeHandler: function() {
+
+  },
   handleSubmit: function(event) {
     event.preventDefault();
     console.log(this.userName.value);
@@ -600,46 +639,58 @@ var Navbar = React.createClass({
         for(var value in key) {
           if(key.hasOwnProperty(value)){
             if(this.password.value === key[value]) {
-              var password = true;
+              var password = key[value];
             }
              if(this.userName.value === key[value]) {
-              var userName = true;
+              var userName = key[value];
+            }
+            if(userName && password) {
+              var id = key.id;
             }
           }
         }
       }
     }
 
+console.log(this.props.admins, "have admins")
     for(var prop in this.props.admins) {
       if(this.props.admins.hasOwnProperty(prop)) {
         var key = this.props.admins[prop];
+        console.log(key, "got key")
         for(var value in key) {
           if(key.hasOwnProperty(value)){
 
             if(this.password.value === key[value]) {
-              console.log("made it here password")
-              var adminPassword = true;
+              console.log("passwords match")
+              var adminPassword = key[value];
+              console.log(key.id)
             }
              if(this.userName.value === key[value]) {
-              console.log("usernaem")
-              var adminUser = true;
+               console.log("userNames match")
+              var adminUser = key[value];
+              console.log(key.id)
+            }
+            if(adminUser && adminPassword) {
+              var id = key.id;
             }
           }
         }
       }
     }
-
+console.log(adminUser, adminPassword)
     if(password && userName) {
       this.setState({
+        loggedIn: true,
         factor: false
       })
-      this.props.getAuth({auth: true})
+      this.props.getAuth({id: id})
     }
      if(adminUser && adminPassword) {
        this.setState({
+         loggedIn: true,
          factor: false
        })
-      this.props.getAuth({auth: true, admin: true})
+      this.props.getAuth({id: id, admin: true})
     }
   },
   render: function() {
@@ -663,36 +714,86 @@ var Navbar = React.createClass({
         </div>
         {this.state.factor ? <EntryModal toggleModal={this.toggleModal} loginModal={this.state.loginModal} toggleOff={this.offToggleCard} toggleOn={this.onToggleCard} self={this} handleSubmit={this.handleSubmit}/> : null}
         <div className="navbar-menu">
-          <div className="navbar-end">
-            <div className="navbar-item">
-              <div className="field is-grouped">
-                <div className="control">
-                {this.props.loggedIn ?
-                  <Link to="/account" className="button is-black" >
-                    <span className="icon">
-                      <i className="fa fa-cog"></i>
-                    </span>
-                    <span>
-                      Account
-                    </span>
-                  </Link>
+                {this.props.loggedIn && this.props.admin ?
+                  <div className="navbar-end">
+                  <div className="navbar-item">
+                    <div className="field is-grouped">
+                      <div className="control">
+                        <Link to={"/admin/" + this.props.accountID + ""} className="button is-black" >
+                          <span className="icon">
+                            <i className="fa fa-cog"></i>
+                          </span>
+                          <span>
+                            Account
+                          </span>
+                        </Link>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="navbar-item">
+                      <div className="field is-grouped">
+                        <div className="control">
+                          <a className="button is-info" onClick={this.props.logout}>
+                            <span className="icon">
+                              <i className="fa fa-sign-out"></i>
+                            </span>
+                            <span>
+                              Logout
+                            </span>
+                          </a>
+                          </div>
+                        </div>
+                      </div>
+                      </div>
+                  : this.props.loggedIn ?
+                  <div className="navbar-end">
+                  <div className="navbar-item">
+                    <div className="field is-grouped">
+                      <div className="control">
+                        <Link to={"/account/" + this.props.accountID + ""} className="button is-black" >
+                          <span className="icon">
+                            <i className="fa fa-cog"></i>
+                          </span>
+                          <span>
+                            Account
+                          </span>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="navbar-item">
+                    <div className="field is-grouped">
+                      <div className="control">
+                        <a className="button is-info" onClick={this.props.logout}>
+                          <span className="icon">
+                            <i className="fa fa-sign-out"></i>
+                          </span>
+                          <span>
+                            Logout
+                          </span>
+                        </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   :
-                <a className="button" onClick={function() {this.setState({ factor: true })}.bind(this)}>
-                  <span className="icon">
-                    <i className="fa fa-sign-in"></i>
-                  </span>
-                  <span>
-                    Log In
-                  </span>
-                </a>}
-
+                  <div className="navbar-end">
+                  <div className="navbar-item">
+                    <div className="field is-grouped">
+                      <div className="control">
+                      <a className="button" onClick={function() {this.setState({ factor: true })}.bind(this)}>
+                        <span className="icon">
+                          <i className="fa fa-sign-in"></i>
+                        </span>
+                        <span>
+                          Log In
+                        </span>
+                      </a>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div className="navbar-item">
-              <span></span>
-            </div>
-          </div>
+                </div>
+              }
         </div>
       </nav>
 
@@ -717,36 +818,39 @@ var BoxDash = React.createClass({
     }
   },
   render: function() {
+    console.log(this.props.router.match.path, "boxdash url bitch")
     if(this.props.factor) {
       return (
         <div className="columns is-vcentered">
-          <div id="widt" className={"column is-" + this.props.imageWidth + " has-text-centered"}>
-              <div id="box-dash">
-                <div id="Cheight"><i className="fa fa-plus-circle fa-5x" onClick={function() {this.modalToggle("is-active")}.bind(this)}></i></div>
+          <div className="widt" className={"column is-" + this.props.imageWidth + " has-text-centered"}>
+              <div className="box-dash">
+                <div className="box-height"><i className="fa fa-plus-circle fa-5x" onClick={function() {this.modalToggle("is-active")}.bind(this)}></i></div>
                 {this.state.factor === "is-active" ?
                 <AddProductModal
+                  router={this.props.router}
                   toggle={this.state.factor}
                   onModalToggle={function(f) {this.modalToggle(f)}.bind(this)}
                   addItem={this.props.addItem}
                   /> : null}
               </div>
-              <div id="lift"></div>
+              <div className="lift"></div>
           </div>
         </div>
       );
     } else {
       return (
-        <div id="widt" className={"column is-" + this.props.imageWidth + " has-text-centered"}>
-          <div id="box-dash">
-            <div id="Cheight"><i className="fa fa-plus-circle fa-5x" onClick={function() {this.modalToggle("is-active")}.bind(this)}></i></div>
+        <div className="widt" className={"column is-" + this.props.imageWidth + " has-text-centered"}>
+          <div className="box-dash">
+            <div className="box-height"><i className="fa fa-plus-circle fa-5x" onClick={function() {this.modalToggle("is-active")}.bind(this)}></i></div>
             {this.state.factor === "is-active" ?
             <AddProductModal
+              router={this.props.router}
               toggle={this.state.factor}
               onModalToggle={function(f) {this.modalToggle(f)}.bind(this)}
               addItem={this.props.addItem}
               /> : null}
           </div>
-          <div id="lift"></div>
+          <div className="lift"></div>
         </div>
       )
     }
@@ -778,44 +882,46 @@ var DisplayImage = React.createClass({
   },
   onImageClick: function() {
     clearTimeout(this.Timeout);
-    let history = this.props.history;
+    console.log(this.props.router.match, "this is match")
     let id = this.props.id;
+    let path = "" + this.props.router.match.path + "/" + id + "";
+
+    console.log(path);
     //es2015 use
     // let path = '/products/${id}'
-    let path = '/product/' + id + '';
+    // let path = '/jeans/' + id + '';
 
-    history.push(path);
+    this.props.router.history.push(path);
   },
   toDefault: function() {
     clearTimeout(this.Timeout);
     this.setState({image: this.props.image[0]});
   },
   componentDidMount: function() {
- //    const interval = setInterval(() => {
- //      var DOMnode = document.getElementsByClassName('image')[this.props.len - 1];
- //      if(DOMnode){
- //        var node = ReactDOM.findDOMNode(DOMnode);
- //        // console.log(node);
- //        var nodeHeight = node.clientHeight;
- //        var nodeWidth = node.clientWidth;
- //        var plusIconDOM = document.getElementById('Cheight');
- //        // console.log(plusIconDOM);
- //        var icon = ReactDOM.findDOMNode(plusIconDOM);
- //        // console.log(icon);
- //        var iconHeight = icon.clientHeight;
- //
- //        var height = nodeHeight - iconHeight;
- //
- //        document.getElementById("Cheight").style.marginTop = "" + height/2 + "px";
- //        document.getElementById("Cheight").style.marginBottom = "" + height/2 + "px";
- //    //  this.setState({})
- //   }
- //
- // }, 300)
+    if(this.props.admin) {
+      this.interval = setInterval(() => {
+        var DOMnode = document.getElementsByClassName('image')[this.props.len - 1];
+        if(DOMnode){
+          var node = ReactDOM.findDOMNode(DOMnode);
+          var nodeHeight = node.clientHeight;
+          var nodeWidth = node.clientWidth;
+          var plusIconDOM = document.getElementsByClassName('box-height')[0];
+          var icon = ReactDOM.findDOMNode(plusIconDOM);
+          // console.log(icon);
+          var iconHeight = icon.clientHeight;
+
+          var height = nodeHeight - iconHeight;
+
+          document.getElementsByClassName("box-height")[0].style.marginTop = "" + height/2 + "px";
+          document.getElementsByClassName("box-height")[0].style.marginBottom = "" + height/2 + "px";
+     }
+
+   }, 300)
+    }
   },
   componentWillUnmount: function() {
     //clear interval
-
+    clearInterval(this.interval);
   },
   componentWillReceiveProps: function(props) {
     if(props.image) {
@@ -889,7 +995,7 @@ var ExtractObjects = React.createClass({
             if(this.props.factor) {
               return ([
                 <DisplayImage
-                     history={this.props.history}
+                     router={this.props.router}
                      admin={this.props.admin}
                      deleteItem={this.props.deleteItem}
                      dropZone={this.props.dropZone}
@@ -910,13 +1016,14 @@ var ExtractObjects = React.createClass({
                      imageWidth={this.props.imageWidth}
                      />,
                   <BoxDash
+                      router={this.props.router}
                       addItem={this.props.addItem}
                       imageWidth={this.props.imageWidth}/>
                  ]);
             } else {
             return (
               <DisplayImage
-                  history={this.props.history}
+                  router={this.props.router}
                   admin={this.props.admin}
                   deleteItem={this.props.deleteItem}
                   dropZone={this.props.dropZone}
@@ -941,7 +1048,7 @@ var ExtractObjects = React.createClass({
           } else {
             return (
                   <DisplayImage
-                      history={this.props.history}
+                      router={this.props.router}
                       admin={this.props.admin}
                       deleteItem={this.props.deleteItem}
                       dropZone={this.props.dropZone}
@@ -977,26 +1084,26 @@ var GridSystem = React.createClass({
     var len = a.initialJeans.length;
     console.log(len, "length")
     var arrOfObj = []
-    var rem = len % this.state.columns;
-    var rows = len / this.state.columns;
+    var rem = len % a.columns;
+    var rows = len / a.columns;
     var factor, columns
 
     var prevPos = 0;
-    var Pos = this.state.columns;
-    for(var i = 0; i < rows; i++) {
-      arrOfObj.push(a.initialJeans.slice(prevPos, Pos));
-      prevPos += this.state.columns;
-      Pos += this.state.columns;
-    }
+    var Pos = a.columns;
 
+      for(var i = 0; i < rows; i++) {
+        arrOfObj.push(a.initialJeans.slice(prevPos, Pos));
+        prevPos += a.columns;
+        Pos += a.columns;
+      }
 
-    if(arrOfObj.length === 0) {
-
-    }else if(arrOfObj != null) {
-      if (arrOfObj[arrOfObj.length - 1].length != this.state.columns) {
-          factor = false;
-      } else {
-          factor = true;
+    if(arrOfObj.length != 0) {
+      if(arrOfObj != null) {
+        if (arrOfObj[arrOfObj.length - 1].length != a.columns) {
+            factor = false;
+        } else {
+            factor = true;
+        }
       }
     }
 
@@ -1005,16 +1112,14 @@ var GridSystem = React.createClass({
     } else {
       columns = this.state.columns
     }
-    
-    // this.setState({
-    //   array: arrOfObj,
-    //   len: len,
-    //   rows: rows,
-    //   remainder: rem,
-    //   arrLen: arrOfObj.length,
-    //   factor: factor,
-    //   columns: columns
-    // })
+
+    this.setState({
+      array: arrOfObj,
+      columns: columns,
+      factor: factor,
+      len: len,
+      arrLen: arrOfObj.length
+    })
   },
   getInitialState: function() {
       if(this.props.initialJeans.length != 0) {
@@ -1069,7 +1174,6 @@ var GridSystem = React.createClass({
   componentDidUpdate: function() {
     if(this.state.newColumns != undefined && this.state.newColumns != this.state.columns) {
         var len = this.props.initialJeans.length;
-        console.log(len, "component did up date")
         var columns = this.state.newColumns;
         var rem = len % this.state.newColumns;
         var rows = len / this.state.newColumns;
@@ -1083,8 +1187,7 @@ var GridSystem = React.createClass({
           prevPos += this.state.newColumns;
           Pos += this.state.newColumns;
         }
-        console.log(arrOfObj.length, "dkljalfjsdjfklasjfklasdfjklsjdfl;sj")
-        console.log(this.props.initialJeans, "initaljeans")
+
         if(this.state.array != null) {
           if (arrOfObj[arrOfObj.length - 1].length != this.state.newColumns) {
               factor = false;
@@ -1120,7 +1223,6 @@ var GridSystem = React.createClass({
   },
 
   render: function() {
-    console.log(this.props.columns, "this.props.columns")
     if(this.state.array == null || this.state.array.length === 0){
       if(this.props.admin) {
         return (
@@ -1131,8 +1233,10 @@ var GridSystem = React.createClass({
         );
       } else {
         return(
-          <div>
-            <h1> this page doesnt have content </h1>
+          <div className="container">
+           <div className="column">
+            <h1> This page does not contain products, please contact the site admin</h1>
+            </div>
           </div>
         )
       }
@@ -1141,13 +1245,14 @@ var GridSystem = React.createClass({
         <div className="container">
           {this.state.array.map(function(objects, index) {
             if(this.props.admin) {
+              console.log()
               if(this.state.arrLen - 1 === 0) {
                 if(index === 0 && this.state.factor === false) {
                   return ([
                     <ManageColumns
                             onColumnManagement={this.columnManagement}/>,
                     <ExtractObjects
-                            history={this.props.history}
+                            router={this.props.router}
                             deleteItem={this.props.deleteItem}
                             dropZone={this.props.dropZone}
                             borderHover={this.props.borderHover}
@@ -1167,7 +1272,7 @@ var GridSystem = React.createClass({
                     <ManageColumns
                             onColumnManagement={this.columnManagement}/>,
                     <ExtractObjects
-                            history={this.props.history}
+                            router={this.props.router}
                             deleteItem={this.props.deleteItem}
                             dropZone={this.props.dropZone}
                             borderHover={this.props.borderHover}
@@ -1181,6 +1286,7 @@ var GridSystem = React.createClass({
                             rows={this.state.rows}
                             />,
                     <BoxDash
+                          router={this.props.router}
                           addItem={this.props.addItem}
                           imageWidth={this.state.imageWidth}
                           factor={true}/>
@@ -1188,7 +1294,7 @@ var GridSystem = React.createClass({
                 } else {
                   return (
                     <ExtractObjects
-                            history={this.props.history}
+                            router={this.props.router}
                             deleteItem={this.props.deleteItem}
                             dropZone={this.props.dropZone}
                             borderHover={this.props.borderHover}
@@ -1208,7 +1314,7 @@ var GridSystem = React.createClass({
                   <ManageColumns
                           onColumnManagement={this.columnManagement}/>,
                   <ExtractObjects
-                          history={this.props.history}
+                          router={this.props.router}
                           deleteItem={this.props.deleteItem}
                           dropZone={this.props.dropZone}
                           borderHover={this.props.borderHover}
@@ -1228,7 +1334,7 @@ var GridSystem = React.createClass({
                   <ManageColumns
                           onColumnManagement={this.columnManagement}/>,
                   <ExtractObjects
-                          history={this.props.history}
+                          router={this.props.router}
                           deleteItem={this.props.deleteItem}
                           dropZone={this.props.dropZone}
                           borderHover={this.props.borderHover}
@@ -1242,16 +1348,17 @@ var GridSystem = React.createClass({
                           rows={this.state.rows}
                           />,
                   <BoxDash
+                        router={this.props.router}
                         addItem={this.props.addItem}
                         imageWidth={this.state.imageWidth}
                         factor={true}/>
                         ])
-              } else if(index === 0) {
+              } else if (index === 0) {
                 return ([
                   <ManageColumns
                           onColumnManagement={this.columnManagement}/>,
                   <ExtractObjects
-                          history={this.props.history}
+                          router={this.props.router}
                           deleteItem={this.props.deleteItem}
                           dropZone={this.props.dropZone}
                           borderHover={this.props.borderHover}
@@ -1268,7 +1375,7 @@ var GridSystem = React.createClass({
               } else if (index === this.state.arrLen - 1 && this.state.factor) {
                 return ([
                   <ExtractObjects
-                        history={this.props.history}
+                        router={this.props.router}
                         deleteItem={this.props.deleteItem}
                         dropZone={this.props.dropZone}
                         borderHover={this.props.borderHover}
@@ -1281,6 +1388,7 @@ var GridSystem = React.createClass({
                         imageWidth={this.state.imageWidth}
                         rows={this.state.rows}/>,
                   <BoxDash
+                        router={this.props.router}
                         addItem={this.props.addItem}
                         imageWidth={this.state.imageWidth}
                         factor={true}/>
@@ -1288,7 +1396,7 @@ var GridSystem = React.createClass({
               } else {
                 return (
                   <ExtractObjects
-                          history={this.props.history}
+                          router={this.props.router}
                           deleteItem={this.props.deleteItem}
                           addItem={this.props.addItem}
                           dropZone={this.props.dropZone}
@@ -1307,7 +1415,7 @@ var GridSystem = React.createClass({
             } else {
               return (
                 <ExtractObjects
-                        history={this.props.history}
+                        router={this.props.router}
                         admin={this.props.admin}
                         key={index}
                         objects={objects}
@@ -1341,14 +1449,13 @@ var nextID = 10;
   id: 10
 }
 */
+
+
 var ShowCase = React.createClass({
   onAddItem: function(data) {
-    console.log(data.image);
-    var nextState = [...this.state.data];
+    var nextState = [...this.props.initialJeans];
     data.id = nextID;
     nextState.push(data);
-
-    console.log(nextState, "nextState")
 
     this.setState({
       data: nextState,
@@ -1357,7 +1464,7 @@ var ShowCase = React.createClass({
     nextID += 1;
   },
   onDeleteItem: function(data) {
-    var nextState = [...this.state.data];
+    var nextState = [...this.props.initialJeans];
     nextState.splice(data, 1);
 
     this.setState({
@@ -1379,7 +1486,7 @@ var ShowCase = React.createClass({
 
   },
   dropZone: function(e) {
-    var nextState = [...this.state.data];
+    var nextState = [...this.props.initialJeans];
     var cell = e.target;
     console.log(cell);
     var cellWidth = cell.clientWidth;
@@ -1395,8 +1502,10 @@ var ShowCase = React.createClass({
       }
     }
 
+    this.props.updateParent(nextState);
     this.setState({
-      data: nextState
+      data: nextState,
+      arr: []
     })
   },
 
@@ -1406,18 +1515,19 @@ var ShowCase = React.createClass({
       data: copy
     }
   },
-
+  componentWillReceiveProps: function(nextProps) {
+    if(nextProps.initialJeans) {
+      this.setState({
+        data: nextProps.initialJeans
+      })
+    }
+  },
   render: function() {
-    console.log(this.props, "showcase state")
-    var arr = [];
-    this.state.data.forEach(function(data, index) {
-      data.index = index;
-      arr.push(data);
-    })
+
     return (
       <GridSystem
-        history={this.props.history}
-        initialJeans={arr}
+        router={this.props.router}
+        initialJeans={this.state.data}
         dropZone={function(e, id) {this.dropZone(e, id)}.bind(this)}
         borderHover={function(e, style, id) {this.borderHover(e, style, id)}.bind(this)}
         addItem={function(d) {this.onAddItem(d)}.bind(this)}
@@ -1440,17 +1550,6 @@ function ProductPage(props) {
   }
   return(
   <div style={{paddingTop: 70 + "px", paddingBottom: 70 + "px"}}>
-  <div className="section product-header">
-    <div className="container">
-      <div className="columns">
-        <div className="column">
-          <span className="title is-3">Product Name</span>
-          <span className="title is-3 has-text-muted">&nbsp;|&nbsp;</span>
-          <span className="title is-4 has-text-muted">Category</span>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <div className="section">
     <div className="container">
@@ -1560,6 +1659,7 @@ function ProductPage(props) {
 
 }
 
+
 function SideNav(props) {
   window.addEventListener('mouseup', function(event){
     var sidenav = document.getElementById('mySidenav');
@@ -1571,7 +1671,9 @@ function SideNav(props) {
   return (
     <div id="mySidenav" className="sidenav">
       <a href="javascript:void(0)" className="closebtn" onClick={props.closeNav}>&times;</a>
-      <Link to="/">Shop</Link>
+      <Link to="/home">Home</Link>
+      <Link to="/jeans">Jeans</Link>
+      <Link to="/shirts">Shirts</Link>
     </div>
   );
 }
@@ -1589,21 +1691,34 @@ var MainApp = React.createClass({
     })
   },
   getAuth: function(authData) {
-    if(authData.auth && authData.admin) {
+    console.log(authData)
+    if(authData.id && authData.admin) {
       this.setState({
         loggedIn: true,
-        admin: true
+        admin: true,
+        authID: authData.id
       })
-    } else if(authData.auth) {
+    } else if(authData.id) {
         this.setState({
-          loggedIn: true
+          loggedIn: true,
+          authID: authData.id
         })
     }
 
   },
+  onLogout: function() {
+    this.setState({
+      loggedIn: false,
+      admin: null,
+      authID: null
+    })
+  },
   getInitialState: function() {
     return {
       jeans: this.props.initialJeans,
+      users: this.props.initialUsers,
+      admins: this.props.initialAdmins,
+      shirts: this.props.initialShirts,
       columns: 4
     }
   },
@@ -1620,17 +1735,24 @@ var MainApp = React.createClass({
     return (
       <HashRouter>
         <div id="main">
-          <Navbar openNav={this.openNav} users={this.props.initialUsers} admins={this.props.initialAdmins} getAuth={function(a) {this.getAuth(a)}.bind(this)} loggedIn={this.state.loggedIn} admin={this.state.admin}/>
+          <Navbar openNav={this.openNav} users={this.props.initialUsers} logout={this.onLogout} accountID={this.state.authID} admins={this.state.admins} getAuth={function(a) {this.getAuth(a)}.bind(this)} loggedIn={this.state.loggedIn} admin={this.state.admin}/>
 
           <SideNav
             closeNav={this.closeNav}
             openNav={this.openNav}
             />
-
             <div className="jar">
-              <Route exact path="/" render={function({history}) {return (<ShowCase initialJeans={this.state.jeans} updateParent={function(n) {this.update(n)}.bind(this)} history={history} loggedIn={this.state.loggedIn} columns={this.state.columns} admin={this.state.admin} getColumns={function(c) {this.getColumns(c)}.bind(this)} />)}.bind(this)} />
-              <Route path="/product/:id" render={function({match}) {return (<ProductPage initialJeans={this.state.jeans} match={match}/>)}.bind(this)} />
-              <Route path="/cart" component={cart} />
+              <Switch>
+                <Route exact path="/" render={function() {return (<Redirect to="/jeans" />)}} />
+                <Route path="/account/:id" render={function({match}) {return(<Account accountID={this.state.authID} users={this.state.users} match={match}/>)}.bind(this)}/>
+                <Route path="/admin/:id" render={function({match}) {return(<Account accountID={this.state.authID} users={this.state.admins} match={match}/>)}.bind(this)}/>
+                <Route exact path="/jeans" render={function(router) {return (<ShowCase initialJeans={this.state.jeans} updateParent={function(n) {this.update(n)}.bind(this)} router={router} loggedIn={this.state.loggedIn} columns={this.state.columns} admin={this.state.admin} getColumns={function(c) {this.getColumns(c)}.bind(this)} />)}.bind(this)} />
+                <Route path="/jeans/:id" render={function({match}) {return (<ProductPage initialJeans={this.state.jeans} match={match}/>)}.bind(this)} />
+                <Route exact path='/shirts' render={function(router) {return (<ShowCase initialJeans={this.state.shirts} updateParent={function(n) {this.update(n)}.bind(this)} router={router} loggedIn={this.state.loggedIn} columns={this.state.columns} admin={this.state.admin} getColumns={function(c) {this.getColumns(c)}.bind(this)} />)}.bind(this)} />
+                <Route path="/shirts/:id" render={function({match}) {return (<ProductPage initialJeans={this.state.shirts} match={match}/>)}.bind(this)} />
+                <Route path="/cart" component={Account} />
+                <Route component={NotFound} />
+              </Switch>
             </div>
 
         </div>
@@ -1640,15 +1762,74 @@ var MainApp = React.createClass({
   }
 })
 
-function cart() {
+function NotFound() {
+  return(
+    <div className="columns">
+      <div className="column is-vcentered has-text-centered">
+      <div style={{marginTop: 20 + "%"}}>
+        <i className="fa fa-exclamation-triangle fa-5x"></i>
+        <h1>404 Not Found</h1>
+      </div>
+      </div>
+    </div>
+  )
+}
+function Account(props) {
+    if(props.accountID != undefined) {
+      if(props.accountID == props.match.params.id) {
+        for(var index in props.users) {
+          if(props.users[index].id == props.accountID) {
+            var user = props.users[index];
+          }
+        }
+      }
+    }
+  return(
+    <div className="column is-6 is-offset-3">
+      <div className="card">
+        <div className="card-header">
+          <div className="card-header-title"> Account Info </div>
+        </div>
+        <div className="card-content">
+          <div className="content">
+            <table>
+              <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>User Name</th>
+                <th>email</th>
+              </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{user.id}</td>
+                  <td>{user.name}</td>
+                  <td>{user.userName}</td>
+                  <td>{user.email}</td>
+                </tr>
+              </tbody>
+            </table>
+            <br/>
+          </div>
+        </div>
+    </div>
+  </div>
+  )
+}
+
+
+function Cart() {
   return(
     <div>
       <h1>this is cart</h1>
     </div>
   )
 }
+
+
 // <ShowCase initialJeans={this.props.initialJeans} />
-ReactDOM.render(<MainApp initialJeans={JEANS} initialUsers={USERS} initialAdmins={ADMINS}/>, document.getElementById("root"));
+ReactDOM.render(<MainApp initialJeans={JEANS} initialUsers={USERS} initialAdmins={ADMINS} initialShirts={SHIRTS}/>, document.getElementById("root"));
 /***********************************************************/
 // propTypes: {
 //   initialJeans: React.PropTypes.arrayOf(React.PropTypes.shape({

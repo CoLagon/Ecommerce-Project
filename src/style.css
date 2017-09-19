@@ -9,9 +9,9 @@ body {
   margin: 0;
   transition: background-color .5s;
 }
-img {
+/*img {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
+}*/
 button {
   width: 66.06px;
 }
@@ -21,7 +21,9 @@ button {
   position: absolute;
   z-index: 9999;
 }
-
+.card-cardi {
+  padding: 5px;
+}
 .jar {
   padding: 12px 0;
 }
@@ -46,7 +48,7 @@ button {
   cursor: pointer;
 }
 
-#box-dash {
+.box-dash {
   margin: 0;
   height: 100%;
   width: 100%;
@@ -90,13 +92,10 @@ a.round-button > i.fa {
   right: 10px;
   top: 7px;
 }
-#test {
-  background-color: green;
-  width: 100%;
-  background: green;
-  border: 2px solid green;
-  background-image: URL("https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Macaca_sinica_-_01.jpg/1200px-Macaca_sinica_-_01.jpg");
+.card-image > .image > img:hover {
+  cursor: pointer;
 }
+
 .column {
   position: relative;
 }
