@@ -111,6 +111,16 @@ var SHIRTS = [
     description: "grey button up short sleeve shirt casual wear",
     price: "$20.00",
     id: 1
+  },
+  {
+    SKU: 2354,
+    title: "GREY BUTTON DOWN",
+    color: "grey",
+    sizes: ["small", "medium", "large"],
+    image: ["https://slimages.macysassets.com/is/image/MCY/products/8/optimized/8069758_fpx.tif?op_sharpen=1&wid=400&hei=489&fit=fit,1&$filterlrg$"],
+    description: "grey button up short sleeve shirt casual wear",
+    price: "$20.00",
+    id: 2
   }
 ]
 var USERS = [
@@ -145,7 +155,7 @@ var ADMINS = [
 function ProductFrame1(props) {
   return (
     <div className={"column is-" + props.imageWidth + ""}>
-    {props.admin ? <a className="round-button red" onClick={function() {console.log(props.index); props.deleteItem(props.index)}}><i className="fa fa-close"></i></a> : null}
+    {props.admin ? <a className="round-button red" onClick={function() {props.deleteItem(props.index,  props.router.match.path)}}><i className="fa fa-close"></i></a> : null}
       <div className="card">
           <div className="card-image">
             <figure className="image is-2by3">
@@ -155,7 +165,7 @@ function ProductFrame1(props) {
                      onMouseOut={props.onToDefault}
                      onDragOver={function(event) {props.borderHover(event, "inset 0 1px 1px rgba(0,0,0, 0.5), 0 0 50px rgb(113,253,38)", event.target.id); event.preventDefault();}}
                      onDragLeave={function(event) {props.borderHover(event, "none");}}
-                     onDrop={function(event) {props.dropZone(event); props.borderHover(event, "none");}}
+                     onDrop={function(event) {props.dropZone(event, props.router.match.path); props.borderHover(event, "none");}}
                      onDragStart={function(event) {event.dataTransfer.setData("text", event.target.id); props.borderHover(event);}}
                      onClick={props.imageClick}
                      draggable="true"
@@ -181,7 +191,7 @@ function ProductFrame1(props) {
 function ProductFrame2(props) {
   return (
     <div className={"column is-" + props.imageWidth + ""}>
-    {props.admin ? <a className="round-button red" onClick={function() {console.log(props.index); props.deleteItem(props.index)}}><i className="fa fa-close"></i></a> : null}
+    {props.admin ? <a className="round-button red" onClick={function() {props.deleteItem(props.index,  props.router.match.path)}}><i className="fa fa-close"></i></a> : null}
       <div className="card">
           <div className="card-image">
             <figure className="image is-2by3">
@@ -191,7 +201,7 @@ function ProductFrame2(props) {
                      onMouseOut={props.onToDefault}
                      onDragOver={function(event) {props.borderHover(event, "inset 0 1px 1px rgba(0,0,0, 0.5), 0 0 50px rgb(113,253,38)", event.target.id); event.preventDefault();}}
                      onDragLeave={function(event) {props.borderHover(event, "none");}}
-                     onDrop={function(event) {props.dropZone(event); props.borderHover(event, "none");}}
+                     onDrop={function(event) {props.dropZone(event, props.router.match.path); props.borderHover(event, "none");}}
                      onDragStart={function(event) {event.dataTransfer.setData("text", event.target.id); props.borderHover(event);}}
                      onClick={props.imageClick}
                      draggable="true"
@@ -227,9 +237,6 @@ var AddProductModal = React.createClass({
       }
     },
     onFileUpload: function(id) {
-      // document.getElementById('file').addEventListener('change', readURL, true);
-      // console.log(document.getElementById(id));
-      console.log(id)
       if(document.getElementById(id).id === "urlUpload") {
         var image = new Image();
         image.src = document.getElementById(id).value;
@@ -241,7 +248,6 @@ var AddProductModal = React.createClass({
 
       } else if(document.getElementById(id).id === "file"){
         var files = document.getElementById(id).files;
-        console.log(files);
         // loop through files
         var parent = this;
         for (var i = 0; i < files.length; i++) {
@@ -261,8 +267,6 @@ var AddProductModal = React.createClass({
               }
           })(files[i], parent)
         }
-      } else {
-        console.error("something went terribly wrong")
       }
 
     },
@@ -631,8 +635,6 @@ var Navbar = React.createClass({
   },
   handleSubmit: function(event) {
     event.preventDefault();
-    console.log(this.userName.value);
-    console.log(this.password.value);
     for(var prop in this.props.users) {
       if(this.props.users.hasOwnProperty(prop)) {
         var key = this.props.users[prop];
@@ -652,23 +654,18 @@ var Navbar = React.createClass({
       }
     }
 
-console.log(this.props.admins, "have admins")
+
     for(var prop in this.props.admins) {
       if(this.props.admins.hasOwnProperty(prop)) {
         var key = this.props.admins[prop];
-        console.log(key, "got key")
         for(var value in key) {
           if(key.hasOwnProperty(value)){
 
             if(this.password.value === key[value]) {
-              console.log("passwords match")
               var adminPassword = key[value];
-              console.log(key.id)
             }
              if(this.userName.value === key[value]) {
-               console.log("userNames match")
               var adminUser = key[value];
-              console.log(key.id)
             }
             if(adminUser && adminPassword) {
               var id = key.id;
@@ -677,7 +674,6 @@ console.log(this.props.admins, "have admins")
         }
       }
     }
-console.log(adminUser, adminPassword)
     if(password && userName) {
       this.setState({
         loggedIn: true,
@@ -813,12 +809,9 @@ var BoxDash = React.createClass({
       this.setState({
         factor: factor
       })
-    } else {
-      console.warn("modalToggle requires the passed parameter to be of type string")
     }
   },
   render: function() {
-    console.log(this.props.router.match.path, "boxdash url bitch")
     if(this.props.factor) {
       return (
         <div className="columns is-vcentered">
@@ -882,11 +875,9 @@ var DisplayImage = React.createClass({
   },
   onImageClick: function() {
     clearTimeout(this.Timeout);
-    console.log(this.props.router.match, "this is match")
     let id = this.props.id;
     let path = "" + this.props.router.match.path + "/" + id + "";
 
-    console.log(path);
     //es2015 use
     // let path = '/products/${id}'
     // let path = '/jeans/' + id + '';
@@ -941,6 +932,7 @@ var DisplayImage = React.createClass({
      if (this.props.id > this.props.len - this.props.remainder) {
         return (
           <ProductFrame2
+            router={this.props.router}
             imageClick={this.onImageClick}
             admin={this.props.admin}
             deleteItem={this.props.deleteItem}
@@ -963,6 +955,7 @@ var DisplayImage = React.createClass({
       } else {
         return (
           <ProductFrame1
+            router={this.props.router}
             imageClick={this.onImageClick}
             admin={this.props.admin}
             deleteItem={this.props.deleteItem}
@@ -1082,7 +1075,6 @@ var ExtractObjects = React.createClass({
 var GridSystem = React.createClass({
   componentWillReceiveProps: function(a) {
     var len = a.initialJeans.length;
-    console.log(len, "length")
     var arrOfObj = []
     var rem = len % a.columns;
     var rows = len / a.columns;
@@ -1245,7 +1237,6 @@ var GridSystem = React.createClass({
         <div className="container">
           {this.state.array.map(function(objects, index) {
             if(this.props.admin) {
-              console.log()
               if(this.state.arrLen - 1 === 0) {
                 if(index === 0 && this.state.factor === false) {
                   return ([
@@ -1264,6 +1255,7 @@ var GridSystem = React.createClass({
                             columns={this.state.columns}
                             imageWidth={this.state.imageWidth}
                             rows={this.state.rows}
+                            addItem={this.props.addItem}
                             factor={true}
                             />
                           ])
@@ -1295,6 +1287,7 @@ var GridSystem = React.createClass({
                   return (
                     <ExtractObjects
                             router={this.props.router}
+                            addItem={this.props.addItem}
                             deleteItem={this.props.deleteItem}
                             dropZone={this.props.dropZone}
                             borderHover={this.props.borderHover}
@@ -1451,96 +1444,6 @@ var nextID = 10;
 */
 
 
-var ShowCase = React.createClass({
-  onAddItem: function(data) {
-    var nextState = [...this.props.initialJeans];
-    data.id = nextID;
-    nextState.push(data);
-
-    this.setState({
-      data: nextState,
-    })
-    this.props.updateParent(nextState);
-    nextID += 1;
-  },
-  onDeleteItem: function(data) {
-    var nextState = [...this.props.initialJeans];
-    nextState.splice(data, 1);
-
-    this.setState({
-      data: nextState
-    })
-    this.props.updateParent(nextState);
-  },
-  borderHover: function(e, style) {
-    myArr.push(e.target.id)
-      if(myArr[0] == e.target.id && e.type == "dragover") {
-        e.target.style.boxShadow = "inset 0 1px 1px rgba(0,0,0, 0.5), 0 0 50px rgb(66, 134, 244)";
-      } else if(e.type == "drop") {
-        e.target.style.boxShadow = "none"
-        console.log(myArr, "myArr")
-        myArr = [];
-      } else {
-        e.target.style.boxShadow = style;
-      }
-
-  },
-  dropZone: function(e) {
-    var nextState = [...this.props.initialJeans];
-    var cell = e.target;
-    console.log(cell);
-    var cellWidth = cell.clientWidth;
-    var coordinates = cell.getBoundingClientRect();
-    var x = e.pageX - coordinates.left;
-    var dataID = e.dataTransfer.getData("text");
-
-    if(dataID != e.target.id) {
-      if( x < cellWidth/2) {
-        nextState.splice(e.target.id, 0, nextState.splice(nextState[dataID].index, 1)[0])
-      } else {
-        nextState.splice(e.target.id, 0, nextState.splice(nextState[dataID].index, 1)[0])
-      }
-    }
-
-    this.props.updateParent(nextState);
-    this.setState({
-      data: nextState,
-      arr: []
-    })
-  },
-
-  getInitialState: function() {
-    var copy = [...this.props.initialJeans];
-    return {
-      data: copy
-    }
-  },
-  componentWillReceiveProps: function(nextProps) {
-    if(nextProps.initialJeans) {
-      this.setState({
-        data: nextProps.initialJeans
-      })
-    }
-  },
-  render: function() {
-
-    return (
-      <GridSystem
-        router={this.props.router}
-        initialJeans={this.state.data}
-        dropZone={function(e, id) {this.dropZone(e, id)}.bind(this)}
-        borderHover={function(e, style, id) {this.borderHover(e, style, id)}.bind(this)}
-        addItem={function(d) {this.onAddItem(d)}.bind(this)}
-        deleteItem={function(data) {this.onDeleteItem(data)}.bind(this)}
-        admin={this.props.admin}
-        loggedIn={this.props.loggedIn}
-        getColumns={this.props.getColumns}
-        columns={this.props.columns}
-        />
-    )
-  }
-})
-
 
 function ProductPage(props) {
   for(var index in props.initialJeans) {
@@ -1677,13 +1580,119 @@ function SideNav(props) {
     </div>
   );
 }
+var ShowCase = React.createClass({
+  onAddItem: function(data, path) {
+    var nextState = [...this.state.data];
+    data.id = nextID;
+    data.index = 8;
+    nextState.push(data);
+
+    var arr = [];
+    nextState.forEach(function(data, index) {
+      data.index = index;
+      arr.push(data);
+    });
+    this.props.updateParent(nextState, path);
+    this.setState({
+      data: arr,
+    })
+
+    nextID += 1;
+  },
+  onDeleteItem: function(data, path) {
+    var nextState = [...this.state.data];
+    nextState.splice(data, 1);
+
+    this.setState({
+      data: nextState
+    })
+    this.props.updateParent(nextState, path);
+  },
+  borderHover: function(e, style) {
+    myArr.push(e.target.id)
+      if(myArr[0] == e.target.id && e.type == "dragover") {
+        e.target.style.boxShadow = "inset 0 1px 1px rgba(0,0,0, 0.5), 0 0 50px rgb(66, 134, 244)";
+      } else if(e.type == "drop") {
+        e.target.style.boxShadow = "none"
+        myArr = [];
+      } else {
+        e.target.style.boxShadow = style;
+      }
+
+  },
+  dropZone: function(e, path) {
+    var nextState = [...this.state.data];
+    var cell = e.target;
+    var cellWidth = cell.clientWidth;
+    var coordinates = cell.getBoundingClientRect();
+    var x = e.pageX - coordinates.left;
+    var dataID = e.dataTransfer.getData("text");
+
+    if(dataID != e.target.id) {
+      if( x < cellWidth/2) {
+        nextState.splice(e.target.id, 0, nextState.splice(nextState[dataID].index, 1)[0])
+      } else {
+        nextState.splice(e.target.id, 0, nextState.splice(nextState[dataID].index, 1)[0])
+      }
+    }
+
+    this.props.updateParent(nextState, path);
+    this.setState({
+      data: nextState
+    })
+  },
+  getInitialState: function() {
+    return {
+      data: [...this.props.initialJeans]
+    }
+  },
+  render: function() {
+    var arr = [];
+    this.state.data.forEach(function(data, index) {
+      data.index = index;
+      arr.push(data);
+    });
+    return (
+      <GridSystem
+        router={this.props.router}
+        initialJeans={arr}
+        dropZone={function(e, p) {this.dropZone(e, p)}.bind(this)}
+        borderHover={function(e, style, id) {this.borderHover(e, style, id)}.bind(this)}
+        addItem={function(d, p) {this.onAddItem(d, p)}.bind(this)}
+        deleteItem={function(d, p) {this.onDeleteItem(d, p)}.bind(this)}
+        admin={this.props.admin}
+        loggedIn={this.props.loggedIn}
+        getColumns={this.props.getColumns}
+        columns={this.props.columns}
+        />
+    )
+  }
+})
+
 
 
 var MainApp = React.createClass({
-  update: function(nextState) {
-    this.setState({
-      jeans: nextState
-    })
+  update: function(nextState, path) {
+    var start_pos = path.indexOf("/") + 1;
+    var end_pos = path.length;
+    var prop = path.substring(start_pos, end_pos);
+    if(prop === "jeans") {
+      this.setState({
+        products: {
+          [prop]: nextState,
+          shirts: this.state.products.shirts
+        }
+      })
+    }
+    if(prop === "shirts") {
+      this.setState({
+        products: {
+          [prop]: nextState,
+          jeans: this.state.products.jeans
+        }
+      })
+    }
+
   },
   getColumns: function(columns) {
     this.setState({
@@ -1691,7 +1700,6 @@ var MainApp = React.createClass({
     })
   },
   getAuth: function(authData) {
-    console.log(authData)
     if(authData.id && authData.admin) {
       this.setState({
         loggedIn: true,
@@ -1715,11 +1723,15 @@ var MainApp = React.createClass({
   },
   getInitialState: function() {
     return {
-      jeans: this.props.initialJeans,
+
       users: this.props.initialUsers,
       admins: this.props.initialAdmins,
-      shirts: this.props.initialShirts,
-      columns: 4
+      columns: 4,
+      products: {
+        shirts: this.props.initialShirts,
+        jeans: this.props.initialJeans
+      }
+
     }
   },
   openNav: function() {
@@ -1731,7 +1743,13 @@ var MainApp = React.createClass({
     document.getElementById("main").style.marginLeft= "0";
   },
   render: function() {
-    console.log(this.state, "main app state")
+
+    // for(var key in this.state.products) {
+    //   console.log(key, " this is the key")
+    //   console.log(this.state.products[key])
+    // }
+    var routes = ["shirts", "jeans"];
+    console.log(this.state);
     return (
       <HashRouter>
         <div id="main">
@@ -1743,13 +1761,19 @@ var MainApp = React.createClass({
             />
             <div className="jar">
               <Switch>
+
+
+              {routes.map(function(data, index) {
+                return ([
+                  <Route exact path={"/" + data + ""} key={index} render={function(router) {return (<ShowCase initialJeans={this.state.products[data]} updateParent={function(n,p) {this.update(n,p)}.bind(this)} router={router} loggedIn={this.state.loggedIn} columns={this.state.columns} admin={this.state.admin} getColumns={function(c) {this.getColumns(c)}.bind(this)} />)}.bind(this)} />,
+                  <Route path={"/" + data + "/:id"} render={function({match}) {return (<ProductPage initialJeans={this.state.products[data]} match={match}/>)}.bind(this)} />
+                ])
+              }.bind(this))}
+
                 <Route exact path="/" render={function() {return (<Redirect to="/jeans" />)}} />
                 <Route path="/account/:id" render={function({match}) {return(<Account accountID={this.state.authID} users={this.state.users} match={match}/>)}.bind(this)}/>
                 <Route path="/admin/:id" render={function({match}) {return(<Account accountID={this.state.authID} users={this.state.admins} match={match}/>)}.bind(this)}/>
-                <Route exact path="/jeans" render={function(router) {return (<ShowCase initialJeans={this.state.jeans} updateParent={function(n) {this.update(n)}.bind(this)} router={router} loggedIn={this.state.loggedIn} columns={this.state.columns} admin={this.state.admin} getColumns={function(c) {this.getColumns(c)}.bind(this)} />)}.bind(this)} />
-                <Route path="/jeans/:id" render={function({match}) {return (<ProductPage initialJeans={this.state.jeans} match={match}/>)}.bind(this)} />
-                <Route exact path='/shirts' render={function(router) {return (<ShowCase initialJeans={this.state.shirts} updateParent={function(n) {this.update(n)}.bind(this)} router={router} loggedIn={this.state.loggedIn} columns={this.state.columns} admin={this.state.admin} getColumns={function(c) {this.getColumns(c)}.bind(this)} />)}.bind(this)} />
-                <Route path="/shirts/:id" render={function({match}) {return (<ProductPage initialJeans={this.state.shirts} match={match}/>)}.bind(this)} />
+
                 <Route path="/cart" component={Account} />
                 <Route component={NotFound} />
               </Switch>
@@ -1761,6 +1785,15 @@ var MainApp = React.createClass({
     )
   }
 })
+
+                //
+                // <Route exact path='/jeans' render={function(router) {return (<ShowCase initialJeans={this.state.products.jeans} updateParent={function(n) {this.update(n)}.bind(this)} router={router} loggedIn={this.state.loggedIn} columns={this.state.columns} admin={this.state.admin} getColumns={function(c) {this.getColumns(c)}.bind(this)} />)}.bind(this)} />
+                // <Route path="/jeans/:id" render={function({match}) {return (<ProductPage initialJeans={this.state.products.jeans} match={match}/>)}.bind(this)} />
+                //
+                // <Route exact path='/shirts' render={function(router) {return (<ShowCase initialJeans={this.state.products.shirts} updateParent={function(n) {this.update(n)}.bind(this)} router={router} loggedIn={this.state.loggedIn} columns={this.state.columns} admin={this.state.admin} getColumns={function(c) {this.getColumns(c)}.bind(this)} />)}.bind(this)} />
+                // <Route path="/shirts/:id" render={function({match}) {return (<ProductPage initialJeans={this.state.products.shirts} match={match}/>)}.bind(this)} />
+
+
 
 function NotFound() {
   return(
