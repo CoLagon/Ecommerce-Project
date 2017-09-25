@@ -12,25 +12,24 @@ body {
 /*img {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }*/
-button {
-  width: 66.06px;
-}
- /*dropdown basic */
 .dropdown {
-  display: block;
+  box-shadow: 0 0 8px #777;
+  display: none;
+  left: 0;
   position: absolute;
-  z-index: 9999;
+  top: 100%;
+  z-index: 2;
+  background-color: #fff;
 }
-.card-cardi {
-  padding: 5px;
+
+.dropdown.is-open {
+  display: block;
 }
-.jar {
-  padding: 12px 0;
+.dropdown.is-closed {
+  display: none;
 }
- /*dropdown optional styling */
-.dropdown li:hover {
-  background-color: #aaa;
-  cursor: pointer;
+.is-turqoise {
+  color: hsl(171, 100%, 41%);
 }
 .theme-green {
   background-color: #71fd26;
@@ -47,7 +46,11 @@ button {
 .fa-plus-circle:hover {
   cursor: pointer;
 }
-
+.verticalLine {
+  border-left: thin solid #fff;
+  margin-right: 15px;
+  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+}
 .box-dash {
   margin: 0;
   height: 100%;

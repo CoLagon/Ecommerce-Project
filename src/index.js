@@ -18,7 +18,39 @@ var JEANS = [
       sizes: [ 28, 30, 32 ],
       image: ["https://cdn.shopify.com/s/files/1/0452/6221/products/rustic-dime-saint-vernon-taper-fit-1_1024x1024-1_1024x1024.jpg?v=1492608261%22", "https://cdn.shopify.com/s/files/1/0452/6221/products/rustic-dime-saint-vernon-taper-fit-2_1024x1024.jpg?v=1492608262"],
       description: "Our Saint Vernon Taper Fit denim features distressed and tattered details. Each pair is hand cut and sanded for a unique look. 100% cotton bleached american denim. Made in Los Angeles.",
-      price: "30.00",
+      price: "$30.00",
+      reviews: [
+        {
+          user: "Cole Logan",
+          review: "Great jeans, not the quality I expected but it's a nice addition to my wardrobe",
+          stars: 4
+        },
+        {
+          user: "George Hennon",
+          review: "Hate them! :(",
+          stars: 1
+        },
+        {
+          user: "Abraham Lincoln",
+          review: "I love these jeans! Great quality and style. I love dem",
+          stars: 5
+        },
+        {
+          user: "21 Savage",
+          review: "issa nice piece of denim",
+          stars: 5
+        },
+        {
+          user: "Post Malone",
+          review: "I wanna flex with these",
+          stars: 4
+        },
+        {
+          user: "Steve Jobs",
+          review: "could be better, you need to see the vision",
+          stars: 2
+        }
+      ],
       id: 1
     },
     {
@@ -29,7 +61,7 @@ var JEANS = [
       sizes: [ 28, 30, 32 ],
       image: ["https://cdn.shopify.com/s/files/1/0452/6221/products/105black_1024x1024.jpg?v=1492608011", "https://cdn.shopify.com/s/files/1/0452/6221/products/105black_b_1024x1024.jpg?v=1492608012","https://cdn.shopify.com/s/files/1/0452/6221/products/105black_c_1024x1024.jpg?v=1492608013"],
       description: "Our new Biker Denim features quality denim with a special knee design and hand shredding, and distressed details that are unique to each piece. 98% Cotton / 2% Spandex. Made in Los Angeles, CA.",
-      price: "30.00",
+      price: "$30.00",
       id: 2
     },
     {
@@ -40,7 +72,7 @@ var JEANS = [
       sizes: [ 30, 32, 34 ],
       image: ["https://cdn.shopify.com/s/files/1/0452/6221/products/rustic-dime-shredded-biker-4_1024x1024.jpg?v=1492608318"],
       description: "Get a stylish street look loaded with comfort with the new Biker Black Shredded jeans from Rustic Dime. A stylish tapered fit will have you looking your best in the black colorway that features custom knee panels and hand cut tears on the front for a shredded look and a cotton-spandex construction for a comfortable fit with plenty of stretch.",
-      price: "30.00",
+      price: "$30.00",
       id: 3
     },
     {
@@ -51,7 +83,7 @@ var JEANS = [
       sizes: [ 28, 30, 32 ],
       image: ["https://cdn.shopify.com/s/files/1/0452/6221/products/rustic-dime-saint-vernon-taper-fit-1_1024x1024-1_1024x1024.jpg?v=1492608261%22", "https://cdn.shopify.com/s/files/1/0452/6221/products/rustic-dime-saint-vernon-taper-fit-2_1024x1024.jpg?v=1492608262"],
       description: "Our Saint Vernon Taper Fit denim features distressed and tattered details. Each pair is hand cut and sanded for a unique look. 100% cotton bleached american denim. Made in Los Angeles.",
-      price: "30.00",
+      price: "$30.00",
       id: 4
     },
     {
@@ -62,7 +94,7 @@ var JEANS = [
       sizes: [ 28, 30, 32 ],
       image: ["https://cdn.shopify.com/s/files/1/0452/6221/products/105black_1024x1024.jpg?v=1492608011", "https://cdn.shopify.com/s/files/1/0452/6221/products/105black_b_1024x1024.jpg?v=1492608012","https://cdn.shopify.com/s/files/1/0452/6221/products/105black_c_1024x1024.jpg?v=1492608013"],
       description: "Our new Biker Denim features quality denim with a special knee design and hand shredding, and distressed details that are unique to each piece. 98% Cotton / 2% Spandex. Made in Los Angeles, CA.",
-      price: "30.00",
+      price: "$30.00",
       id: 5
     },
     {
@@ -73,7 +105,7 @@ var JEANS = [
       sizes: [ 28, 30, 32 ],
       image: ["https://cdn.shopify.com/s/files/1/0452/6221/products/rustic-dime-saint-vernon-taper-fit-1_1024x1024-1_1024x1024.jpg?v=1492608261%22", "https://cdn.shopify.com/s/files/1/0452/6221/products/rustic-dime-saint-vernon-taper-fit-2_1024x1024.jpg?v=1492608262"],
       description: "Our Saint Vernon Taper Fit denim features distressed and tattered details. Each pair is hand cut and sanded for a unique look. 100% cotton bleached american denim. Made in Los Angeles.",
-      price: "30.00",
+      price: "$30.00",
       id: 6
     },
     {
@@ -84,7 +116,7 @@ var JEANS = [
       sizes: [ 28, 30, 32 ],
       image: ["https://cdn.shopify.com/s/files/1/0452/6221/products/105black_1024x1024.jpg?v=1492608011", "https://cdn.shopify.com/s/files/1/0452/6221/products/105black_b_1024x1024.jpg?v=1492608012","https://cdn.shopify.com/s/files/1/0452/6221/products/105black_c_1024x1024.jpg?v=1492608013"],
       description: "Our new Biker Denim features quality denim with a special knee design and hand shredding, and distressed details that are unique to each piece. 98% Cotton / 2% Spandex. Made in Los Angeles, CA.",
-      price: "30.00",
+      price: "$30.00",
       id: 7
     },
     {
@@ -95,7 +127,7 @@ var JEANS = [
       sizes: [ 28, 30, 32 ],
       image: ["https://cdn.shopify.com/s/files/1/0452/6221/products/rustic-dime-saint-vernon-taper-fit-1_1024x1024-1_1024x1024.jpg?v=1492608261%22", "https://cdn.shopify.com/s/files/1/0452/6221/products/rustic-dime-saint-vernon-taper-fit-2_1024x1024.jpg?v=1492608262"],
       description: "Our Saint Vernon Taper Fit denim features distressed and tattered details. Each pair is hand cut and sanded for a unique look. 100% cotton bleached american denim. Made in Los Angeles.",
-      price: "30.00",
+      price: "$30.00",
       id: 8
     }
 ];
@@ -104,28 +136,38 @@ var JEANS = [
 var SHIRTS = [
   {
     SKU: 2354,
-    title: "GREY BUTTON UP",
-    color: "grey",
+    title: "BLUE BUTTON UP",
+    color: "blue",
     sizes: ["small", "medium", "large"],
-    image: ["https://slimages.macysassets.com/is/image/MCY/products/8/optimized/8069758_fpx.tif?op_sharpen=1&wid=400&hei=489&fit=fit,1&$filterlrg$"],
-    description: "grey button up short sleeve shirt casual wear",
+    image: ["http://oldnavy.gap.com/webcontent/0013/692/910/cn13692910.jpg"],
+    description: "blue button up short sleeve shirt casual wear",
     price: "$20.00",
     id: 1
   },
   {
     SKU: 2354,
-    title: "GREY BUTTON DOWN",
-    color: "grey",
+    title: "PLAID BUTTON UP",
+    color: "blue",
     sizes: ["small", "medium", "large"],
-    image: ["https://slimages.macysassets.com/is/image/MCY/products/8/optimized/8069758_fpx.tif?op_sharpen=1&wid=400&hei=489&fit=fit,1&$filterlrg$"],
-    description: "grey button up short sleeve shirt casual wear",
+    image: ["http://oldnavy.gap.com/webcontent/0013/996/066/cn13996066.jpg"],
+    description: "plaid button up short sleeve shirt casual wear",
     price: "$20.00",
     id: 2
+  },
+  {
+    SKU: 2354,
+    title: "DOTTED BUTTON UP",
+    color: "red",
+    sizes: ["small", "medium", "large"],
+    image: ["http://oldnavy.gap.com/webcontent/0013/648/384/cn13648384.jpg"],
+    description: "red button up short sleeve shirt casual wear",
+    price: "$20.00",
+    id: 3
   }
 ]
 var USERS = [
   {
-    name: "cole logan",
+    name: "John Doe",
     userName: "user1",
     email: "colelogan19@yahoo.com",
     address: "123 sesame street",
@@ -136,7 +178,7 @@ var USERS = [
 
 var ADMINS = [
   {
-    name: "george hennon",
+    name: "Santa Clause",
     userName: "admin1",
     email: "admin@gmail.com",
     address: null,
@@ -276,8 +318,9 @@ var AddProductModal = React.createClass({
       this.state.data.title = document.getElementById("title").value;
       this.state.data.fit = document.getElementById("fit").value;
       this.state.data.color = "";
-      this.state.data.size = "";
+      this.state.data.sizes = "";
       this.state.data.image = this.state.image;
+      this.state.data.description = document.getElementById("textarea").value
 
       for(var i = 0; i < document.getElementsByName("color").length; i++) {
         if(document.getElementsByName("color")[i].checked) {
@@ -287,14 +330,20 @@ var AddProductModal = React.createClass({
       for(var i = 0; i < document.getElementsByClassName("checkbox").length; i++) {
         if(document.getElementsByClassName("checkbox")[i].checked) {
           sizeValues.push(document.getElementsByClassName("checkbox")[i].value)
-          this.state.data.size = sizeValues;
+          this.state.data.sizes = sizeValues;
         }
       }
 
-      if(this.state.data.sku && this.state.data.title && this.state.data.fit && this.state.data.color && this.state.data.size && this.state.data.image) {
+      if(this.state.data.sku && this.state.data.title && this.state.data.fit && this.state.data.color && this.state.data.sizes && this.state.data.image && this.state.data.description) {
         this.props.addItem(this.state.data, this.props.router.match.path);
         callback("is-inactive")
       } else {
+        if(document.getElementById("textarea").value == '') {
+          document.getElementById("description").setAttribute("class", "visible");
+        } else {
+          document.getElementById("description").setAttribute("class", "hidden");
+        }
+
         var inputs = document.getElementsByTagName('input');
           for(var i=0; i<inputs.length; i++){
             var type = inputs[i].getAttribute("type");
@@ -309,6 +358,8 @@ var AddProductModal = React.createClass({
             }
 
           }
+
+
 
             var loopRadio = function(j) {
               if(j < document.getElementsByName("color").length) {
@@ -356,6 +407,8 @@ var AddProductModal = React.createClass({
             }
           }
           toggleDialog(0)
+
+
       }
     },
     render: function() {
@@ -505,7 +558,7 @@ var AddProductModal = React.createClass({
                   <div id="fileImage"></div>
 
                   <div className="jar">
-                    <label className="label has-text-left">Description</label>
+                    <label className="label has-text-left">Description<span id="description" className="hidden"><i className="fa fa-asterisk Red"></i></span></label>
                     <textarea id="textarea" className="textarea"></textarea>
                   </div>
                 </div>
@@ -528,8 +581,8 @@ function EntryModal(props) {
     <div className="modal is-active">
       <div className="modal-background"></div>
       {props.loginModal ?
-        <LoginCard toggleModal={props.toggleModal} toggleOff={props.toggleOff} self={props.self} handleSubmit={props.handleSubmit}/> :
-        <RegisterCard toggleModal={props.toggleModal} toggleOn={props.toggleOn} self={props.self} handleSubmit={props.handleSubmit}/>}
+        <LoginCard toggleModal={props.toggleModal} error={props.error} clearError={props.clearError} toggleOff={props.toggleOff} self={props.self} handleSubmit={props.handleSubmit}/> :
+        <RegisterCard toggleModal={props.toggleModal} registerError={props.registerError} toggleOn={props.toggleOn} self={props.self} handleSubmit={props.handleSubmit} registerUser={props.registerUser}/>}
     </div>
   );
 }
@@ -539,7 +592,7 @@ function LoginCard(props) {
   <div className="modal-card">
     <header className="modal-card-head">
       <p className="modal-card-title">Log In</p>
-      <button className="delete" aria-label="close" onClick={props.toggleModal}></button>
+      <button className="delete" aria-label="close" onClick={function() {props.toggleModal(); props.clearError();}}></button>
     </header>
     <form onSubmit={props.handleSubmit}>
     <section className="modal-card-body">
@@ -560,12 +613,14 @@ function LoginCard(props) {
       <button className="button is-default">Cancel</button>
 
       <a onClick={props.toggleOff}>Register</a>
+      &nbsp; &nbsp;
+      <p className="Red">{props.error}</p>
     </footer>
     </form>
   </div>
   )
 }
-
+var userrID = 2;
 function RegisterCard(props) {
   return(
     <div className="modal-card">
@@ -573,7 +628,7 @@ function RegisterCard(props) {
         <p className="modal-card-title">Register</p>
         <button className="delete" aria-label="close" onClick={props.toggleModal}></button>
       </header>
-      <form onSubmit={props.handleSubmit}>
+      <form onSubmit={props.registerUser}>
       <section className="modal-card-body">
         <label className="label">Name</label>
         <p className="control">
@@ -587,7 +642,12 @@ function RegisterCard(props) {
         <p className="control">
           <input className="input" type="text" placeholder="jsmith@example.org" ref={function(input) {props.self.email = input}}/>
         </p>
+        <label className="label">Address</label>
+        <p className="control">
+          <input className="input" type="text" placeholder="123 Sesame Street" ref={function(input) {props.self.address = input}}/>
+        </p>
         <hr/>
+
         <label className="label">Password</label>
         <p className="control">
           <input className="input" type="password" placeholder="●●●●●●●" ref={function(input) {props.self.password = input}}/>
@@ -598,9 +658,11 @@ function RegisterCard(props) {
         </p>
       </section>
       <footer className="modal-card-foot">
-        <button className="button is-success">Register</button>
+        <button className="button is-success" onClick={props.registerUser}>Register</button>
         <button className="button is-default">Cancel</button>
         <a onClick={props.toggleOn}>Log In</a>
+        &nbsp; &nbsp;
+        <p className="Red">{props.registerError}</p>
       </footer>
       </form>
     </div>
@@ -630,8 +692,71 @@ var Navbar = React.createClass({
       loginModal: false
     })
   },
-  routeHandler: function() {
+  validateEmail: function(emailAddress) {
+    var pattern = new RegExp(/^(("[\w-+\s]+")|([\w-+]+(?:\.[\w-+]+)*)|("[\w-+\s]+")([\w-+]+(?:\.[\w-+]+)*))(@((?:[\w-+]+\.)*\w[\w-+]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][\d]\.|1[\d]{2}\.|[\d]{1,2}\.))((25[0-5]|2[0-4][\d]|1[\d]{2}|[\d]{1,2})\.){2}(25[0-5]|2[0-4][\d]|1[\d]{2}|[\d]{1,2})\]?$)/i);
+    return pattern.test(emailAddress);
+  },
+  registerUser: function() {
 
+    if(!this.validateEmail(this.email.value)) {
+      return this.setState({
+        registerError: "* Email is not an email"
+      })
+    }
+
+    if(this.password.value != this.confirmPassword.value) {
+      return this.setState({
+        registerError: "* Passwords do not match"
+      })
+    }
+
+
+    var user = {
+      name: this.name.value,
+      userName: this.userName.value,
+      email: this.email.value,
+      address: this.address.value,
+      passord: this.password.value,
+      id: userrID
+    }
+
+    this.props.addUser(user);
+    this.signIn(this.password.value, this.userName.value);
+    userrID += 1;
+
+  },
+  signIn: function(password, userName) {
+    for(var prop in this.props.users) {
+      if(this.props.users.hasOwnProperty(prop)) {
+        var key = this.props.users[prop];
+        for(var value in key) {
+          if(key.hasOwnProperty(value)){
+            if(password === key[value]) {
+              var password = key[value];
+            }
+             if(userName === key[value]) {
+              var userName = key[value];
+            }
+            if(userName && password) {
+              var id = key.id;
+            }
+          }
+        }
+      }
+    }
+
+    if(password && userName) {
+      this.props.getAuth({id: id})
+       this.setState({
+         factor: false,
+         error: null
+       })
+    }
+  },
+  clearError: function() {
+    this.setState({
+      error: null
+    })
   },
   handleSubmit: function(event) {
     event.preventDefault();
@@ -676,17 +801,20 @@ var Navbar = React.createClass({
     }
     if(password && userName) {
       this.setState({
-        loggedIn: true,
-        factor: false
+        factor: false,
+        error: null
       })
       this.props.getAuth({id: id})
-    }
-     if(adminUser && adminPassword) {
+    } else if(adminUser && adminPassword) {
        this.setState({
-         loggedIn: true,
-         factor: false
+         factor: false,
+         error: null
        })
       this.props.getAuth({id: id, admin: true})
+    } else {
+      this.setState({
+        error: "* The username or password is incorrect!"
+      })
     }
   },
   render: function() {
@@ -708,10 +836,60 @@ var Navbar = React.createClass({
             <span></span>
           </div>
         </div>
-        {this.state.factor ? <EntryModal toggleModal={this.toggleModal} loginModal={this.state.loginModal} toggleOff={this.offToggleCard} toggleOn={this.onToggleCard} self={this} handleSubmit={this.handleSubmit}/> : null}
+
+
+        <div className="navbar-end">
+        {this.props.cart ?
+          this.props.cart.length > 0 ?
+        <div className="navbar-item has-dropdown is-hoverable">
+          <a className="navbar-link  is-active">
+            <i className="fa fa-shopping-cart fa-2x is-turqoise"></i>
+          </a>
+          <div className="navbar-dropdown">
+          {this.props.cart.map(function(item, index) {
+            return (
+
+                <a key={index} style={{cursor: "default"}}  className="navbar-item">
+                  <div className="level is-mobile">
+                    <div className="level-left">
+                      <div className="level-item">
+                        <p>
+                          <strong className="content is-small">{item.title}</strong>
+                          <br/>
+                          <small>{item.quantity}</small>
+                        </p>
+                      </div>
+                    </div>
+                    <div className="level-right">
+                      <div className="level-item">
+                        <span className="spacer">
+                          <img src={item.image[0]}/>
+                        </span>
+                      </div>
+                      <div className="level-item">
+                        <p style={{cursor: "pointer"}} onClick={function() {this.props.removeCart(index)}.bind(this)}>X</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+
+            );
+          }.bind(this))}
+          </div>
+        </div>
+        :
+        <div className="navbar-item">
+          <i className="fa fa-shopping-cart fa-2x is-turqoise"></i>
+        </div>
+        :
+        <div className="navbar-item">
+          <i className="fa fa-shopping-cart fa-2x is-turqoise"></i>
+        </div>
+        }
+        {this.state.factor ? <EntryModal toggleModal={this.toggleModal} registerError={this.state.registerError} clearError={this.clearError} loginModal={this.state.loginModal} error={this.state.error} toggleOff={this.offToggleCard} toggleOn={this.onToggleCard} self={this} handleSubmit={this.handleSubmit} registerUser={this.registerUser}/> : null}
         <div className="navbar-menu">
                 {this.props.loggedIn && this.props.admin ?
-                  <div className="navbar-end">
+                  ([
                   <div className="navbar-item">
                     <div className="field is-grouped">
                       <div className="control">
@@ -725,7 +903,7 @@ var Navbar = React.createClass({
                         </Link>
                         </div>
                       </div>
-                    </div>
+                    </div>,
                     <div className="navbar-item">
                       <div className="field is-grouped">
                         <div className="control">
@@ -740,9 +918,9 @@ var Navbar = React.createClass({
                           </div>
                         </div>
                       </div>
-                      </div>
+                  ])
                   : this.props.loggedIn ?
-                  <div className="navbar-end">
+                  ([
                   <div className="navbar-item">
                     <div className="field is-grouped">
                       <div className="control">
@@ -756,7 +934,7 @@ var Navbar = React.createClass({
                         </Link>
                       </div>
                     </div>
-                  </div>
+                  </div>,
                   <div className="navbar-item">
                     <div className="field is-grouped">
                       <div className="control">
@@ -771,9 +949,8 @@ var Navbar = React.createClass({
                         </div>
                       </div>
                     </div>
-                  </div>
+                  ])
                   :
-                  <div className="navbar-end">
                   <div className="navbar-item">
                     <div className="field is-grouped">
                       <div className="control">
@@ -788,8 +965,9 @@ var Navbar = React.createClass({
                     </div>
                   </div>
                 </div>
-                </div>
+
               }
+            </div>
         </div>
       </nav>
 
@@ -852,7 +1030,7 @@ var BoxDash = React.createClass({
 
 function ManageColumns(props) {
   return (
-  <div className="jar">
+  <div style={{paddingBottom: 20 + "px"}}>
     <div className="has-text-right">
       <button className="button red is-medium is-rounded" onClick={function() {props.onColumnManagement(-1)}}><span className="icon"><i className="fa fa-minus fa-1x"></i></span></button>
       <button className="button theme-green is-medium is-rounded" onClick={function() {props.onColumnManagement(1)}}><span className="icon"><i className="fa fa-plus fa-1x"></i></span></button>
@@ -1442,125 +1620,246 @@ var nextID = 10;
   id: 10
 }
 */
+function ListItems(props) {
+  return (
+      <li className="nav-item" onClick={function() {props.selectSize(props.size); props.toggleDropdown("is-closed")}}><a>{props.size}</a></li>
+  );
+}
 
 
-
-function ProductPage(props) {
-  for(var index in props.initialJeans) {
-    if(props.initialJeans[index].id == props.match.params.id) {
-      var jean = props.initialJeans[index];
+var ProductPage = React.createClass({
+  getInitialState: function() {
+    return {
+      size: "Size(s)",
+      quantity: 1,
+      toggle: "is-closed",
+      user: "unknown"
     }
-  }
-  return(
-  <div style={{paddingTop: 70 + "px", paddingBottom: 70 + "px"}}>
+  },
+  selectSize: function(num) {
+    this.setState({
+      size: num
+    })
+  },
+  selectQuantity: function(num) {
+    var prev = this.state.quantity;
+    var curr = prev + num;
+    if(curr < 1) {
+      curr = 1;
+    } else if(curr > 6) {
+      curr = 6;
+    }
+     this.setState({
+      quantity: curr
+     })
+  },
+  toggleDropdown: function(toggle) {
+    this.setState({
+      toggle: toggle
+    })
+  },
+  handleSubmit: function() {
+    event.preventDefault();
+    var review;
 
-  <div className="section">
-    <div className="container">
-      <div className="columns">
-        <div className="column is-6">
-          <div className="image is-2by2">
-            <img src={jean.image[0]} />
+  },
+
+  render: function() {
+
+    // console.log(this.props.admin.userName)
+    for(var index in this.props.initialJeans) {
+      if(this.props.initialJeans[index].id == this.props.match.params.id) {
+        var jean = this.props.initialJeans[index];
+      }
+    }
+    if(jean.reviews) {
+      var starReviews = 0;
+      jean.reviews.forEach(function(item, index) {
+        starReviews = starReviews + item.stars;
+      })
+
+      var avg = Math.ceil((starReviews / jean.reviews.length));
+      var s = [];
+
+      for(var i = 1; i < avg; i++) {
+        s.push(i);
+      }
+      var recursion = function(num) {
+        if(s.length< num) {
+          s.push(0);
+          recursion(num);
+        }
+      }
+      recursion(5);
+    }
+    return (
+    <div style={{paddingTop: 70 + "px", paddingBottom: 70 + "px"}}>
+
+
+    <div className="section">
+      <div className="container">
+        <div className="columns">
+          <div className="column is-6">
+            <div className="image is-2by2">
+              <img src={jean.image[0]} />
+            </div>
           </div>
-        </div>
-        <div className="column is-5 is-offset-1">
-          <div className="title is-2">{jean.title}</div>
-          <p className="title is-3 has-text-muted">{jean.price}</p>
-          <hr/>
-          <br/>
-          <p className="">
-            <i className="fa fa-star title is-5"></i>
-            <i className="fa fa-star title is-5"></i>
-            <i className="fa fa-star title is-5"></i>
-            <i className="fa fa-star title is-5"></i>
-            <i className="fa fa-star title is-5"></i>
-            &nbsp; &nbsp;
-            <strong>41 Reviews</strong>
-            &nbsp; &nbsp;
-            <a href="#">show all</a>
-          </p>
-          <br/>
-          <p>{jean.description}
-          </p>
-          <br/>
-          <br/>
-          <p className="">
-            <a href="#">
-              <i className="fa fa-minus cart-icon"></i>
-            </a>
-            &nbsp;
-            <input type="text" name="" className="input has-text-centered" value="1" style={{width: 40 + "px"}} />
-            &nbsp;
-            <a href="#">
-              <i className="fa fa-plus cart-icon"></i>
-            </a>
-            &nbsp; &nbsp; &nbsp;
-            <a className="button is-primary">Add to cart</a>
-          </p>
-          <br/>
-          <table className="table">
-            <tbody>
-              <tr>
-                <td className="has-text-right">
-                  <strong>Item ID</strong>
-                </td>
-                <td>{jean.id}</td>
-              </tr>
-              <tr>
-                <td className="has-text-right">
-                  <strong>Seller</strong>
-                </td>
-                <td>jsmith</td>
-              </tr>
-              <tr>
-                <td className="has-text-right">
-                  <strong>Added</strong>
-                </td>
-                <td>3 days ago</td>
-              </tr>
-              <tr>
-                <td className="has-text-right">
-                  <strong>Views</strong>
-                </td>
-                <td>3</td>
-              </tr>
-            </tbody>
-          </table>
+          <div className="column is-5 is-offset-1">
+            <div className="title is-2">{jean.title}</div>
+            <p className="title is-3 has-text-muted">{jean.price}</p>
+            <hr/>
+            <br/>
+            <p className="">
+              {jean.reviews ? s.map(function(star, index) {
+                if(star == 0) {
+                  return <i key={index} className="fa fa-star-o"></i>
+                } else {
+                  return <i key={index} className="fa fa-star"></i>
+                }
+              }) : null}
+              &nbsp; &nbsp;
+              <strong>{jean.reviews ? jean.reviews.length : 0} Reviews</strong>
+              &nbsp; &nbsp;
+
+            </p>
+            <br/>
+            <p>{jean.description}</p>
+            <br/>
+            <br/>
+
+            <div className="level">
+              <div className="field is-grouped">
+               <div className="control level-item">
+                 <a className="button" type="button" onClick={function() {this.state.toggle === "is-open" ? this.toggleDropdown("is-closed") : this.toggleDropdown("is-open")}.bind(this)}>
+                   {this.state.size}
+                 </a>
+
+                 <div className={"dropdown " + this.state.toggle + ""}>
+                   <ul>
+                   {jean.sizes.map(function(size, index) {
+                     return <ListItems size={size} key={index} selectSize={function(n) {this.selectSize(n)}.bind(this)} toggleDropdown={function(t) {this.toggleDropdown(t)}.bind(this)}/>
+                   }.bind(this))}
+                   </ul>
+                 </div>
+               </div>
+                <div className="control level-item">
+                    <a onClick={function() {this.selectQuantity(-1)}.bind(this)}>
+                      <i className="fa fa-minus cart-icon"></i>
+                    </a>
+                  &nbsp;
+                </div>
+                <div className="control level-item">
+                <input type="text" name="" className="input has-text-centered" value={this.state.quantity} onChange={this.selectQuantity} style={{width: 40 + "px"}} />
+                &nbsp;
+                </div>
+                <div className="level-item">
+                <a onClick={function() {this.selectQuantity(1)}.bind(this)}>
+                  <i className="fa fa-plus cart-icon"></i>
+                </a>
+                &nbsp; &nbsp; &nbsp;
+                </div>
+                <a className="button is-primary" onClick={function() {this.state.size === "Size(s)" ? alert("Choose a size") : this.props.addCart({quantity: this.state.quantity, price: jean.price, image: jean.image, title: jean.title, size: this.state.size, id: jean.id})}.bind(this)}>Add to cart</a>
+
+
+                </div>
+            </div>
+
+            <br/>
+            <table className="table">
+              <tbody>
+                <tr>
+                  <td className="has-text-right">
+                    <strong>Item ID</strong>
+                  </td>
+                  <td>{jean.id}</td>
+                </tr>
+                <tr>
+                  <td className="has-text-right">
+                    <strong>Color</strong>
+                  </td>
+                  <td>{jean.color}</td>
+                </tr>
+                <tr>
+                  <td className="has-text-right">
+                    <strong>Fit</strong>
+                  </td>
+                  <td>{jean.fit}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-
-  <div className="section">
-    <div className="container">
-      <div className="tabs">
-        <ul>
-          <li><a>Reviews</a></li>
-        </ul>
+    <div ref="reviews" className="section">
+      <div className="container">
+      {jean.reviews ?
+        <div className="tabs">
+          <ul>
+            <li><a>Reviews</a></li>
+          </ul>
+        </div>
+        : null}
+        {this.props.loggedIn || this.props.cart?
+        <div className="box">
+          <div className="level">
+            <div className="field is-grouped">
+              <div className="control level-item">
+                <p className="level-item">{this.props.userName}</p>
+              </div>
+              <div className="verticalLine">
+              </div>
+              <div className="control level-item">
+              <input className="input level-item" placeholder="stars" type="number" name="stars" min="0" max="5" ref={function(input) {this.stars = input;}.bind(this)}/>
+              </div>
+            </div>
+          </div>
+          <form onSubmit={function() {
+              event.preventDefault();
+              this.props.addReview(jean, {
+                    user: this.props.userName,
+                    review: this.review.value,
+                    stars: this.stars.value
+                  }, this.props.match.path)
+                  this.review.value = '';
+                }.bind(this)}>
+            <input className="input" type="text" placeholder="write a review..." ref={function(input) {this.review = input;}.bind(this)}/>
+          </form>
+        </div>
+        : null}
+        {jean.reviews ? jean.reviews.map(function(reviews, index) {
+          var stars = [];
+          for(var i = 0; i < reviews.stars; i++) {
+            stars.push(i);
+          }
+          return (
+            <div key={index} className="box">
+              <div className="level">
+                <div className="field is-grouped">
+                  <div className="control level-item">
+                    <p className="level-item">{reviews.user}</p>
+                  </div>
+                  <div className="verticalLine">
+                  </div>
+                  <div className="control level-item">
+                  <p className="level-item"> {stars.map(function(star, index) {
+                    return <i key={index} className="fa fa-star"></i>
+                  })}</p>
+                  </div>
+                </div>
+              </div>
+              <p>{reviews.review}</p>
+            </div>
+          )
+        }) : null}
+        </div>
       </div>
-      <div className="box">
-        <p> </p><br/><p>
 
-        Sed at risus enim. Nunc aliquet tellus a purus blandit lobortis. Duis condimentum sapien sed orci ornare mollis. Praesent eleifend ante magna, quis commodo risus pellentesque in. Donec eget porta leo. Sed vel dictum est. Ut dui lorem, volutpat vel risus in, dictum euismod ex. Aenean laoreet dapibus nulla, nec viverra massa feugiat vitae. Vestibulum elementum nec nisi dictum rhoncus. Nam placerat mi eu tortor tincidunt commodo. Duis posuere, sapien a laoreet dapibus, elit tortor laoreet est, eget dapibus dui justo vitae ipsum. Praesent sed augue nec leo hendrerit iaculis sit amet efficitur ante. Nunc ac maximus mauris. Sed luctus erat id elit tempor, a aliquam lacus sodales.
-      </p><br/><p>
+  </div>
+  )}
+})
 
-      Suspendisse sodales metus justo, ullamcorper iaculis purus interdum in. Sed ultricies enim felis, in interdum urna malesuada a. Morbi id ligula vel leo elementum dignissim quis vel purus. Donec iaculis, est ac maximus vestibulum, sapien mi lacinia urna, at laoreet felis lectus nec urna. Fusce egestas, neque vitae blandit scelerisque, leo arcu pellentesque risus, et volutpat neque nunc id massa. Aenean dapibus leo vel purus malesuada, eu ultrices nulla consequat. Duis erat orci, lobortis sed dictum id, pretium a nibh. Mauris pharetra ligula consequat gravida ornare.
-    </p><br/><p>
-
-    Sed a gravida sapien. Nam malesuada feugiat nunc, eu varius risus suscipit non. Nulla vitae odio fermentum, varius ligula et, iaculis enim. Mauris tempor in dolor non aliquet. Pellentesque ac mauris a augue tempus pharetra. Nulla facilisi. Vivamus sit amet lacus sagittis, ullamcorper nisi sit amet, consequat eros. Sed faucibus nulla vitae erat tristique ornare.
-  </p><br/><p>
-
-  Nullam sit amet magna ipsum. In tincidunt tincidunt tellus. Duis maximus vulputate elit sit amet auctor. Vestibulum a nunc consectetur, accumsan arcu eu, dapibus est. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec vitae massa eget nulla gravida porta eu et sem. Sed in lorem id lectus auctor lobortis sed vel libero. Nam dapibus risus eu sodales consectetur. Fusce luctus sollicitudin ante et sodales. Curabitur eget justo turpis. Vestibulum vel nunc tellus. Morbi accumsan urna nibh, at malesuada odio faucibus accumsan.
-</p>
-
-</div>
-</div>
-</div>
-
-</div>
-  );
-
-}
 
 
 function SideNav(props) {
@@ -1669,7 +1968,7 @@ var ShowCase = React.createClass({
   }
 })
 
-
+var cartID = 1;
 
 var MainApp = React.createClass({
   update: function(nextState, path) {
@@ -1694,23 +1993,194 @@ var MainApp = React.createClass({
     }
 
   },
+  addReview: function(data, review, route) {
+    if(route === "/jeans/:id") {
+      for(var index in this.state.products.jeans) {
+        if(this.state.products.jeans[index].id == data.id) {
+
+          var jean = this.state.products.jeans[index];
+          if(this.state.products.jeans[index].reviews == undefined) {
+            jean.reviews = [];
+            jean.reviews.push(review);
+          } else {
+            var cReviews = [...jean.reviews];
+            cReviews.push(review)
+            jean.reviews = cReviews;
+          }
+
+          var cState = [...this.state.products.jeans];
+          cState.splice(index, 1, jean);
+
+          this.setState({
+            products: {
+              jeans: cState,
+              shirts: this.state.products.shirts
+              }
+          })
+        }
+      }
+    } else {
+      for(var index in this.state.products.shirts) {
+        if(this.state.products.shirts[index].id == data.id) {
+
+          var shirt = this.state.products.shirts[index];
+          if(this.state.products.shirts[index].reviews == undefined) {
+            shirt.reviews = [];
+            shirt.reviews.push(review);
+          } else {
+            var cReviews = [...shirt.reviews];
+            cReviews.push(review)
+            shirt.reviews = cReviews;
+          }
+
+          var cState = [...this.state.products.shirts];
+          cState.splice(index, 1, shirt);
+
+          this.setState({
+            products: {
+              jeans: this.state.products.jeans,
+              shirts: cState
+              }
+          })
+        }
+      }
+    }
+
+  },
   getColumns: function(columns) {
     this.setState({
       columns: columns
     })
   },
   getAuth: function(authData) {
-    if(authData.id && authData.admin) {
+    if(authData.admin) {
+      for(var prop in this.props.initialAdmins) {
+        if(this.props.initialAdmins[prop].id === authData.id) {
+           this.admin = this.props.initialAdmins[prop];
+           if(this.admin.cart) {
+             var cart = [...this.admin.cart];
+           } else {
+             var cart = [];
+           }
+           this.setState({
+             admin: true,
+             authID: this.props.initialAdmins[prop].id,
+             userName: this.props.initialAdmins[prop].userName,
+             loggedIn: true,
+             cart: cart
+           })
+        }
+      }
+    } else {
+      for(var prop in this.state.users) {
+        if(this.state.users[prop].id === authData.id) {
+           this.user = this.state.users[prop];
+           if(this.user.cart) {
+             var cart = [...this.user.cart];
+           } else {
+             var cart = [];
+           }
+             this.setState({
+               authID: this.state.users[prop].id,
+               userName: this.state.users[prop].userName,
+               loggedIn: true,
+               cart: cart
+             })
+        }
+      }
+    }
+
+
+  },
+  addCart: function(item) {
+    if(this.admin) {
+      if(this.admin.cart) {
+        var cart = [...this.admin.cart];
+      } else {
+        var cart = [...this.state.cart];
+      }
+      cart.push(item);
+      this.admin.cart = cart;
       this.setState({
-        loggedIn: true,
-        admin: true,
-        authID: authData.id
+        cart: cart,
+        id: cartID
       })
-    } else if(authData.id) {
-        this.setState({
-          loggedIn: true,
-          authID: authData.id
-        })
+      cartID += 1;
+    } else {
+      if(this.state.cart) {
+        var cart = [...this.state.cart];
+      } else {
+        var cart = [];
+      }
+
+      cart.push(item);
+      this.setState({
+        cart: cart,
+        id: cartID
+      })
+      cartID += 1;
+    }
+
+
+
+   if(this.user) {
+      if(this.user.cart) {
+        var cart = [...this.user.cart];
+      } else {
+        var cart = [...this.state.cart];
+      }
+      cart.push(item);
+      this.user.cart = cart;
+      this.setState({
+        cart: cart,
+        id: cartID
+      })
+      cartID += 1;
+    } else {
+      if(this.state.cart) {
+        var cart = [...this.state.cart];
+      } else {
+        var cart = [];
+      }
+
+      cart.push(item);
+      this.setState({
+        cart: cart,
+        id: cartID
+      })
+      cartID += 1;
+    }
+
+  },
+  removeCart: function(index) {
+    if(this.admin) {
+      var cart = [...this.admin.cart];
+      cart.splice(index, 1);
+      this.admin.cart = cart;
+      this.setState({
+        cart: cart
+      })
+    } else {
+      var cart = [...this.state.cart];
+      cart.splice(index, 1);
+      this.setState({
+        cart: cart
+      })
+    }
+
+    if(this.user) {
+      var cart = [...this.user.cart];
+      cart.splice(index, 1);
+      this.user.cart = cart;
+      this.setState({
+        cart: vart
+      })
+    } else {
+      var cart = [...this.state.cart];
+      cart.splice(index, 1);
+      this.setState({
+        cart: cart
+      })
     }
 
   },
@@ -1718,20 +2188,26 @@ var MainApp = React.createClass({
     this.setState({
       loggedIn: false,
       admin: null,
-      authID: null
+      authID: null,
+      cart: null
+    })
+  },
+  addUser: function(user) {
+    var users = [...this.state.users];
+    users.push(user);
+    this.setState({
+      users: users
     })
   },
   getInitialState: function() {
     return {
-
       users: this.props.initialUsers,
       admins: this.props.initialAdmins,
       columns: 4,
       products: {
         shirts: this.props.initialShirts,
         jeans: this.props.initialJeans
-      }
-
+      },
     }
   },
   openNav: function() {
@@ -1743,38 +2219,32 @@ var MainApp = React.createClass({
     document.getElementById("main").style.marginLeft= "0";
   },
   render: function() {
-
-    // for(var key in this.state.products) {
-    //   console.log(key, " this is the key")
-    //   console.log(this.state.products[key])
-    // }
+    var hostName = window.location;
     var routes = ["shirts", "jeans"];
-    console.log(this.state);
     return (
       <HashRouter>
         <div id="main">
-          <Navbar openNav={this.openNav} users={this.props.initialUsers} logout={this.onLogout} accountID={this.state.authID} admins={this.state.admins} getAuth={function(a) {this.getAuth(a)}.bind(this)} loggedIn={this.state.loggedIn} admin={this.state.admin}/>
+          <Navbar addUser={function(user) {this.addUser(user)}.bind(this)} openNav={this.openNav} users={this.state.users} logout={this.onLogout} accountID={this.state.authID} admins={this.state.admins} removeCart={function(i) {this.removeCart(i)}.bind(this)} getAuth={function(a) {this.getAuth(a)}.bind(this)} loggedIn={this.state.loggedIn} admin={this.state.admin} cart={this.state.cart}/>
 
           <SideNav
             closeNav={this.closeNav}
             openNav={this.openNav}
             />
-            <div className="jar">
+            <div style={{padding: 50 + "px"}}>
               <Switch>
-
-
               {routes.map(function(data, index) {
                 return ([
                   <Route exact path={"/" + data + ""} key={index} render={function(router) {return (<ShowCase initialJeans={this.state.products[data]} updateParent={function(n,p) {this.update(n,p)}.bind(this)} router={router} loggedIn={this.state.loggedIn} columns={this.state.columns} admin={this.state.admin} getColumns={function(c) {this.getColumns(c)}.bind(this)} />)}.bind(this)} />,
-                  <Route path={"/" + data + "/:id"} render={function({match}) {return (<ProductPage initialJeans={this.state.products[data]} match={match}/>)}.bind(this)} />
+                  <Route path={"/" + data + "/:id"} render={function({match}) {return (<ProductPage initialJeans={this.state.products[data]} addReview={function(d, r, p) {this.addReview(d, r, p)}.bind(this)} addCart={function(i) {this.addCart(i)}.bind(this)} loggedIn={this.state.loggedIn} admin={this.state.admin} userName={this.state.userName} match={match}/>)}.bind(this)} />
                 ])
               }.bind(this))}
 
-                <Route exact path="/" render={function() {return (<Redirect to="/jeans" />)}} />
-                <Route path="/account/:id" render={function({match}) {return(<Account accountID={this.state.authID} users={this.state.users} match={match}/>)}.bind(this)}/>
-                <Route path="/admin/:id" render={function({match}) {return(<Account accountID={this.state.authID} users={this.state.admins} match={match}/>)}.bind(this)}/>
+                <Route exact path="/" render={function() {return (<Redirect to="/home" />)}} />
+                <Route path="/home" component={Home} />
+                <Route path="/account/:id" render={function({match}) {return(<Account hostName={hostName} accountID={this.state.authID} users={this.state.users} match={match}/>)}.bind(this)}/>
+                <Route path="/admin/:id" render={function({match}) {return(<Account hostName={hostName} accountID={this.state.authID} users={this.state.admins} match={match}/>)}.bind(this)}/>
 
-                <Route path="/cart" component={Account} />
+                <Route path="/cart" render={function({match}) {return(<Cart accountID={this.state.authID} users={this.state.admins} match={match}/>)}.bind(this)} />
                 <Route component={NotFound} />
               </Switch>
             </div>
@@ -1816,6 +2286,12 @@ function Account(props) {
           }
         }
       }
+    }
+    try {
+      var user = user.id
+    } catch(e) {
+      alert("Error: 301 permission denied");
+      window.location = props.hostName.origin;
     }
   return(
     <div className="column is-6 is-offset-3">
@@ -1860,10 +2336,36 @@ function Cart() {
   )
 }
 
+function Home() {
+  return (
+
+      <div className="card">
+        <div className="card-content">
+          <div className="content">
+            <p>Here are the log in credentials for <strong><u>Admin</u></strong></p>
+            <p className="content is-small"><strong><u>username:</u></strong> admin</p>
+            <p className="content is-small"><strong><u>password:</u></strong> admin</p>
+          </div>
+          <div className="content">
+            <p>Here are the log in credentials for <strong><u>User</u></strong></p>
+            <p className="content is-small"><strong><u>username:</u></strong> user1</p>
+            <p className="content is-small"><strong><u>password:</u></strong> password</p>
+          </div>
+        </div>
+        <div className="card-footer">
+          <p className="card-footer-item">If you have any questions or comments regarding this project. You can contact me <acronym title="colelogan19@yahoo.com"> here </acronym></p>
+        </div>
+      </div>
+  )
+}
+
 
 // <ShowCase initialJeans={this.props.initialJeans} />
 ReactDOM.render(<MainApp initialJeans={JEANS} initialUsers={USERS} initialAdmins={ADMINS} initialShirts={SHIRTS}/>, document.getElementById("root"));
 /***********************************************************/
+
+
+
 // propTypes: {
 //   initialJeans: React.PropTypes.arrayOf(React.PropTypes.shape({
 //     SKU: React.PropTypes.number.isRequired,
@@ -1877,75 +2379,6 @@ ReactDOM.render(<MainApp initialJeans={JEANS} initialUsers={USERS} initialAdmins
 //   })).isRequired
 // },
 
-// var rotate = function(i, j) {
-//   if(this.state.array[i+1]) {
-//     if(i === 0) {
-//       this.state.array[i].push(this.state.array[i+1].splice(0,1)[0]);
-//       rotate(i + 1, 0);
-//     } else if(j <= i) {
-//       var object = this.state.array[i+1].splice(0,1)[0];
-//       if(object == undefined) {
-//         console.log("nope")
-//       } else {
-//         this.state.array[i].push(object);
-//         rotate(i, j + 1);
-//       }
-//     } else {
-//       rotate(i + 1, 0)
-//     }
-//   }
-// }.bind(this);
-// rotate(0, 0);
-
-
-/**********************************************************************************/
-// <div className="column">
-//     <div className="card">
-//       <div className="card-image">
-//         <figure className="image is-2by3">
-//             <img src={this.state.image} onMouseOver={ function() {
-//               var len = this.state.image.length;
-//               this.flipImage(len);
-//             }.bind(this) } onMouseOut={function() {this.toDefault();}.bind(this)} />
-//         </figure>
-//       </div>
-//     </div>
-//     <div>
-//       {this.props.title}
-//       <ButtonDrop
-//           toggle={this.state.toggle}
-//           sizes={this.props.size}
-//           index={this.props.index}
-//           size={this.state.size}
-//           onSizeSelect={function(size, index) { this.sizeSelect(size, index)}.bind(this)}
-//           onButtonDrop={function(index) { this.dropButton(index)}.bind(this)}/>
-//     </div>
-// </div>
-
-
-
-// {this.state.jean.map(function(jean, index) {
-//   this.state.image = jean.image;
-//   return <ImageFrame
-//       index={index}
-//       id={jean.id}
-//       length={this.props.length}
-//       remainder={this.props.remainder}
-//       image={this.state.image}
-//       key={jean.id}
-//       length={this.props.length}
-//       columns={this.props.columns}
-//       rows={this.props.rows}
-//       toggle={this.state.toggle}
-//       sizes={jean.size}
-//       index={this.props.index}
-//       size={this.state.size}
-//       onSizeSelect={function(size, index) { this.sizeSelect(size, index)}.bind(this)}
-//       onButtonDrop={function(index) { this.dropButton(index)}.bind(this)}
-//       onFlipImage={function(length) { this.flipImage(length)}.bind(this)}
-//       onToDefault={function() { this.toDefault()}.bind(this)}
-//       />
-// }.bind(this))}
 
 // <ButtonDrop
 //     id={props.id}
@@ -1977,31 +2410,3 @@ ReactDOM.render(<MainApp initialJeans={JEANS} initialUsers={USERS} initialAdmins
 // componentDidMount: function() {
 //   document.getElementById(this.props.id).style.display = "none";
 // },
-
-
-// function ButtonList(props) {
-//   return (
-//       <li onClick={function() {props.onSize(props.size, props.id);}}><a>{props.size}</a></li>
-//   );
-// }
-// function ButtonDrop(props) {
-//   return (
-//     <div className="has-dropdown">
-//     <button className="button is-medium" onClick={function() {props.onButtonDrop(props.id); console.log("drop");}}>{props.size}</button>
-//       <div className={"dropdown box " + props.toggle + ""} id={props.id}>
-//         <ul >
-//         {
-//           props.sizes.map(function(size, index) {
-//             return <ButtonList
-//                       key={index}
-//                       size={size}
-//                       onSize={props.onSizeSelect}
-//                       id={props.id}
-//                       />
-//           })
-//         }
-//         </ul>
-//       </div>
-//     </div>
-//   );
-// }
